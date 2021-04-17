@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Countdown - Tests</title>
+        <title>Countdown</title>
         <link rel="stylesheet" href="../../dist/css/app.min.css">
     </head>
 
@@ -114,8 +114,8 @@
 
             var date = (new Date(Date.now() + 864e5 * 7)).toISOString();
 
-            TAGSDEV.util.$$('[js-countdown]').forEach(function(el) {
-                TAGSDEV.countdown(el, {date: date});
+            TAGSX.util.$$('[js-countdown]').forEach(function(el) {
+                TAGSX.countdown(el, {date: date});
             });
 
         </script>
