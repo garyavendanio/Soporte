@@ -1,0 +1,232 @@
+// Name:            Column
+// Description:     Utilities for text columns
+//
+// Component:       `x-column-*`
+//
+// Sub-objects:     `x-column-span`
+//
+// Modifiers:       `x-column-divider`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$column-gutter  : $global-gutter !default;
+$column-gutter-l: $global-medium-gutter !default;
+
+$column-divider-rule-color: $global-border !default;
+$column-divider-rule-width: 1px !default;
+
+
+/* ========================================================================
+   Component: Column
+ ========================================================================== */
+
+[class*='x-column-'] {
+    column-gap: $column-gutter;
+}
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large) {
+
+    [class*='x-column-'] {
+        column-gap: $column-gutter-l;
+    }
+
+}
+
+/*
+ * Fix image 1px line wrapping into the next column in Chrome
+ */
+
+[class*='x-column-'] img {
+    transform: translate3d(0, 0, 0);
+}
+
+
+/* Divider
+ ========================================================================== */
+
+/*
+ * 1. Double the column gap
+ */
+
+.x-column-divider {
+    column-rule: $column-divider-rule-width solid $column-divider-rule-color;
+    /* 1 */
+    column-gap : ($column-gutter * 2);
+}
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large) {
+
+    .x-column-divider {
+        column-gap: ($column-gutter-l * 2);
+    }
+
+}
+
+
+/* Width modifiers
+ ========================================================================== */
+
+.x-column-1-2 {
+    column-count: 2;
+}
+
+.x-column-1-3 {
+    column-count: 3;
+}
+
+.x-column-1-4 {
+    column-count: 4;
+}
+
+.x-column-1-5 {
+    column-count: 5;
+}
+
+.x-column-1-6 {
+    column-count: 6;
+}
+
+/* Phone landscape and bigger */
+@media (min-width: $breakpoint-small) {
+
+    .x-column-1-2\:small {
+        column-count: 2;
+    }
+
+    .x-column-1-3\:small {
+        column-count: 3;
+    }
+
+    .x-column-1-4\:small {
+        column-count: 4;
+    }
+
+    .x-column-1-5\:small {
+        column-count: 5;
+    }
+
+    .x-column-1-6\:small {
+        column-count: 6;
+    }
+
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium) {
+
+    .x-column-1-2\:medium {
+        column-count: 2;
+    }
+
+    .x-column-1-3\:medium {
+        column-count: 3;
+    }
+
+    .x-column-1-4\:medium {
+        column-count: 4;
+    }
+
+    .x-column-1-5\:medium {
+        column-count: 5;
+    }
+
+    .x-column-1-6\:medium {
+        column-count: 6;
+    }
+
+}
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large) {
+
+    .x-column-1-2\:large {
+        column-count: 2;
+    }
+
+    .x-column-1-3\:large {
+        column-count: 3;
+    }
+
+    .x-column-1-4\:large {
+        column-count: 4;
+    }
+
+    .x-column-1-5\:large {
+        column-count: 5;
+    }
+
+    .x-column-1-6\:large {
+        column-count: 6;
+    }
+
+}
+
+/* Large screen and bigger */
+@media (min-width: $breakpoint-xlarge) {
+
+    .x-column-1-2\:xlarge {
+        column-count: 2;
+    }
+
+    .x-column-1-3\:xlarge {
+        column-count: 3;
+    }
+
+    .x-column-1-4\:xlarge {
+        column-count: 4;
+    }
+
+    .x-column-1-5\:xlarge {
+        column-count: 5;
+    }
+
+    .x-column-1-6\:xlarge {
+        column-count: 6;
+    }
+
+}
+
+/* Make element span across all columns
+ * Does not work in Firefox yet
+ ========================================================================== */
+
+.x-column-span {
+    column-span: all;
+}
+
+
+// Hooks
+// ========================================================================
+
+@if(mixin-exists(hook-column-misc)) {
+    @include hook-column-misc();
+}
+
+// @mixin hook-column-misc(){}
+
+
+// Inverse
+// ========================================================================
+
+$inverse-column-divider-rule-color: $inverse-global-border !default;
+
+//
+// Component: Column
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+
+// Miscellaneous
+// ========================================================================
+
+// @mixin hook-column-misc(){}

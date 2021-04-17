@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Search - Tests</title>
+        <script src="js/test.js"></script>
+    </head>
+
+    <body>
+
+        <div class="x-container">
+
+            <h1>Search</h1>
+
+            <h2>Default</h2>
+
+            <div class="x-margin">
+                <form class="x-search x-search-default">
+                    <input class="x-search-input" type="search" placeholder="Search">
+                </form>
+            </div>
+
+            <div class="x-margin" x-margin>
+                <form class="x-search x-search-default">
+                    <span x-search-icon></span>
+                    <input class="x-search-input" type="search" placeholder="Icon...">
+                </form>
+
+                <form class="x-search x-search-default">
+                    <span class="x-search-icon-flip" x-search-icon></span>
+                    <input class="x-search-input" type="search" placeholder="Flip...">
+                </form>
+            </div>
+
+            <div class="x-margin" x-margin>
+                <form class="x-search x-search-default">
+                    <a href="#" x-search-icon></a>
+                    <input class="x-search-input" type="search" placeholder="Link...">
+                </form>
+
+                <form class="x-search x-search-default">
+                    <button class="x-search-icon-flip" x-search-icon></button>
+                    <input class="x-search-input" type="search" placeholder="Button...">
+                </form>
+            </div>
+
+            <h2>Navbar</h2>
+
+            <div class="x-margin x-navbar-container x-navbar">
+                <div class="x-navbar-left">
+                    <div class="x-navbar-item">
+
+                        <form class="x-search x-search-navbar">
+                            <input class="x-search-input" type="search" placeholder="Search">
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="x-margin x-navbar-container x-navbar">
+                <div class="x-navbar-left">
+                    <div class="x-navbar-item">
+
+                        <form class="x-search x-search-navbar">
+                            <span x-search-icon></span>
+                            <input class="x-search-input" type="search" placeholder="Icon...">
+                        </form>
+
+                    </div>
+                </div>
+                <div class="x-navbar-right">
+                    <div class="x-navbar-item">
+
+                        <form class="x-search x-search-navbar">
+                            <span class="x-search-icon-flip" x-search-icon></span>
+                            <input class="x-search-input" type="search" placeholder="Flip...">
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="x-margin x-navbar-container x-navbar">
+                <div class="x-navbar-left">
+                    <div class="x-navbar-item">
+
+                        <form class="x-search x-search-navbar">
+                            <a href="#" x-search-icon></a>
+                            <input class="x-search-input" type="search" placeholder="Link...">
+                        </form>
+
+                    </div>
+                </div>
+                <div class="x-navbar-right">
+                    <div class="x-navbar-item">
+
+                        <form class="x-search x-search-navbar">
+                            <button class="x-search-icon-flip" x-search-icon></button>
+                            <input class="x-search-input" type="search" placeholder="Button...">
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+            <h2>Large</h2>
+
+            <div class="x-margin">
+                <form class="x-search x-search-large">
+                    <input class="x-search-input" type="search" placeholder="Search">
+                </form>
+            </div>
+
+            <div class="x-margin" x-margin>
+                <form class="x-search x-search-large">
+                    <span x-search-icon></span>
+                    <input class="x-search-input" type="search" placeholder="Icon...">
+                </form>
+
+                <form class="x-search x-search-large">
+                    <span class="x-search-icon-flip" x-search-icon></span>
+                    <input class="x-search-input" type="search" placeholder="Flip...">
+                </form>
+            </div>
+
+            <div class="x-margin" x-margin>
+                <form class="x-search x-search-large">
+                    <a href="#" x-search-icon></a>
+                    <input class="x-search-input" type="search" placeholder="Link...">
+                </form>
+
+                <form class="x-search x-search-large">
+                    <button class="x-search-icon-flip" x-search-icon></button>
+                    <input class="x-search-input" type="search" placeholder="Button...">
+                </form>
+            </div>
+
+            <h2>Toggle</h2>
+
+            <a class="x-search-toggle" href="#" x-search-icon></a>
+
+            <h2>Navbar Toggle + Layouts</h2>
+
+            <nav class="x-navbar-container x-margin" x-navbar>
+
+                <div class="test-overlay x-navbar-left">
+
+                    <a class="x-navbar-item x-logo" href="#">Overlay</a>
+
+                    <ul class="x-navbar-nav">
+                        <li class="x-active"><a href="#">Active</a></li>
+                        <li><a href="#">Parent</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                    </ul>
+
+                </div>
+
+                <div class="test-overlay x-navbar-right">
+
+                    <ul class="x-navbar-nav">
+                        <li><a href="#">Item</a></li>
+                    </ul>
+
+                    <a class="x-navbar-toggle" x-search-icon x-toggle="target: .test-overlay; animation: x-animation-fade" href="#"></a>
+
+                </div>
+
+                <div class="x-navbar-left x-flex-1 test-overlay" hidden>
+
+                    <div class="x-navbar-item x-width-expand">
+                        <form class="x-search x-search-navbar x-width-1-1">
+                            <input class="x-search-input" type="search" placeholder="Search" autofocus>
+                        </form>
+                    </div>
+
+                    <a class="x-navbar-toggle" x-close x-toggle="target: .test-overlay; animation: x-animation-fade" href="#"></a>
+
+                </div>
+
+            </nav>
+
+            <nav class="x-navbar-container x-margin" x-navbar>
+                <div class="x-navbar-left">
+
+                    <a class="x-navbar-item x-logo" href="#">Drop</a>
+
+                    <ul class="x-navbar-nav">
+                        <li class="x-active"><a href="#">Active</a></li>
+                        <li><a href="#">Parent</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                    </ul>
+
+                </div>
+                <div class="x-navbar-right">
+
+                    <ul class="x-navbar-nav">
+                        <li><a href="#">Item</a></li>
+                    </ul>
+
+                    <div>
+                        <a class="x-navbar-toggle" x-search-icon href="#"></a>
+                        <div x-drop="mode: click; pos: left-center; offset: 0">
+                            <form class="x-search x-search-navbar x-width-1-1">
+                                <input class="x-search-input" type="search" placeholder="Search" autofocus>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+
+            <nav class="x-navbar-container x-margin" x-navbar>
+                <div class="x-navbar-left">
+
+                    <a class="x-navbar-item x-logo" href="#">Dropdown</a>
+
+                    <ul class="x-navbar-nav">
+                        <li class="x-active"><a href="#">Active</a></li>
+                        <li><a href="#">Parent</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                    </ul>
+
+                </div>
+                <div class="x-navbar-right">
+
+                    <ul class="x-navbar-nav">
+                        <li><a href="#">Item</a></li>
+                    </ul>
+
+                    <div>
+                        <a class="x-navbar-toggle" href="#" x-search-icon></a>
+                        <div class="x-navbar-dropdown" x-drop="mode: click; cls-drop: x-navbar-dropdown; boundary: !nav">
+
+                            <div class="x-grid-small x-flex-middle" x-grid>
+                                <div class="x-width-expand">
+                                    <form class="x-search x-search-navbar x-width-1-1">
+                                        <input class="x-search-input" type="search" placeholder="Search" autofocus>
+                                    </form>
+                                </div>
+                                <div class="x-width-auto">
+                                    <a class="x-navbar-dropdown-close" href="#" x-close></a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+
+            <nav class="x-navbar-container x-margin" x-navbar>
+                <div class="x-navbar-left">
+
+                    <a class="x-navbar-item x-logo" href="#">Justify</a>
+
+                    <ul class="x-navbar-nav">
+                        <li class="x-active"><a href="#">Active</a></li>
+                        <li><a href="#">Parent</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                    </ul>
+
+                </div>
+                <div class="x-navbar-right">
+
+                    <ul class="x-navbar-nav">
+                        <li><a href="#">Item</a></li>
+                    </ul>
+
+                    <div>
+                        <a class="x-navbar-toggle" href="#" x-search-icon></a>
+                        <div class="x-navbar-dropdown" x-drop="mode: click; cls-drop: x-navbar-dropdown; boundary: !nav; boundary-align: true; pos: bottom-justify; flip: x">
+
+                            <div class="x-grid-small x-flex-middle" x-grid>
+                                <div class="x-width-expand">
+                                    <form class="x-search x-search-navbar x-width-1-1">
+                                        <input class="x-search-input" type="search" placeholder="Search" autofocus>
+                                    </form>
+                                </div>
+                                <div class="x-width-auto">
+                                    <a class="x-navbar-dropdown-close" href="#" x-close></a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+
+            <nav class="x-navbar-container x-margin" x-navbar="dropbar: +.x-navbar-dropbar; dropbar-mode: expand">
+                <div class="x-navbar-left">
+
+                    <a class="x-navbar-item x-logo" href="#">Dropbar</a>
+
+                    <ul class="x-navbar-nav">
+                        <li class="x-active"><a href="#">Active</a></li>
+                        <li><a href="#">Parent</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                    </ul>
+
+                </div>
+                <div class="x-navbar-right">
+
+                    <ul class="x-navbar-nav">
+                        <li><a href="#">Item</a></li>
+                    </ul>
+
+                    <div>
+                        <a class="x-navbar-toggle" href="#" x-search-icon></a>
+                        <div class="x-navbar-dropdown" x-drop="mode: click; cls-drop: x-navbar-dropdown; boundary: !nav; boundary-align: true; pos: bottom-justify; flip: x">
+
+                            <div class="x-grid-small x-flex-middle" x-grid>
+                                <div class="x-width-expand">
+                                    <form class="x-search x-search-navbar x-width-1-1">
+                                        <input class="x-search-input" type="search" placeholder="Search" autofocus>
+                                    </form>
+                                </div>
+                                <div class="x-width-auto">
+                                    <a class="x-navbar-dropdown-close" href="#" x-close></a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+
+            <div class="x-navbar-dropbar"></div>
+
+            <nav class="x-navbar x-navbar-container x-margin">
+                <div class="x-navbar-left">
+
+                    <a class="x-navbar-item x-logo" href="#">Modal</a>
+
+                    <ul class="x-navbar-nav">
+                        <li class="x-active"><a href="#">Active</a></li>
+                        <li><a href="#">Parent</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                    </ul>
+
+                </div>
+                <div class="x-navbar-right">
+
+                    <ul class="x-navbar-nav">
+                        <li><a href="#">Item</a></li>
+                    </ul>
+
+                    <a class="x-navbar-toggle" href="#modal-full" x-search-icon x-toggle></a>
+
+                </div>
+            </nav>
+
+            <div id="modal-full" class="x-modal-full" x-modal>
+                <div class="x-modal-dialog x-flex x-flex-center x-flex-middle" x-height-viewport>
+                    <button class="x-modal-close-full" type="button" x-close></button>
+                    <form class="x-search x-search-large">
+                        <input class="x-search-input x-text-center" type="search" placeholder="Search" autofocus>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+</html>

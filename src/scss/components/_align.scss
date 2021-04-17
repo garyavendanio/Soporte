@@ -1,0 +1,165 @@
+// Name:            Align
+// Description:     Utilities to align embedded content
+//
+// Component:       `x-align-left-*`
+//                  `x-align-right-*`
+//                  `x-align-center`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$align-margin-horizontal: $global-gutter !default;
+$align-margin-vertical  : $global-gutter !default;
+
+$align-margin-horizontal-l: $global-medium-gutter !default;
+
+
+/* ========================================================================
+   Component: Align
+ ========================================================================== */
+
+/*
+ * Default
+ */
+
+[class*='x-align'] {
+    display      : block;
+    margin-bottom: $align-margin-vertical;
+}
+
+*+[class*='x-align'] {
+    margin-top: $align-margin-vertical;
+}
+
+/*
+ * Center
+ */
+
+.x-align-center {
+    margin-left : auto;
+    margin-right: auto;
+}
+
+/*
+ * Left/Right
+ */
+
+.x-align-left {
+    margin-top  : 0;
+    margin-right: $align-margin-horizontal;
+    float       : left;
+}
+
+.x-align-right {
+    margin-top : 0;
+    margin-left: $align-margin-horizontal;
+    float      : right;
+}
+
+/* Phone landscape and bigger */
+@media (min-width: $breakpoint-small) {
+
+    .x-align-left\:small {
+        margin-top  : 0;
+        margin-right: $align-margin-horizontal;
+        float       : left;
+    }
+
+    .x-align-right\:small {
+        margin-top : 0;
+        margin-left: $align-margin-horizontal;
+        float      : right;
+    }
+
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium) {
+
+    .x-align-left\:medium {
+        margin-top  : 0;
+        margin-right: $align-margin-horizontal;
+        float       : left;
+    }
+
+    .x-align-right\:medium {
+        margin-top : 0;
+        margin-left: $align-margin-horizontal;
+        float      : right;
+    }
+
+}
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large) {
+
+    .x-align-left\:large {
+        margin-top: 0;
+        float     : left;
+    }
+
+    .x-align-right\:large {
+        margin-top: 0;
+        float     : right;
+    }
+
+    .x-align-left,
+    .x-align-left\:small,
+    .x-align-left\:medium,
+    .x-align-left\:large {
+        margin-right: $align-margin-horizontal-l;
+    }
+
+    .x-align-right,
+    .x-align-right\:small,
+    .x-align-right\:medium,
+    .x-align-right\:large {
+        margin-left: $align-margin-horizontal-l;
+    }
+
+}
+
+/* Large screen and bigger */
+@media (min-width: $breakpoint-xlarge) {
+
+    .x-align-left\:xlarge {
+        margin-top  : 0;
+        margin-right: $align-margin-horizontal-l;
+        float       : left;
+    }
+
+    .x-align-right\:xlarge {
+        margin-top : 0;
+        margin-left: $align-margin-horizontal-l;
+        float      : right;
+    }
+
+}
+
+
+// Hooks
+// ========================================================================
+
+@if(mixin-exists(hook-align-misc)) {
+    @include hook-align-misc();
+}
+
+// @mixin hook-align-misc(){}
+
+//
+// Component: Align
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+
+// Miscellaneous
+// ========================================================================
+
+// @mixin hook-align-misc(){}

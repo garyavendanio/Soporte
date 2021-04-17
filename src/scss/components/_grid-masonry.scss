@@ -1,0 +1,120 @@
+// Name:            Grid
+// Description:     Component to create two dimensional grids
+//
+// Component:       `x-grid2`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$grid-column-xsmall : 100px !default;
+$grid-column-small  : 200px !default;
+$grid-column-medium : 300px !default;
+$grid-column-large  : 400px !default;
+$grid-column-xlarge : 500px !default;
+$grid-column-xxlarge: 600px !default;
+
+$grid-gap-small : $global-small-gutter !default;
+$grid-gap-medium: $global-gutter !default;
+$grid-gap-large : $global-large-gutter !default;
+
+
+/* ========================================================================
+   Component: Grid
+ ========================================================================== */
+
+.x-grid-masonry {
+  display: grid;
+}
+
+.x-grid-inline {
+  display: inline-grid;
+}
+
+
+/* Columns Width
+ ========================================================================== */
+
+.x-grid-column-xsmall {
+  grid-template-columns: repeat(auto-fill, minmax($grid-column-xsmall, 1fr));
+}
+
+.x-grid-column-small {
+  grid-template-columns: repeat(auto-fill, minmax($grid-column-small, 1fr));
+}
+
+.x-grid-column-medium {
+  grid-template-columns: repeat(auto-fill, minmax($grid-column-medium, 1fr));
+}
+
+.x-grid-column-large {
+  grid-template-columns: repeat(auto-fill, minmax($grid-column-large, 1fr));
+}
+
+.x-grid-column-xlarge {
+  grid-template-columns: repeat(auto-fill, minmax($grid-column-xlarge, 1fr));
+}
+
+.x-grid-column-xxlarge {
+  grid-template-columns: repeat(auto-fill, minmax($grid-column-xxlarge, 1fr));
+}
+
+
+/* Gap
+ ========================================================================== */
+
+.x-grid-gap-none {
+  grid-gap: 0;
+}
+
+.x-grid-gap-small {
+  grid-gap: $grid-gap-small;
+}
+
+.x-grid-gap-medium {
+  grid-gap: $grid-gap-medium;
+}
+
+.x-grid-gap-large {
+  grid-gap: $grid-gap-large;
+}
+
+
+/* Auto Placement
+ ========================================================================== */
+
+// Default
+.x-grid-auto-flow-row {
+  grid-auto-flow: row;
+}
+
+.x-grid-auto-flow-column {
+  grid-auto-flow: column;
+}
+
+.x-grid-auto-flow-dense {
+  grid-auto-flow: dense;
+}
+
+
+/* Item Span
+ ========================================================================== */
+
+// TODO Fix implicit tracks if span is too large
+.x-grid-item-span-2 {
+  grid-column-start: span 2;
+}
+
+.x-grid-item-span-3 {
+  grid-column-start: span 3;
+}
+
+.x-grid-item-span-4 {
+  grid-column-start: span 4;
+}
+
+.x-grid-item-span-5 {
+  grid-column-start: span 5;
+}

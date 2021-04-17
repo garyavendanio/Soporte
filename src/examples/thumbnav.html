@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Thumbnav - Tests</title>
+        <script src="js/test.js"></script>
+    </head>
+
+    <body>
+
+        <div class="x-container">
+
+            <h1>Thumbnav</h1>
+
+            <h2>Horizontal</h2>
+
+            <ul class="x-thumbnav">
+                <li class="x-active"><a href="#"><img src="images/photo.jpg" width="100" alt=""></a></li>
+                <li><a href="#"><img src="images/dark.jpg" width="100" alt=""></a></li>
+                <li><a href="#"><img src="images/light.jpg" width="100" alt=""></a></li>
+            </ul>
+
+            <h2>Vertical</h2>
+
+            <ul class="x-thumbnav x-thumbnav-vertical">
+                <li class="x-active"><a href="#"><img src="images/photo.jpg" width="100" alt=""></a></li>
+                <li><a href="#"><img src="images/dark.jpg" width="100" alt=""></a></li>
+                <li><a href="#"><img src="images/light.jpg" width="100" alt=""></a></li>
+            </ul>
+
+            <h2>Image</h2>
+
+            <div class="x-position-relative" x-slideshow="animation: fade">
+
+                <ul class="x-slideshow-items">
+                    <li><img src="images/photo.jpg" alt="" x-cover></li>
+                    <li><img src="images/dark.jpg" alt="" x-cover></li>
+                    <li><img src="images/light.jpg" alt="" x-cover></li>
+                </ul>
+
+                <div class="x-position-bottom-center x-position-small">
+                    <ul class="x-thumbnav">
+                        <li x-slideshow-item="0"><a href="#"><img src="images/photo.jpg" width="100" alt=""></a></li>
+                        <li x-slideshow-item="1"><a href="#"><img src="images/dark.jpg" width="100" alt=""></a></li>
+                        <li x-slideshow-item="2"><a href="#"><img src="images/light.jpg" width="100" alt=""></a></li>
+                    </ul>
+                </div>
+
+                <div class="x-position-center-right x-position-small">
+                    <ul class="x-thumbnav x-thumbnav-vertical">
+                        <li x-slideshow-item="0"><a href="#"><img src="images/photo.jpg" width="100" alt=""></a></li>
+                        <li x-slideshow-item="1"><a href="#"><img src="images/dark.jpg" width="100" alt=""></a></li>
+                        <li x-slideshow-item="2"><a href="#"><img src="images/light.jpg" width="100" alt=""></a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
+</html>

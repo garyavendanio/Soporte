@@ -1,0 +1,554 @@
+// Name:            Animation
+// Description:     Utilities for keyframe animations
+//
+// Component:       `x-animation-*`
+//
+// Modifiers:       `x-animation-fade`
+//                  `x-animation-scale-up`
+//                  `x-animation-scale-down`
+//                  `x-animation-slide-top-*`
+//                  `x-animation-slide-bottom-*`
+//                  `x-animation-slide-left-*`
+//                  `x-animation-slide-right-*`
+//                  `x-animation-kenburns`
+//                  `x-animation-shake`
+//                  `x-animation-stroke`
+//                  `x-animation-reverse`
+//                  `x-animation-fast`
+//
+// Sub-objects:     `x-animation-toggle`
+//
+// States:          `x-active`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$animation-duration         : 0.5s !default;
+$animation-fade-duration    : 0.8s !default;
+$animation-stroke-duration  : 2s !default;
+$animation-kenburns-duration: 15s !default;
+$animation-fast-duration    : 0.1s !default;
+
+$animation-slide-small-translate : 10px !default;
+$animation-slide-medium-translate: 50px !default;
+
+
+/* ========================================================================
+   Component: Animation
+ ========================================================================== */
+
+[class*='x-animation-'] {
+    animation-duration       : $animation-duration;
+    animation-timing-function: ease-out;
+    animation-fill-mode      : both;
+}
+
+
+/* Animations
+ ========================================================================== */
+
+/*
+ * Fade
+ */
+
+.x-animation-fade {
+    animation-name           : x-fade;
+    animation-duration       : $animation-fade-duration;
+    animation-timing-function: linear;
+}
+
+/*
+ * Scale
+ */
+
+.x-animation-scale-up {
+    animation-name: x-fade-scale-02;
+}
+
+.x-animation-scale-down {
+    animation-name: x-fade-scale-18;
+}
+
+/*
+ * Slide
+ */
+
+.x-animation-slide-top {
+    animation-name: x-fade-top;
+}
+
+.x-animation-slide-bottom {
+    animation-name: x-fade-bottom;
+}
+
+.x-animation-slide-left {
+    animation-name: x-fade-left;
+}
+
+.x-animation-slide-right {
+    animation-name: x-fade-right;
+}
+
+/*
+ * Slide Small
+ */
+
+.x-animation-slide-top-small {
+    animation-name: x-fade-top-small;
+}
+
+.x-animation-slide-bottom-small {
+    animation-name: x-fade-bottom-small;
+}
+
+.x-animation-slide-left-small {
+    animation-name: x-fade-left-small;
+}
+
+.x-animation-slide-right-small {
+    animation-name: x-fade-right-small;
+}
+
+/*
+ * Slide Medium
+ */
+
+.x-animation-slide-top-medium {
+    animation-name: x-fade-top-medium;
+}
+
+.x-animation-slide-bottom-medium {
+    animation-name: x-fade-bottom-medium;
+}
+
+.x-animation-slide-left-medium {
+    animation-name: x-fade-left-medium;
+}
+
+.x-animation-slide-right-medium {
+    animation-name: x-fade-right-medium;
+}
+
+/*
+ * Kenburns
+ */
+
+.x-animation-kenburns {
+    animation-name    : x-scale-kenburns;
+    animation-duration: $animation-kenburns-duration;
+}
+
+/*
+ * Shake
+ */
+
+.x-animation-shake {
+    animation-name: x-shake;
+}
+
+/*
+ * SVG Stroke
+ * The `--x-animation-stroke` custom property contains the longest path length.
+ * Set it manually or use `x-svg="stroke-animation: true"` to set it automatically.
+ * All strokes are animated by the same pace and doesn't end simultaneously.
+ * To end simultaneously, `pathLength="1"` could be used, but it's not working in Safari yet.
+ */
+
+.x-animation-stroke {
+    animation-name    : x-stroke;
+    stroke-dasharray  : var(--x-animation-stroke);
+    animation-duration: $animation-stroke-duration;
+}
+
+
+/* Direction modifier
+ ========================================================================== */
+
+.x-animation-reverse {
+    animation-direction      : reverse;
+    animation-timing-function: ease-in;
+}
+
+
+/* Duration modifier
+ ========================================================================== */
+
+.x-animation-fast {
+    animation-duration: $animation-fast-duration;
+}
+
+
+/* Toggle (Hover + Focus)
+========================================================================== */
+
+/*
+ * The toggle is triggered on touch devices using `:focus` and tabindex
+ */
+
+.x-animation-toggle:not(:hover):not(:focus) [class*='x-animation-'] {
+    animation-name: none;
+}
+
+/*
+ * 1. Prevent tab highlighting on iOS.
+ */
+
+.x-animation-toggle {
+    /* 1 */
+    -webkit-tap-highlight-color: transparent;
+}
+
+/*
+ * Remove outline for `tabindex`
+ */
+
+.x-animation-toggle:focus {
+    outline: none;
+}
+
+
+/* Keyframes used by animation classes
+ ========================================================================== */
+
+/*
+ * Fade
+ */
+
+@keyframes x-fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/*
+ * Slide Top
+ */
+
+@keyframes x-fade-top {
+    0% {
+        opacity  : 0;
+        transform: translateY(-100%);
+    }
+
+    100% {
+        opacity  : 1;
+        transform: translateY(0);
+    }
+}
+
+/*
+ * Slide Bottom
+ */
+
+@keyframes x-fade-bottom {
+    0% {
+        opacity  : 0;
+        transform: translateY(100%);
+    }
+
+    100% {
+        opacity  : 1;
+        transform: translateY(0);
+    }
+}
+
+/*
+ * Slide Left
+ */
+
+@keyframes x-fade-left {
+    0% {
+        opacity  : 0;
+        transform: translateX(-100%);
+    }
+
+    100% {
+        opacity  : 1;
+        transform: translateX(0);
+    }
+}
+
+/*
+ * Slide Right
+ */
+
+@keyframes x-fade-right {
+    0% {
+        opacity  : 0;
+        transform: translateX(100%);
+    }
+
+    100% {
+        opacity  : 1;
+        transform: translateX(0);
+    }
+}
+
+/*
+ * Slide Top Small
+ */
+
+@keyframes x-fade-top-small {
+    0% {
+        opacity  : 0;
+        transform: translateY(-$animation-slide-small-translate);
+    }
+
+    100% {
+        opacity  : 1;
+        transform: translateY(0);
+    }
+}
+
+/*
+ * Slide Bottom Small
+ */
+
+@keyframes x-fade-bottom-small {
+    0% {
+        opacity  : 0;
+        transform: translateY($animation-slide-small-translate);
+    }
+
+    100% {
+        opacity  : 1;
+        transform: translateY(0);
+    }
+}
+
+/*
+ * Slide Left Small
+ */
+
+@keyframes x-fade-left-small {
+    0% {
+        opacity  : 0;
+        transform: translateX(-$animation-slide-small-translate);
+    }
+
+    100% {
+        opacity  : 1;
+        transform: translateX(0);
+    }
+}
+
+/*
+ * Slide Right Small
+ */
+
+@keyframes x-fade-right-small {
+    0% {
+        opacity  : 0;
+        transform: translateX($animation-slide-small-translate);
+    }
+
+    100% {
+        opacity  : 1;
+        transform: translateX(0);
+    }
+}
+
+/*
+ * Slide Top Medium
+ */
+
+@keyframes x-fade-top-medium {
+    0% {
+        opacity  : 0;
+        transform: translateY(-$animation-slide-medium-translate);
+    }
+
+    100% {
+        opacity  : 1;
+        transform: translateY(0);
+    }
+}
+
+/*
+ * Slide Bottom Medium
+ */
+
+@keyframes x-fade-bottom-medium {
+    0% {
+        opacity  : 0;
+        transform: translateY($animation-slide-medium-translate);
+    }
+
+    100% {
+        opacity  : 1;
+        transform: translateY(0);
+    }
+}
+
+/*
+ * Slide Left Medium
+ */
+
+@keyframes x-fade-left-medium {
+    0% {
+        opacity  : 0;
+        transform: translateX(-$animation-slide-medium-translate);
+    }
+
+    100% {
+        opacity  : 1;
+        transform: translateX(0);
+    }
+}
+
+/*
+ * Slide Right Medium
+ */
+
+@keyframes x-fade-right-medium {
+    0% {
+        opacity  : 0;
+        transform: translateX($animation-slide-medium-translate);
+    }
+
+    100% {
+        opacity  : 1;
+        transform: translateX(0);
+    }
+}
+
+/*
+ * Scale Up
+ */
+
+@keyframes x-fade-scale-02 {
+    0% {
+        opacity  : 0;
+        transform: scale(0.2);
+    }
+
+    100% {
+        opacity  : 1;
+        transform: scale(1);
+    }
+}
+
+/*
+ * Scale Down
+ */
+
+@keyframes x-fade-scale-18 {
+    0% {
+        opacity  : 0;
+        transform: scale(1.8);
+    }
+
+    100% {
+        opacity  : 1;
+        transform: scale(1);
+    }
+}
+
+/*
+ * Kenburns
+ */
+
+@keyframes x-scale-kenburns {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+/*
+ * Shake
+ */
+
+@keyframes x-shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10% {
+        transform: translateX(-9px);
+    }
+
+    20% {
+        transform: translateX(8px);
+    }
+
+    30% {
+        transform: translateX(-7px);
+    }
+
+    40% {
+        transform: translateX(6px);
+    }
+
+    50% {
+        transform: translateX(-5px);
+    }
+
+    60% {
+        transform: translateX(4px);
+    }
+
+    70% {
+        transform: translateX(-3px);
+    }
+
+    80% {
+        transform: translateX(2px);
+    }
+
+    90% {
+        transform: translateX(-1px);
+    }
+}
+
+/*
+ * Stroke
+ */
+
+@keyframes x-stroke {
+    0% {
+        stroke-dashoffset: var(--x-animation-stroke);
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+// Hooks
+// ========================================================================
+
+@if(mixin-exists(hook-animation-misc)) {
+    @include hook-animation-misc();
+}
+
+// @mixin hook-animation-misc(){}
+
+
+//
+// Component: Animation
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+
+// Miscellaneous
+// ========================================================================
+
+// @mixin hook-animation-misc(){}

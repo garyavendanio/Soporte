@@ -1,0 +1,324 @@
+// Name:            Position
+// Description:     Utilities to position content
+//
+// Component:       `x-position-absolute`
+//                  `x-position-relative`
+//                  `x-position-z-index`
+//                  `x-position-top`
+//                  `x-position-bottom`
+//                  `x-position-left`
+//                  `x-position-right`
+//                  `x-position-top-left`
+//                  `x-position-top-center`
+//                  `x-position-top-right`
+//                  `x-position-bottom-left`
+//                  `x-position-bottom-center`
+//                  `x-position-bottom-right`
+//                  `x-position-center`
+//                  `x-position-center-left`
+//                  `x-position-center-right`
+//                  `x-position-cover`
+//
+// Modifiers:       `x-position-small`
+//                  `x-position-medium`
+//                  `x-position-large`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$position-small-margin  : $global-small-gutter !default;
+$position-medium-margin : $global-gutter !default;
+$position-large-margin  : $global-gutter !default;
+$position-large-margin-l: 50px !default;
+
+
+/* ========================================================================
+   Component: Position
+ ========================================================================== */
+
+
+/* Directions
+ ========================================================================== */
+
+/*
+ * 1. Prevent content overflow if `max-width: 100%` is used inside position container.
+ */
+
+[class*='x-position-top'],
+[class*='x-position-bottom'],
+[class*='x-position-left'],
+[class*='x-position-right'],
+[class*='x-position-center'] {
+    position : absolute !important;
+    /* 1 */
+    max-width: 100%;
+}
+
+
+/* Edges
+ ========================================================================== */
+
+/* Don't use `width: 100%` because it is wrong if the parent has padding. */
+.x-position-top {
+    top  : 0;
+    left : 0;
+    right: 0;
+}
+
+.x-position-bottom {
+    bottom: 0;
+    left  : 0;
+    right : 0;
+}
+
+.x-position-left {
+    top   : 0;
+    bottom: 0;
+    left  : 0;
+}
+
+.x-position-right {
+    top   : 0;
+    bottom: 0;
+    right : 0;
+}
+
+
+/* Corners
+ ========================================================================== */
+
+.x-position-top-left {
+    top : 0;
+    left: 0;
+}
+
+.x-position-top-right {
+    top  : 0;
+    right: 0;
+}
+
+.x-position-bottom-left {
+    bottom: 0;
+    left  : 0;
+}
+
+.x-position-bottom-right {
+    bottom: 0;
+    right : 0;
+}
+
+/*
+ * Center
+ * 1. Fix text wrapping if content is larger than 50% of the container.
+ */
+
+.x-position-center {
+    top       : 50%;
+    left      : 50%;
+    transform : translate(-50%, -50%);
+    /* 1 */
+    width     : max-content;
+    max-width : 100%;
+    box-sizing: border-box;
+}
+
+/* Vertical */
+[class*='x-position-center-left'],
+[class*='x-position-center-right'] {
+    top      : 50%;
+    transform: translateY(-50%);
+}
+
+.x-position-center-left {
+    left: 0;
+}
+
+.x-position-center-right {
+    right: 0;
+}
+
+.x-position-center-left-out {
+    right: 100%;
+    width: max-content;
+}
+
+.x-position-center-right-out {
+    left : 100%;
+    width: max-content;
+}
+
+/* Horizontal */
+.x-position-top-center,
+.x-position-bottom-center {
+    left      : 50%;
+    transform : translateX(-50%);
+    /* 1 */
+    width     : max-content;
+    max-width : 100%;
+    box-sizing: border-box;
+}
+
+.x-position-top-center {
+    top: 0;
+}
+
+.x-position-bottom-center {
+    bottom: 0;
+}
+
+
+/* Cover
+ ========================================================================== */
+
+.x-position-cover {
+    position: absolute;
+    top     : 0;
+    bottom  : 0;
+    left    : 0;
+    right   : 0;
+}
+
+
+/* Utility
+ ========================================================================== */
+
+.x-position-relative {
+    position: relative !important;
+}
+
+.x-position-absolute {
+    position: absolute !important;
+}
+
+.x-position-fixed {
+    position: fixed !important;
+}
+
+.x-position-z-index {
+    z-index: 1;
+}
+
+
+/* Margin modifier
+ ========================================================================== */
+
+/*
+ * Small
+ */
+
+.x-position-small {
+    max-width: unquote('calc(100% - (#{$position-small-margin} * 2))');
+    margin   : $position-small-margin;
+}
+
+.x-position-small.x-position-center {
+    transform: translate(-50%, -50%) translate(-$position-small-margin, (-$position-small-margin));
+}
+
+.x-position-small[class*='x-position-center-left'],
+.x-position-small[class*='x-position-center-right'] {
+    transform: translateY(-50%) translateY(-$position-small-margin);
+}
+
+.x-position-small.x-position-top-center,
+.x-position-small.x-position-bottom-center {
+    transform: translateX(-50%) translateX(-$position-small-margin);
+}
+
+/*
+ * Medium
+ */
+
+.x-position-medium {
+    max-width: unquote('calc(100% - (#{$position-medium-margin} * 2))');
+    margin   : $position-medium-margin;
+}
+
+.x-position-medium.x-position-center {
+    transform: translate(-50%, -50%) translate(-$position-medium-margin, (-$position-medium-margin));
+}
+
+.x-position-medium[class*='x-position-center-left'],
+.x-position-medium[class*='x-position-center-right'] {
+    transform: translateY(-50%) translateY(-$position-medium-margin);
+}
+
+.x-position-medium.x-position-top-center,
+.x-position-medium.x-position-bottom-center {
+    transform: translateX(-50%) translateX(-$position-medium-margin);
+}
+
+/*
+ * Large
+ */
+
+.x-position-large {
+    max-width: unquote('calc(100% - (#{$position-large-margin} * 2))');
+    margin   : $position-large-margin;
+}
+
+.x-position-large.x-position-center {
+    transform: translate(-50%, -50%) translate(-$position-large-margin, (-$position-large-margin));
+}
+
+.x-position-large[class*='x-position-center-left'],
+.x-position-large[class*='x-position-center-right'] {
+    transform: translateY(-50%) translateY(-$position-large-margin);
+}
+
+.x-position-large.x-position-top-center,
+.x-position-large.x-position-bottom-center {
+    transform: translateX(-50%) translateX(-$position-large-margin);
+}
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large) {
+
+    .x-position-large {
+        max-width: unquote('calc(100% - (#{$position-large-margin-l} * 2))');
+        margin   : $position-large-margin-l;
+    }
+
+    .x-position-large.x-position-center {
+        transform: translate(-50%, -50%) translate(-$position-large-margin-l, (-$position-large-margin-l));
+    }
+
+    .x-position-large[class*='x-position-center-left'],
+    .x-position-large[class*='x-position-center-right'] {
+        transform: translateY(-50%) translateY(-$position-large-margin-l);
+    }
+
+    .x-position-large.x-position-top-center,
+    .x-position-large.x-position-bottom-center {
+        transform: translateX(-50%) translateX(-$position-large-margin-l);
+    }
+
+}
+
+
+// Hooks
+// ========================================================================
+
+@if(mixin-exists(hook-position-misc)) {
+    @include hook-position-misc();
+}
+
+// @mixin hook-position-misc(){}
+
+//
+// Component: Position
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+
+// Miscellaneous
+// ========================================================================
+
+// @mixin hook-position-misc(){}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Leader - Tests</title>
+        <script src="js/test.js"></script>
+    </head>
+
+    <body>
+
+        <div class="x-container">
+
+            <h1>Leader</h1>
+
+            <div class="x-grid-small x-width-1-2:medium x-flex-bottom" x-grid>
+                <div class="x-width-expand" x-leader>Lorem ipsum dolor</div>
+                <div class="x-width-auto">Price</div>
+            </div>
+
+            <div class="x-grid-small x-width-1-2:medium x-flex-bottom" x-grid>
+                <div class="x-width-expand" x-leader fill="-">Lorem ipsum dolor sit amet</div>
+                <div class="x-width-auto">Price</div>
+            </div>
+
+            <div class="x-grid-small x-width-1-2:medium x-flex-bottom" x-grid>
+                <div class="x-width-expand" x-leader>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</div>
+                <div class="x-width-auto">Price</div>
+            </div>
+
+            <div class="x-grid-small x-width-1-2:medium x-flex-bottom" x-grid>
+                <div class="x-width-expand" x-leader="media: :large">The leader dots are hidden before :large</div>
+                <div class="x-width-auto">Price</div>
+            </div>
+
+            <h2>JavaScript Options</h2>
+
+            <table class="x-table x-table-striped">
+                <thead>
+                    <tr>
+                        <th>Option</th>
+                        <th>Value</th>
+                        <th>Default</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>fill</code></td>
+                        <td>String</td>
+                        <td>undefined</td>
+                        <td>Optional fill character.</td>
+                    </tr>
+                    <tr>
+                        <td><code>media</code></td>
+                        <td>String</td>
+                        <td>false</td>
+                        <td>Condition for the space filling - a width as integer (e.g. 640) or a breakpoint (e.g. :small, :medium, :large, :xlarge).</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </body>
+</html>

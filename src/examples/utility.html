@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Utility - Tests</title>
+        <script src="js/test.js"></script>
+    </head>
+
+    <body>
+
+        <div class="x-container">
+
+            <h1>Utility</h1>
+
+            <div class="x-child-width-1-2:medium" x-grid>
+                <div>
+
+                    <div class="x-panel">
+                        <h2>Panel</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+
+                </div>
+                <div>
+
+                    <h2>Panel Scrollable</h2>
+
+                    <div class="x-panel x-panel-scrollable">
+                        <ul class="x-list">
+                            <li><label><input class="x-checkbox" type="checkbox"> Category 1</label></li>
+                            <li>
+                                <label><input class="x-checkbox" type="checkbox"> Category 2</label>
+                                <ul>
+                                    <li><label><input class="x-checkbox" type="checkbox"> Category 2.1</label></li>
+                                    <li><label><input class="x-checkbox" type="checkbox"> Category 2.2</label></li>
+                                    <li>
+                                        <label><input class="x-checkbox" type="checkbox"> Category 2.3</label>
+                                        <ul>
+                                            <li><label><input class="x-checkbox" type="checkbox"> Category 2.3.1</label></li>
+                                            <li><label><input class="x-checkbox" type="checkbox"> Category 2.3.2</label></li>
+                                        </ul>
+                                    </li>
+                                    <li><label><input class="x-checkbox" type="checkbox"> Category 2.4</label></li>
+                                </ul>
+                            </li>
+                            <li><label><input class="x-checkbox" type="checkbox"> Category 3</label></li>
+                            <li><label><input class="x-checkbox" type="checkbox"> Category 4</label></li>
+                        </ul>
+
+                    </div>
+
+                </div>
+                <div>
+
+                    <h2>Overflow Auto</h2>
+
+                    <div class="x-overflow-auto">
+                        <table class="x-table x-table-striped x-table-small x-text-nowrap">
+                            <thead>
+                                <tr>
+                                    <th>Table Heading</th>
+                                    <th>Table Heading</th>
+                                    <th>Table Heading</th>
+                                    <th>Table Heading</th>
+                                    <th>Table Heading</th>
+                                    <th>Table Heading</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <td>Table Footer</td>
+                                    <td>Table Footer</td>
+                                    <td>Table Footer</td>
+                                    <td>Table Footer</td>
+                                    <td>Table Footer</td>
+                                    <td>Table Footer</td>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <tr>
+                                    <td>Table Data</td>
+                                    <td>Table Data</td>
+                                    <td>Table Data</td>
+                                    <td>Table Data</td>
+                                    <td>Table Data</td>
+                                    <td>Table Data</td>
+                                </tr>
+                                <tr>
+                                    <td>Table Data</td>
+                                    <td>Table Data</td>
+                                    <td>Table Data</td>
+                                    <td>Table Data</td>
+                                    <td>Table Data</td>
+                                    <td>Table Data</td>
+                                </tr>
+                                <tr>
+                                    <td>Table Data</td>
+                                    <td>Table Data</td>
+                                    <td>Table Data</td>
+                                    <td>Table Data</td>
+                                    <td>Table Data</td>
+                                    <td>Table Data</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div>
+
+                    <h2>Pre scrollable</h2>
+
+<pre class="x-overflow-auto x-height-medium x-resize"><code>&lt;div x-grid&gt;
+    &lt;div class="x-width-1-2"&gt;...&lt;/div&gt;&lt;div class="x-width-1-2"&gt;...&lt;/div&gt;&lt;div class="x-width-1-2"&gt;...&lt;/div&gt;
+    &lt;div class="x-width-1-2"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div x-grid&gt;
+    &lt;div class="x-width-1-2"&gt;...&lt;/div&gt;
+    &lt;div class="x-width-1-2"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div x-grid&gt;
+    &lt;div class="x-width-1-2"&gt;...&lt;/div&gt;
+    &lt;div class="x-width-1-2"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div x-grid&gt;
+    &lt;div class="x-width-1-2"&gt;...&lt;/div&gt;
+    &lt;div class="x-width-1-2"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div x-grid&gt;
+    &lt;div class="x-width-1-2"&gt;...&lt;/div&gt;
+    &lt;div class="x-width-1-2"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div x-grid&gt;
+    &lt;div class="x-width-1-2"&gt;...&lt;/div&gt;
+    &lt;div class="x-width-1-2"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div x-grid&gt;
+    &lt;div class="x-width-1-2"&gt;...&lt;/div&gt;
+    &lt;div class="x-width-1-2"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div x-grid&gt;
+    &lt;div class="x-width-1-2"&gt;...&lt;/div&gt;
+    &lt;div class="x-width-1-2"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                </div>
+            </div>
+
+            <h2>Overflow Auto JS</h2>
+
+            <div class="x-child-width-1-2:medium" x-grid>
+                <div>
+
+                    <div class="x-height-medium">
+                        <div class="js-wrapper">
+
+                            <p>Some content before the overflow auto container.</p>
+
+                            <div x-overflow-auto="selContainer: .x-height-medium; selContent: .js-wrapper">
+                                <div class="x-grid-small" x-grid>
+                                    <div class="x-width-1-2"><img src="images/light.jpg" alt=""></div>
+                                    <div class="x-width-1-2"><img src="images/dark.jpg" alt=""></div>
+                                </div>
+                            </div>
+
+                            <p>Some content after the overflow auto container.</p>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div>
+
+                    <div class="x-height-medium">
+                        <div class="js-wrapper">
+
+                            <p>Some content before the overflow auto container.</p>
+
+                            <div x-overflow-auto="selContainer: .x-height-medium; selContent: .js-wrapper">
+                                <div class="x-grid-small" x-grid>
+                                    <div class="x-width-1-2"><img src="images/light.jpg" alt=""></div>
+                                    <div class="x-width-1-2"><img src="images/dark.jpg" alt=""></div>
+                                    <div class="x-width-1-2"><img src="images/photo.jpg" alt=""></div>
+                                    <div class="x-width-1-2"><img src="images/photo2.jpg" alt=""></div>
+                                </div>
+                            </div>
+
+                            <p>Some content after the overflow auto container.</p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <h3>JavaScript Options</h3>
+
+            <table class="x-table x-table-striped">
+                <thead>
+                    <tr>
+                        <th>Option</th>
+                        <th>Value</th>
+                        <th>Default</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>selContainer</code></td>
+                        <td>CSS selector</td>
+                        <td><code>.x-modal</code></td>
+                        <td>The container element which provides the height.</td>
+                    </tr>
+                    <tr>
+                        <td><code>selContent</code></td>
+                        <td>CSS selector</td>
+                        <td><code>.x-modal-dialog</code></td>
+                        <td>The element which wraps the inner content to provide its height.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Responsive Objects</h2>
+
+            <div class="x-child-width-1-3:small" x-grid>
+                <div>
+                    <p>JS Responsive Width (Iframe)</p>
+                    <iframe src="https://www.youtube-nocookie.com/embed/c2pz2mlSfXA?autoplay=0&amp;showinfo=0&amp;rel=0&amp;modestbranding=1" width="1920" height="1080" frameborder="0" allowfullscreen x-responsive></iframe>
+                </div>
+                <div>
+                    <p>Responsive Height (Image)</p>
+                    <p style="height: 100px; "><img class="x-responsive-height" src="images/photo.jpg" alt=""></p>
+                </div>
+            </div>
+
+            <h2>Box-shadows</h2>
+
+            <div class="x-child-width-1-5:medium x-grid-large" x-grid>
+                <div>
+
+                    <div class="x-inline x-box-shadow-hover-small">
+                        <img class="x-invisible" src="images/photo.jpg" alt="">
+                        <div class="x-position-center">Hover</div>
+                    </div>
+
+                </div>
+                <div>
+
+                    <div class="x-inline x-box-shadow-small">
+                        <img class="x-invisible" src="images/photo.jpg" alt="">
+                        <div class="x-position-center">Small</div>
+                    </div>
+
+                </div>
+                <div>
+
+                    <div class="x-inline x-box-shadow-medium">
+                        <img class="x-invisible" src="images/photo.jpg" alt="">
+                        <div class="x-position-center">Medium</div>
+                    </div>
+
+                </div>
+                <div>
+
+                    <div class="x-inline x-box-shadow-large">
+                        <img class="x-invisible" src="images/photo.jpg" alt="">
+                        <div class="x-position-center">Large</div>
+                    </div>
+
+                </div>
+                <div>
+
+                    <div class="x-inline x-box-shadow-xlarge">
+                        <img class="x-invisible" src="images/photo.jpg" alt="">
+                        <div class="x-position-center">X-Large</div>
+                    </div>
+
+                </div>
+                <div>
+
+                    <img class="x-box-shadow-hover-xlarge" src="images/photo.jpg" alt="">
+
+                </div>
+                <div>
+
+                    <img class="x-box-shadow-small" src="images/photo.jpg" alt="">
+
+                </div>
+                <div>
+
+                    <img class="x-box-shadow-medium" src="images/photo.jpg" alt="">
+
+                </div>
+                <div>
+
+                    <img class="x-box-shadow-large" src="images/photo.jpg" alt="">
+
+                </div>
+                <div>
+
+                    <img class="x-box-shadow-xlarge" src="images/photo.jpg" alt="">
+
+                </div>
+                <div>
+
+                    <img class="x-box-shadow-hover-xlarge" src="images/light.jpg" alt="">
+
+                </div>
+                <div>
+
+                    <img class="x-box-shadow-small" src="images/light.jpg" alt="">
+
+                </div>
+                <div>
+
+                    <img class="x-box-shadow-medium" src="images/light.jpg" alt="">
+
+                </div>
+                <div>
+
+                    <img class="x-box-shadow-large" src="images/light.jpg" alt="">
+
+                </div>
+                <div>
+
+                    <img class="x-box-shadow-xlarge" src="images/light.jpg" alt="">
+
+                </div>
+                <div>
+
+                    <img class="x-box-shadow-hover-xlarge" src="images/dark.jpg" alt="">
+
+                </div>
+                <div>
+
+                    <img class="x-box-shadow-small" src="images/dark.jpg" alt="">
+
+                </div>
+                <div>
+
+                    <img class="x-box-shadow-medium" src="images/dark.jpg" alt="">
+
+                </div>
+                <div>
+
+                    <img class="x-box-shadow-large" src="images/dark.jpg" alt="">
+
+                </div>
+                <div>
+
+                    <img class="x-box-shadow-xlarge" src="images/dark.jpg" alt="">
+
+                </div>
+            </div>
+
+            <h2>Box-shadow Bottom</h2>
+
+            <div class="x-child-width-1-5:medium x-grid-large" x-grid>
+                <div class="x-width-1-6:medium">
+
+                    <div class="x-box-shadow-bottom">
+                        <img src="images/photo.jpg" alt="">
+                    </div>
+
+                </div>
+                <div class="x-width-1-3:medium">
+
+                    <div class="x-box-shadow-bottom">
+                        <img src="images/photo.jpg" alt="">
+                    </div>
+
+                </div>
+                <div class="x-width-1-2:medium">
+
+                    <div class="x-box-shadow-bottom">
+                        <img src="images/photo.jpg" alt="">
+                    </div>
+
+                </div>
+            </div>
+
+            <h2>Drop Cap</h2>
+
+            <p class="x-text-lead x-dropcap">Dorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+            <div class="x-dropcap">
+                <p>Torem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+
+            <h1>Logo</h1>
+
+            <p>
+                <a class="x-logo" href="#">Text Logo</a>
+            </p>
+
+            <div class="x-flex-inline x-margin x-grid-small" x-grid>
+                <div>
+                    <p>Image</p>
+                    <a class="x-logo" href="#">
+                        <img src="images/photo.jpg" width="200" alt="">
+                    </a>
+                </div>
+                <div>
+                    <p>+ Inverse Image</p>
+                    <a class="x-logo" href="#">
+                        <img src="images/photo.jpg" width="200" alt="">
+                        <img class="x-logo-inverse" src="images/dark.jpg" width="200" alt="">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,84 @@
+// Name:            Placeholder
+// Description:     Component to create placeholder boxes
+//
+// Component:       `x-placeholder`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$placeholder-margin-vertical   : $global-margin !default;
+$placeholder-padding-vertical  : $global-gutter !default;
+$placeholder-padding-horizontal: $global-gutter !default;
+$placeholder-background        : $global-muted-background !default;
+
+
+/* ========================================================================
+   Component: Placeholder
+ ========================================================================== */
+
+.x-placeholder {
+  margin-bottom: $placeholder-margin-vertical;
+  padding      : $placeholder-padding-vertical $placeholder-padding-horizontal;
+  background   : $placeholder-background;
+
+  @if(mixin-exists(hook-placeholder)) {
+    @include hook-placeholder();
+  }
+}
+
+/* Add margin if adjacent element */
+*+.x-placeholder {
+  margin-top: $placeholder-margin-vertical;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+
+.x-placeholder> :last-child {
+  margin-bottom: 0;
+}
+
+
+// Hooks
+// ========================================================================
+
+@if(mixin-exists(hook-placeholder-misc)) {
+  @include hook-placeholder-misc();
+}
+
+// @mixin hook-placeholder(){}
+// @mixin hook-placeholder-misc(){}
+
+//
+// Component: Placeholder
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$placeholder-background:                         transparent !default;
+
+//
+// New
+//
+
+$placeholder-border-width:                       $global-border-width !default;
+$placeholder-border:                             $global-border !default;
+
+
+// Component
+// ========================================================================
+
+
+
+
+// Miscellaneous
+// ========================================================================
+
+// @mixin hook-placeholder-misc(){}

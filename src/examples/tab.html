@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Tab - Tests</title>
+        <script src="js/test.js"></script>
+    </head>
+
+    <body>
+
+        <div class="x-container">
+
+            <h1>Tab</h1>
+
+            <div class="x-child-width-1-2:medium" x-grid>
+                <div>
+
+                    <h2>Top</h2>
+
+                    <ul x-tab>
+                        <li class="x-active"><a href="#">Left</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li class="x-disabled"><a>Disabled</a></li>
+                    </ul>
+
+                    <ul class="x-flex-right" x-tab>
+                        <li class="x-active"><a href="#">Right</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li class="x-disabled"><a>Disabled</a></li>
+                    </ul>
+
+                    <ul class="x-flex-center" x-tab>
+                        <li class="x-active"><a href="#">Center</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                    </ul>
+
+                    <ul class="x-child-width-1-5" x-tab>
+                        <li class="x-active"><a href="#">Justify</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                    </ul>
+
+                </div>
+                <div>
+
+                    <h2>Bottom</h2>
+
+                    <ul class="x-tab-bottom" x-tab>
+                        <li class="x-active"><a href="#">Left</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li class="x-disabled"><a>Disabled</a></li>
+                    </ul>
+
+                    <ul class="x-tab-bottom x-flex-right" x-tab>
+                        <li class="x-active"><a href="#">Right</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li class="x-disabled"><a>Disabled</a></li>
+                    </ul>
+
+                    <ul class="x-tab-bottom x-flex-center" x-tab>
+                        <li class="x-active"><a href="#">Center</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                    </ul>
+
+                    <ul class="x-tab-bottom x-child-width-1-5" x-tab>
+                        <li class="x-active"><a href="#">Justify</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <h2>Left/Right</h2>
+
+            <div class="x-child-width-auto" x-grid>
+                <div>
+
+                    <ul class="x-tab-left" x-tab>
+                        <li class="x-active"><a href="#">Active</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                    </ul>
+
+                </div>
+                <div>
+
+                    <ul class="x-tab-right" x-tab>
+                        <li class="x-active"><a href="#">Active</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <h2>Dropdown</h2>
+
+            <div class="x-margin">
+
+                <ul class="x-width-1-2:medium" x-tab>
+                    <li class="x-active"><a href="#">Active</a></li>
+                    <li><a href="#">Item</a></li>
+                    <li><a href="#">Item</a></li>
+                    <li>
+                        <a href="#">More <span class="x-margin-small-left" x-icon="icon: trash"></span></a>
+                        <div x-dropdown="mode: click">
+                            <ul class="x-nav x-dropdown-nav">
+                                <li class="x-active"><a href="#">Active</a></li>
+                                <li class="x-parent"><a href="#">Item</a></li>
+                                <li class="x-nav-header">Header</li>
+                                <li><a href="#"><span class="x-margin-small-right" x-icon="icon: table"></span> Item</a></li>
+                                <li><a href="#"><span class="x-margin-small-right" x-icon="icon: thumbnails"></span> Item</a></li>
+                                <li class="x-nav-divider"></li>
+                                <li><a href="#"><span class="x-margin-small-right" x-icon="icon: trash"></span> Item</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+
+            <h2>JavaScript Options</h2>
+
+            <div class="x-overflow-auto">
+                <table class="x-table x-table-striped">
+                    <thead>
+                        <tr>
+                            <th>Option</th>
+                            <th>Value</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>connect</code></td>
+                            <td>CSS selector</td>
+                            <td>false</td>
+                            <td>Related items container. By default next element with class 'x-switcher'.</td>
+                        </tr>
+                        <tr>
+                            <td><code>toggle</code></td>
+                            <td>CSS selector</td>
+                            <td>> *</td>
+                            <td>Toggle selector - triggers content switching on click.</td>
+                        </tr>
+                        <tr>
+                            <td><code>active</code></td>
+                            <td>Number</td>
+                            <td>0</td>
+                            <td>Active index on init. (Providing a negative number indicates a position starting from the end of the set)</td>
+                        </tr>
+                        <tr>
+                            <td><code>animation</code></td>
+                            <td>String</td>
+                            <td>false</td>
+                            <td>The space separated names of animations to use. (Comma separate for animation out)</td>
+                        </tr>
+                        <tr>
+                            <td><code>duration</code></td>
+                            <td>Number</td>
+                            <td>200</td>
+                            <td>The animation duration.</td>
+                        </tr>
+                        <tr>
+                            <td><code>swiping</code></td>
+                            <td>Boolean</td>
+                            <td>true</td>
+                            <td>Use swiping.</td>
+                        </tr>
+                        <tr>
+                            <td><code>media</code></td>
+                            <td>Integer|String</td>
+                            <td>960</td>
+                            <td>When to become horizontal - a width as integer (e.g. 640) or a breakpoint (e.g. :small, :medium, :large, :xlarge).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </body>
+</html>

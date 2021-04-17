@@ -1,0 +1,366 @@
+// Name:            Flex
+// Description:     Utilities for layouts based on flexbox
+//
+// Component:       `x-flex-*`
+//
+// ========================================================================
+
+
+/* ========================================================================
+   Component: Flex
+ ========================================================================== */
+
+.x-flex {
+    display: flex;
+}
+
+.x-flex-inline {
+    display: inline-flex;
+}
+
+/*
+ * Remove pseudo elements created by micro clearfix as precaution
+ */
+
+.x-flex::before,
+.x-flex::after,
+.x-flex-inline::before,
+.x-flex-inline::after {
+    display: none;
+}
+
+
+/* Alignment
+ ========================================================================== */
+
+/*
+ * Align items along the main axis of the current line of the flex container
+ * Row: Horizontal
+ */
+
+// Default
+.x-flex-left {
+    justify-content: flex-start;
+}
+
+.x-flex-center {
+    justify-content: center;
+}
+
+.x-flex-right {
+    justify-content: flex-end;
+}
+
+.x-flex-between {
+    justify-content: space-between;
+}
+
+.x-flex-around {
+    justify-content: space-around;
+}
+
+
+/* Phone landscape and bigger */
+@media (min-width: $breakpoint-small) {
+
+    .x-flex-left\:small {
+        justify-content: flex-start;
+    }
+
+    .x-flex-center\:small {
+        justify-content: center;
+    }
+
+    .x-flex-right\:small {
+        justify-content: flex-end;
+    }
+
+    .x-flex-between\:small {
+        justify-content: space-between;
+    }
+
+    .x-flex-around\:small {
+        justify-content: space-around;
+    }
+
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium) {
+
+    .x-flex-left\:medium {
+        justify-content: flex-start;
+    }
+
+    .x-flex-center\:medium {
+        justify-content: center;
+    }
+
+    .x-flex-right\:medium {
+        justify-content: flex-end;
+    }
+
+    .x-flex-between\:medium {
+        justify-content: space-between;
+    }
+
+    .x-flex-around\:medium {
+        justify-content: space-around;
+    }
+
+}
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large) {
+
+    .x-flex-left\:large {
+        justify-content: flex-start;
+    }
+
+    .x-flex-center\:large {
+        justify-content: center;
+    }
+
+    .x-flex-right\:large {
+        justify-content: flex-end;
+    }
+
+    .x-flex-between\:large {
+        justify-content: space-between;
+    }
+
+    .x-flex-around\:large {
+        justify-content: space-around;
+    }
+
+}
+
+/* Large screen and bigger */
+@media (min-width: $breakpoint-xlarge) {
+
+    .x-flex-left\:xlarge {
+        justify-content: flex-start;
+    }
+
+    .x-flex-center\:xlarge {
+        justify-content: center;
+    }
+
+    .x-flex-right\:xlarge {
+        justify-content: flex-end;
+    }
+
+    .x-flex-between\:xlarge {
+        justify-content: space-between;
+    }
+
+    .x-flex-around\:xlarge {
+        justify-content: space-around;
+    }
+
+}
+
+/*
+ * Align items in the cross axis of the current line of the flex container
+ * Row: Vertical
+ */
+
+// Default
+.x-flex-stretch {
+    align-items: stretch;
+}
+
+.x-flex-top {
+    align-items: flex-start;
+}
+
+.x-flex-middle {
+    align-items: center;
+}
+
+.x-flex-bottom {
+    align-items: flex-end;
+}
+
+
+/* Direction
+ ========================================================================== */
+
+// Default
+.x-flex-row {
+    flex-direction: row;
+}
+
+.x-flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.x-flex-column {
+    flex-direction: column;
+}
+
+.x-flex-column-reverse {
+    flex-direction: column-reverse;
+}
+
+
+/* Wrap
+ ========================================================================== */
+
+// Default
+.x-flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+.x-flex-wrap {
+    flex-wrap: wrap;
+}
+
+.x-flex-wrap-reverse {
+    flex-wrap: wrap-reverse;
+}
+
+/*
+ * Aligns items within the flex container when there is extra space in the cross-axis
+ * Only works if there is more than one line of flex items
+ */
+
+// Default
+.x-flex-wrap-stretch {
+    align-content: stretch;
+}
+
+.x-flex-wrap-top {
+    align-content: flex-start;
+}
+
+.x-flex-wrap-middle {
+    align-content: center;
+}
+
+.x-flex-wrap-bottom {
+    align-content: flex-end;
+}
+
+.x-flex-wrap-between {
+    align-content: space-between;
+}
+
+.x-flex-wrap-around {
+    align-content: space-around;
+}
+
+
+/* Item ordering
+ ========================================================================== */
+
+/*
+ * Default is 0
+ */
+
+.x-flex-first {
+    order: -1;
+}
+
+.x-flex-last {
+    order: 99;
+}
+
+
+/* Phone landscape and bigger */
+@media (min-width: $breakpoint-small) {
+
+    .x-flex-first\:small {
+        order: -1;
+    }
+
+    .x-flex-last\:small {
+        order: 99;
+    }
+
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium) {
+
+    .x-flex-first\:medium {
+        order: -1;
+    }
+
+    .x-flex-last\:medium {
+        order: 99;
+    }
+
+}
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large) {
+
+    .x-flex-first\:large {
+        order: -1;
+    }
+
+    .x-flex-last\:large {
+        order: 99;
+    }
+
+}
+
+/* Large screen and bigger */
+@media (min-width: $breakpoint-xlarge) {
+
+    .x-flex-first\:xlarge {
+        order: -1;
+    }
+
+    .x-flex-last\:xlarge {
+        order: 99;
+    }
+
+}
+
+
+/* Item dimensions
+ ========================================================================== */
+
+/*
+ * Initial: 0 1 auto
+ * Content dimensions, but shrinks
+ */
+
+/*
+ * No Flex: 0 0 auto
+ * Content dimensions
+ */
+
+.x-flex-none {
+    flex: none;
+}
+
+/*
+ * Relative Flex: 1 1 auto
+ * Space is allocated considering content
+ */
+
+.x-flex-auto {
+    flex: auto;
+}
+
+/*
+ * Absolute Flex: 1 1 0%
+ * Space is allocated solely based on flex
+ */
+
+.x-flex-1 {
+    flex: 1;
+}
+
+
+// Hooks
+// ========================================================================
+
+@if(mixin-exists(hook-flex-misc)) {
+    @include hook-flex-misc();
+}
+
+// @mixin hook-flex-misc(){}

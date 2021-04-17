@@ -1,0 +1,600 @@
+// Name:            Card
+// Description:     Component to create boxed content containers
+//
+// Component:       `x-card`
+//
+// Sub-objects:     `x-card-body`
+//                  `x-card-header`
+//                  `x-card-footer`
+//                  `x-card-media-*`
+//                  `x-card-title`
+//                  `x-card-badge`
+//
+// Modifiers:       `x-card-hover`
+//                  `x-card-default`
+//                  `x-card-primary`
+//                  `x-card-secondary`
+//                  `x-card-small`
+//                  `x-card-large`
+//
+// Uses:            `x-grid-stack`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$card-body-padding-horizontal: $global-gutter !default;
+$card-body-padding-vertical  : $global-gutter !default;
+
+$card-body-padding-horizontal-l: $global-medium-gutter !default;
+$card-body-padding-vertical-l  : $global-medium-gutter !default;
+
+$card-header-padding-horizontal: $global-gutter !default;
+$card-header-padding-vertical  : round($global-gutter / 2) !default;
+
+$card-header-padding-horizontal-l: $global-medium-gutter !default;
+$card-header-padding-vertical-l  : round($global-medium-gutter / 2) !default;
+
+$card-footer-padding-horizontal: $global-gutter !default;
+$card-footer-padding-vertical  : ($global-gutter / 2) !default;
+
+$card-footer-padding-horizontal-l: $global-medium-gutter !default;
+$card-footer-padding-vertical-l  : round($global-medium-gutter / 2) !default;
+
+$card-title-font-size  : $global-large-font-size !default;
+$card-title-line-height: 1.4 !default;
+
+$card-badge-top  : $global-gutter !default;
+$card-badge-right: $card-badge-top !default;
+
+$card-hover-background: $global-muted-background !default;
+
+$card-default-background      : $global-muted-background !default;
+$card-default-color           : $global-color !default;
+$card-default-title-color     : $global-emphasis-color !default;
+$card-default-hover-background: darken($card-default-background, 5%) !default;
+
+$card-primary-background      : $global-primary-background !default;
+$card-primary-color           : $global-inverse-color !default;
+$card-primary-title-color     : $card-primary-color !default;
+$card-primary-hover-background: darken($card-primary-background, 5%) !default;
+$card-primary-color-mode      : light !default;
+
+$card-secondary-background      : $global-secondary-background !default;
+$card-secondary-color           : $global-inverse-color !default;
+$card-secondary-title-color     : $card-secondary-color !default;
+$card-secondary-hover-background: darken($card-secondary-background, 5%) !default;
+$card-secondary-color-mode      : light !default;
+
+$card-small-body-padding-horizontal  : $global-margin !default;
+$card-small-body-padding-vertical    : $global-margin !default;
+$card-small-header-padding-horizontal: $global-margin !default;
+$card-small-header-padding-vertical  : round($global-margin / 1.5) !default;
+$card-small-footer-padding-horizontal: $global-margin !default;
+$card-small-footer-padding-vertical  : round($global-margin / 1.5) !default;
+
+$card-large-body-padding-horizontal-l  : $global-large-gutter !default;
+$card-large-body-padding-vertical-l    : $global-large-gutter !default;
+$card-large-header-padding-horizontal-l: $global-large-gutter !default;
+$card-large-header-padding-vertical-l  : round($global-large-gutter / 2) !default;
+$card-large-footer-padding-horizontal-l: $global-large-gutter !default;
+$card-large-footer-padding-vertical-l  : round($global-large-gutter / 2) !default;
+
+
+/* ========================================================================
+   Component: Card
+ ========================================================================== */
+
+.x-card {
+    position  : relative;
+    box-sizing: border-box;
+
+    @if(mixin-exists(hook-card)) {
+        @include hook-card();
+    }
+}
+
+
+/* Sections
+ ========================================================================== */
+
+.x-card-body {
+    display: flow-root;
+    padding: $card-body-padding-vertical $card-body-padding-horizontal;
+
+    @if(mixin-exists(hook-card-body)) {
+        @include hook-card-body();
+    }
+}
+
+.x-card-header {
+    display: flow-root;
+    padding: $card-header-padding-vertical $card-header-padding-horizontal;
+
+    @if(mixin-exists(hook-card-header)) {
+        @include hook-card-header();
+    }
+}
+
+.x-card-footer {
+    display: flow-root;
+    padding: $card-footer-padding-vertical $card-footer-padding-horizontal;
+
+    @if(mixin-exists(hook-card-footer)) {
+        @include hook-card-footer();
+    }
+}
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large) {
+
+    .x-card-body {
+        padding: $card-body-padding-vertical-l $card-body-padding-horizontal-l;
+    }
+
+    .x-card-header {
+        padding: $card-header-padding-vertical-l $card-header-padding-horizontal-l;
+    }
+
+    .x-card-footer {
+        padding: $card-footer-padding-vertical-l $card-footer-padding-horizontal-l;
+    }
+
+}
+
+/*
+ * Remove margin from the last-child
+ */
+
+.x-card-body> :last-child,
+.x-card-header> :last-child,
+.x-card-footer> :last-child {
+    margin-bottom: 0;
+}
+
+
+/* Media
+ ========================================================================== */
+
+/*
+ * Reserved alignment modifier to style the media element, e.g. with `border-radius`
+ * Implemented by the theme
+ */
+
+[class*='x-card-media'] {
+    @if(mixin-exists(hook-card-media)) {
+        @include hook-card-media();
+    }
+}
+
+.x-card-media-top,
+.x-grid-stack>.x-card-media-left,
+.x-grid-stack>.x-card-media-right {
+    @if(mixin-exists(hook-card-media-top)) {
+        @include hook-card-media-top();
+    }
+}
+
+.x-card-media-bottom {
+    @if(mixin-exists(hook-card-media-bottom)) {
+        @include hook-card-media-bottom();
+    }
+}
+
+:not(.x-grid-stack)>.x-card-media-left {
+    @if(mixin-exists(hook-card-media-left)) {
+        @include hook-card-media-left();
+    }
+}
+
+:not(.x-grid-stack)>.x-card-media-right {
+    @if(mixin-exists(hook-card-media-right)) {
+        @include hook-card-media-right();
+    }
+}
+
+
+/* Title
+ ========================================================================== */
+
+.x-card-title {
+    font-size  : $card-title-font-size;
+    line-height: $card-title-line-height;
+
+    @if(mixin-exists(hook-card-title)) {
+        @include hook-card-title();
+    }
+}
+
+
+/* Badge
+ ========================================================================== */
+
+.x-card-badge {
+    position: absolute;
+    top     : $card-badge-top;
+    right   : $card-badge-right;
+    z-index : 1;
+
+    @if(mixin-exists(hook-card-badge)) {
+        @include hook-card-badge();
+    }
+}
+
+/*
+ * Remove margin from adjacent element
+ */
+
+.x-card-badge:first-child+* {
+    margin-top: 0;
+}
+
+
+/* Hover modifier
+ ========================================================================== */
+
+.x-card-hover:not(.x-card-default):not(.x-card-primary):not(.x-card-secondary):hover {
+    background: $card-hover-background;
+
+    @if(mixin-exists(hook-card-hover)) {
+        @include hook-card-hover();
+    }
+}
+
+
+/* Style modifiers
+ ========================================================================== */
+
+/*
+ * Default
+ * Note: Header and Footer are only implemented for the default style
+ */
+
+.x-card-default {
+    background: $card-default-background;
+    color     : $card-default-color;
+
+    @if(mixin-exists(hook-card-default)) {
+        @include hook-card-default();
+    }
+}
+
+.x-card-default .x-card-title {
+    color: $card-default-title-color;
+
+    @if(mixin-exists(hook-card-default-title)) {
+        @include hook-card-default-title();
+    }
+}
+
+.x-card-default.x-card-hover:hover {
+    background-color: $card-default-hover-background;
+
+    @if(mixin-exists(hook-card-default-hover)) {
+        @include hook-card-default-hover();
+    }
+}
+
+.x-card-default .x-card-header {
+    @if(mixin-exists(hook-card-default-header)) {
+        @include hook-card-default-header();
+    }
+}
+
+.x-card-default .x-card-footer {
+    @if(mixin-exists(hook-card-default-footer)) {
+        @include hook-card-default-footer();
+    }
+}
+
+/*
+ * Primary
+ */
+
+.x-card-primary {
+    background: $card-primary-background;
+    color     : $card-primary-color;
+
+    @if(mixin-exists(hook-card-primary)) {
+        @include hook-card-primary();
+    }
+}
+
+.x-card-primary .x-card-title {
+    color: $card-primary-title-color;
+
+    @if(mixin-exists(hook-card-primary-title)) {
+        @include hook-card-primary-title();
+    }
+}
+
+.x-card-primary.x-card-hover:hover {
+    background-color: $card-primary-hover-background;
+
+    @if(mixin-exists(hook-card-primary-hover)) {
+        @include hook-card-primary-hover();
+    }
+}
+
+// Color Mode
+@if ($card-primary-color-mode==light) {
+    .x-card-primary.x-card-body {
+        @extend .x-light !optional;
+    }
+}
+
+@if ($card-primary-color-mode==light) {
+    .x-card-primary> :not([class*='x-card-media']) {
+        @extend .x-light !optional;
+    }
+}
+
+@if ($card-primary-color-mode==dark) {
+    .x-card-primary.x-card-body {
+        @extend .x-dark !optional;
+    }
+}
+
+@if ($card-primary-color-mode==dark) {
+    .x-card-primary> :not([class*='x-card-media']) {
+        @extend .x-dark !optional;
+    }
+}
+
+/*
+ * Secondary
+ */
+
+.x-card-secondary {
+    background: $card-secondary-background;
+    color     : $card-secondary-color;
+
+    @if(mixin-exists(hook-card-secondary)) {
+        @include hook-card-secondary();
+    }
+}
+
+.x-card-secondary .x-card-title {
+    color: $card-secondary-title-color;
+
+    @if(mixin-exists(hook-card-secondary-title)) {
+        @include hook-card-secondary-title();
+    }
+}
+
+.x-card-secondary.x-card-hover:hover {
+    background-color: $card-secondary-hover-background;
+
+    @if(mixin-exists(hook-card-secondary-hover)) {
+        @include hook-card-secondary-hover();
+    }
+}
+
+// Color Mode
+@if ($card-secondary-color-mode==light) {
+    .x-card-secondary.x-card-body {
+        @extend .x-light !optional;
+    }
+}
+
+@if ($card-secondary-color-mode==light) {
+    .x-card-secondary> :not([class*='x-card-media']) {
+        @extend .x-light !optional;
+    }
+}
+
+@if ($card-secondary-color-mode==dark) {
+    .x-card-secondary.x-card-body {
+        @extend .x-dark !optional;
+    }
+}
+
+@if ($card-secondary-color-mode==dark) {
+    .x-card-secondary> :not([class*='x-card-media']) {
+        @extend .x-dark !optional;
+    }
+}
+
+
+/* Size modifier
+ ========================================================================== */
+
+/*
+ * Small
+ */
+
+.x-card-small.x-card-body,
+.x-card-small .x-card-body {
+    padding: $card-small-body-padding-vertical $card-small-body-padding-horizontal;
+}
+
+.x-card-small .x-card-header {
+    padding: $card-small-header-padding-vertical $card-small-header-padding-horizontal;
+}
+
+.x-card-small .x-card-footer {
+    padding: $card-small-footer-padding-vertical $card-small-footer-padding-horizontal;
+}
+
+/*
+ * Large
+ */
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large) {
+
+    .x-card-large.x-card-body,
+    .x-card-large .x-card-body {
+        padding: $card-large-body-padding-vertical-l $card-large-body-padding-horizontal-l;
+    }
+
+    .x-card-large .x-card-header {
+        padding: $card-large-header-padding-vertical-l $card-large-header-padding-horizontal-l;
+    }
+
+    .x-card-large .x-card-footer {
+        padding: $card-large-footer-padding-vertical-l $card-large-footer-padding-horizontal-l;
+    }
+
+}
+
+
+// Hooks
+// ========================================================================
+
+@if(mixin-exists(hook-card-misc)) {
+    @include hook-card-misc();
+}
+
+// @mixin hook-card(){}
+// @mixin hook-card-body(){}
+// @mixin hook-card-header(){}
+// @mixin hook-card-footer(){}
+// @mixin hook-card-media(){}
+// @mixin hook-card-media-top(){}
+// @mixin hook-card-media-bottom(){}
+// @mixin hook-card-media-left(){}
+// @mixin hook-card-media-right(){}
+// @mixin hook-card-title(){}
+// @mixin hook-card-badge(){}
+// @mixin hook-card-hover(){}
+// @mixin hook-card-default(){}
+// @mixin hook-card-default-title(){}
+// @mixin hook-card-default-hover(){}
+// @mixin hook-card-default-header(){}
+// @mixin hook-card-default-footer(){}
+// @mixin hook-card-primary(){}
+// @mixin hook-card-primary-title(){}
+// @mixin hook-card-primary-hover(){}
+// @mixin hook-card-secondary(){}
+// @mixin hook-card-secondary-title(){}
+// @mixin hook-card-secondary-hover(){}
+// @mixin hook-card-misc(){}
+
+//
+// Component: Card
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$card-hover-background:                         $global-background !default;
+
+$card-default-background:                       $global-background !default;
+$card-default-hover-background:                 $card-default-background !default;
+
+$card-primary-hover-background:                 $card-primary-background !default;
+
+$card-secondary-hover-background:               $card-secondary-background !default;
+
+//
+// New
+//
+
+$card-hover-box-shadow:                         $global-large-box-shadow !default;
+
+$card-default-box-shadow:                       $global-medium-box-shadow !default;
+$card-default-hover-box-shadow:                 $global-large-box-shadow !default;
+
+$card-default-header-border-width:              $global-border-width !default;
+$card-default-header-border:                    $global-border !default;
+
+$card-default-footer-border-width:              $global-border-width !default;
+$card-default-footer-border:                    $global-border !default;
+
+$card-primary-box-shadow:                       $global-medium-box-shadow !default;
+$card-primary-hover-box-shadow:                 $global-large-box-shadow !default;
+
+$card-secondary-box-shadow:                     $global-medium-box-shadow !default;
+$card-secondary-hover-box-shadow:               $global-large-box-shadow !default;
+
+
+// Component
+// ========================================================================
+
+
+
+
+// Sections
+// ========================================================================
+
+// @mixin hook-card-body(){}
+
+// @mixin hook-card-header(){}
+
+// @mixin hook-card-footer(){}
+
+
+// Media
+// ========================================================================
+
+// @mixin hook-card-media(){}
+
+// @mixin hook-card-media-top(){}
+
+// @mixin hook-card-media-bottom(){}
+
+// @mixin hook-card-media-left(){}
+
+// @mixin hook-card-media-right(){}
+
+
+// Title
+// ========================================================================
+
+// @mixin hook-card-title(){}
+
+
+// Badge
+// ========================================================================
+
+// @mixin hook-card-badge(){}
+
+
+// Hover modifier
+// ========================================================================
+
+
+
+
+// Style modifiers
+// ========================================================================
+
+
+
+// @mixin hook-card-default-title(){}
+
+
+
+
+
+
+
+//
+// Primary
+//
+
+
+
+// @mixin hook-card-primary-title(){}
+
+
+
+//
+// Secondary
+//
+
+
+
+// @mixin hook-card-secondary-title(){}
+
+
+
+
+// Miscellaneous
+// ========================================================================
+

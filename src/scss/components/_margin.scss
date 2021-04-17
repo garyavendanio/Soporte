@@ -1,0 +1,450 @@
+// Name:            Margin
+// Description:     Utilities for margins
+//
+// Component:       `x-margin-*`
+//                  `x-margin-small-*`
+//                  `x-margin-medium-*`
+//                  `x-margin-large-*`
+//                  `x-margin-xlarge-*`
+//                  `x-margin-remove-*`
+//                  `x-margin-auto-*`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$margin-margin: $global-margin !default;
+
+$margin-small-margin: $global-small-margin !default;
+
+$margin-medium-margin: $global-medium-margin !default;
+
+$margin-large-margin  : $global-medium-margin !default;
+$margin-large-margin-l: $global-large-margin !default;
+
+$margin-xlarge-margin  : $global-large-margin !default;
+$margin-xlarge-margin-l: $global-xlarge-margin !default;
+
+
+/* ========================================================================
+   Component: Margin
+ ========================================================================== */
+
+/*
+ * Default
+ */
+
+.x-margin {
+    margin-bottom: $margin-margin;
+}
+
+*+.x-margin {
+    margin-top: $margin-margin !important;
+}
+
+.x-margin-top {
+    margin-top: $margin-margin !important;
+}
+
+.x-margin-bottom {
+    margin-bottom: $margin-margin !important;
+}
+
+.x-margin-left {
+    margin-left: $margin-margin !important;
+}
+
+.x-margin-right {
+    margin-right: $margin-margin !important;
+}
+
+
+/* Small
+ ========================================================================== */
+
+.x-margin-small {
+    margin-bottom: $margin-small-margin;
+}
+
+*+.x-margin-small {
+    margin-top: $margin-small-margin !important;
+}
+
+.x-margin-small-top {
+    margin-top: $margin-small-margin !important;
+}
+
+.x-margin-small-bottom {
+    margin-bottom: $margin-small-margin !important;
+}
+
+.x-margin-small-left {
+    margin-left: $margin-small-margin !important;
+}
+
+.x-margin-small-right {
+    margin-right: $margin-small-margin !important;
+}
+
+
+/* Medium
+ ========================================================================== */
+
+.x-margin-medium {
+    margin-bottom: $margin-medium-margin;
+}
+
+*+.x-margin-medium {
+    margin-top: $margin-medium-margin !important;
+}
+
+.x-margin-medium-top {
+    margin-top: $margin-medium-margin !important;
+}
+
+.x-margin-medium-bottom {
+    margin-bottom: $margin-medium-margin !important;
+}
+
+.x-margin-medium-left {
+    margin-left: $margin-medium-margin !important;
+}
+
+.x-margin-medium-right {
+    margin-right: $margin-medium-margin !important;
+}
+
+
+/* Large
+ ========================================================================== */
+
+.x-margin-large {
+    margin-bottom: $margin-large-margin;
+}
+
+*+.x-margin-large {
+    margin-top: $margin-large-margin !important;
+}
+
+.x-margin-large-top {
+    margin-top: $margin-large-margin !important;
+}
+
+.x-margin-large-bottom {
+    margin-bottom: $margin-large-margin !important;
+}
+
+.x-margin-large-left {
+    margin-left: $margin-large-margin !important;
+}
+
+.x-margin-large-right {
+    margin-right: $margin-large-margin !important;
+}
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large) {
+
+    .x-margin-large {
+        margin-bottom: $margin-large-margin-l;
+    }
+
+    *+.x-margin-large {
+        margin-top: $margin-large-margin-l !important;
+    }
+
+    .x-margin-large-top {
+        margin-top: $margin-large-margin-l !important;
+    }
+
+    .x-margin-large-bottom {
+        margin-bottom: $margin-large-margin-l !important;
+    }
+
+    .x-margin-large-left {
+        margin-left: $margin-large-margin-l !important;
+    }
+
+    .x-margin-large-right {
+        margin-right: $margin-large-margin-l !important;
+    }
+
+}
+
+
+/* XLarge
+ ========================================================================== */
+
+.x-margin-xlarge {
+    margin-bottom: $margin-xlarge-margin;
+}
+
+*+.x-margin-xlarge {
+    margin-top: $margin-xlarge-margin !important;
+}
+
+.x-margin-xlarge-top {
+    margin-top: $margin-xlarge-margin !important;
+}
+
+.x-margin-xlarge-bottom {
+    margin-bottom: $margin-xlarge-margin !important;
+}
+
+.x-margin-xlarge-left {
+    margin-left: $margin-xlarge-margin !important;
+}
+
+.x-margin-xlarge-right {
+    margin-right: $margin-xlarge-margin !important;
+}
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large) {
+
+    .x-margin-xlarge {
+        margin-bottom: $margin-xlarge-margin-l;
+    }
+
+    *+.x-margin-xlarge {
+        margin-top: $margin-xlarge-margin-l !important;
+    }
+
+    .x-margin-xlarge-top {
+        margin-top: $margin-xlarge-margin-l !important;
+    }
+
+    .x-margin-xlarge-bottom {
+        margin-bottom: $margin-xlarge-margin-l !important;
+    }
+
+    .x-margin-xlarge-left {
+        margin-left: $margin-xlarge-margin-l !important;
+    }
+
+    .x-margin-xlarge-right {
+        margin-right: $margin-xlarge-margin-l !important;
+    }
+
+}
+
+
+/* Auto
+ ========================================================================== */
+
+.x-margin-auto {
+    margin-left : auto !important;
+    margin-right: auto !important;
+}
+
+.x-margin-auto-top {
+    margin-top: auto !important;
+}
+
+.x-margin-auto-bottom {
+    margin-bottom: auto !important;
+}
+
+.x-margin-auto-left {
+    margin-left: auto !important;
+}
+
+.x-margin-auto-right {
+    margin-right: auto !important;
+}
+
+.x-margin-auto-vertical {
+    margin-top   : auto !important;
+    margin-bottom: auto !important;
+}
+
+/* Phone landscape and bigger */
+@media (min-width: $breakpoint-small) {
+
+    .x-margin-auto\:small {
+        margin-left : auto !important;
+        margin-right: auto !important;
+    }
+
+    .x-margin-auto-left\:small {
+        margin-left: auto !important;
+    }
+
+    .x-margin-auto-right\:small {
+        margin-right: auto !important;
+    }
+
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium) {
+
+    .x-margin-auto\:medium {
+        margin-left : auto !important;
+        margin-right: auto !important;
+    }
+
+    .x-margin-auto-left\:medium {
+        margin-left: auto !important;
+    }
+
+    .x-margin-auto-right\:medium {
+        margin-right: auto !important;
+    }
+
+}
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large) {
+
+    .x-margin-auto\:large {
+        margin-left : auto !important;
+        margin-right: auto !important;
+    }
+
+    .x-margin-auto-left\:large {
+        margin-left: auto !important;
+    }
+
+    .x-margin-auto-right\:large {
+        margin-right: auto !important;
+    }
+
+}
+
+/* Large screen and bigger */
+@media (min-width: $breakpoint-xlarge) {
+
+    .x-margin-auto\:xlarge {
+        margin-left : auto !important;
+        margin-right: auto !important;
+    }
+
+    .x-margin-auto-left\:xlarge {
+        margin-left: auto !important;
+    }
+
+    .x-margin-auto-right\:xlarge {
+        margin-right: auto !important;
+    }
+
+}
+
+
+/* Remove
+ ========================================================================== */
+
+.x-margin-remove {
+    margin: 0 !important;
+}
+
+.x-margin-remove-top {
+    margin-top: 0 !important;
+}
+
+.x-margin-remove-bottom {
+    margin-bottom: 0 !important;
+}
+
+.x-margin-remove-left {
+    margin-left: 0 !important;
+}
+
+.x-margin-remove-right {
+    margin-right: 0 !important;
+}
+
+.x-margin-remove-vertical {
+    margin-top   : 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.x-margin-remove-adjacent+*,
+.x-margin-remove-first-child> :first-child {
+    margin-top: 0 !important;
+}
+
+.x-margin-remove-last-child> :last-child {
+    margin-bottom: 0 !important;
+}
+
+/* Phone landscape and bigger */
+@media (min-width: $breakpoint-small) {
+
+    .x-margin-remove-left\:small {
+        margin-left: 0 !important;
+    }
+
+    .x-margin-remove-right\:small {
+        margin-right: 0 !important;
+    }
+
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium) {
+
+    .x-margin-remove-left\:medium {
+        margin-left: 0 !important;
+    }
+
+    .x-margin-remove-right\:medium {
+        margin-right: 0 !important;
+    }
+
+}
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large) {
+
+    .x-margin-remove-left\:large {
+        margin-left: 0 !important;
+    }
+
+    .x-margin-remove-right\:large {
+        margin-right: 0 !important;
+    }
+
+}
+
+/* Large screen and bigger */
+@media (min-width: $breakpoint-xlarge) {
+
+    .x-margin-remove-left\:xlarge {
+        margin-left: 0 !important;
+    }
+
+    .x-margin-remove-right\:xlarge {
+        margin-right: 0 !important;
+    }
+
+}
+
+
+
+// Hooks
+// ========================================================================
+
+@if(mixin-exists(hook-margin-misc)) {
+    @include hook-margin-misc();
+}
+
+// @mixin hook-margin-misc(){}
+
+
+//
+// Component: Margin
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+
+// Miscellaneous
+// ========================================================================
+
+// @mixin hook-margin-misc(){}

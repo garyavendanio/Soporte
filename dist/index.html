@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAGSX</title>
+    <link rel="stylesheet" href="./css/app.css">
+</head>
+
+<body>
+    <h3>Hi!</h3>
+
+    <div x-alert>
+        <a class="x-alert-close" x-close></a>
+        <h1>Notice!</h1>
+        <p> <a href="" x-icon="icon: headphones"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+
+    <div class="x-container x-container-small">
+        <div class="x-alert-success x-border-xrounded" x-alert>
+            <a class="x-alert-close" x-close></a>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+        </div>
+    </div>
+
+    <!-- Responsive Bootstrap style -->
+    <h2>Responsive Bootstrap style</h2>
+
+    <nav class="x-navbar-container x-flex-column x-flex-top" x-navbar x-toggle="media: :small; cls: x-flex-row x-flex-top; mode: media">
+        <button type="button" x-toggle="target: .navbar-collapse; cls: x-visible:small" class="x-navbar-toggle x-hidden:small" x-navbar-toggle-icon></button>
+        <div class="navbar-collapse x-visible:small">
+            <div class="x-navbar-left">
+                <ul x-toggle="media: :small; cls: x-navbar-nav x-padding-remove; mode: media" class="x-nav x-nav-primary x-padding-small">
+                    <li class="x-active"><a href="#">Active</a></li>
+                    <li><a href="#">Item</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <ul class="x-grid-small x-child-width-1-2 x-child-width-1-4:small" x-sortable="handle: .x-card" x-grid>
+        <li>
+            <div class="x-card x-card-default x-card-body x-text-center">Item 1</div>
+        </li>
+        <li>
+            <div class="x-card x-card-default x-card-body x-text-center x-border-xxrounded">Item 2</div>
+        </li>
+        <li>
+            <div class="x-card x-card-default x-card-body x-text-center">Item 3</div>
+        </li>
+        <li>
+            <div class="x-card x-card-default x-card-body x-text-center">Item 4</div>
+        </li>
+        <li>
+            <div class="x-card x-card-default x-card-body x-text-center">Item 5</div>
+        </li>
+        <li>
+            <div class="x-card x-card-default x-card-body x-text-center x-border-xxrounded">Item 6</div>
+        </li>
+        <li>
+            <div class="x-card x-card-default x-card-body x-text-center x-border-xrounded">Item 7</div>
+        </li>
+        <li>
+            <div class="x-card x-card-default x-card-body x-text-center">Item 8</div>
+        </li>
+    </ul>
+
+    <div>
+        <div class="x-panel">
+            <div class="x-alert x-margin-remove">X-Large<br>(Large Screens)</div>
+            <div class="x-alert x-alert-success x-position-cover x-margin-remove x-visible:small">✔ X-Large<br>(Large Screens)</div>
+        </div>
+    </div>
+
+    div class="x-container">
+
+            <h1>Countdown</h1>
+
+            <h2>Grid</h2>
+
+            <div class="x-grid-small x-child-width-auto x-margin" x-grid js-countdown>
+                <div>
+                    <div class="x-countdown-number x-countdown-days"></div>
+                </div>
+                <div class="x-countdown-separator">:</div>
+                <div>
+                    <div class="x-countdown-number x-countdown-hours"></div>
+                </div>
+                <div class="x-countdown-separator">:</div>
+                <div>
+                    <div class="x-countdown-number x-countdown-minutes"></div>
+                </div>
+                <div class="x-countdown-separator">:</div>
+                <div>
+                    <div class="x-countdown-number x-countdown-seconds"></div>
+                </div>
+            </div>
+
+            <div class="x-grid-small x-child-width-auto" x-grid js-countdown>
+                <div>
+                    <div class="x-countdown-number x-countdown-days"></div>
+                    <div class="x-countdown-label x-margin-small x-text-center x-visible:small">Days</div>
+                </div>
+                <div class="x-countdown-separator">:</div>
+                <div>
+                    <div class="x-countdown-number x-countdown-hours"></div>
+                    <div class="x-countdown-label x-margin-small x-text-center x-visible:small">Hours</div>
+                </div>
+                <div class="x-countdown-separator">:</div>
+                <div>
+                    <div class="x-countdown-number x-countdown-minutes"></div>
+                    <div class="x-countdown-label x-margin-small x-text-center x-visible:small">Minutes</div>
+                </div>
+                <div class="x-countdown-separator">:</div>
+                <div>
+                    <div class="x-countdown-number x-countdown-seconds"></div>
+                    <div class="x-countdown-label x-margin-small x-text-center x-visible:small">Seconds</div>
+                </div>
+            </div>
+
+            <h2>Text</h2>
+
+            <div class="x-margin" js-countdown>
+                <span class="x-countdown-number x-countdown-days x-text-middle"></span>
+                <span class="x-countdown-separator x-text-middle">:</span>
+                <span class="x-countdown-number x-countdown-hours x-text-middle"></span>
+                <span class="x-countdown-separator x-text-middle">:</span>
+                <span class="x-countdown-number x-countdown-minutes x-text-middle"></span>
+                <span class="x-countdown-separator x-text-middle">:</span>
+                <span class="x-countdown-number x-countdown-seconds x-text-middle"></span>
+            </div>
+
+            <div js-countdown>
+                <span class="x-countdown-number">
+                    <span class="x-countdown-days"></span><small>d</small>
+                </span>
+                <span class="x-countdown-number">
+                    <span class="x-countdown-hours"></span><small>h</small>
+                </span>
+                <span class="x-countdown-number">
+                    <span class="x-countdown-minutes"></span><small>m</small>
+                </span>
+                <span class="x-countdown-number">
+                    <span class="x-countdown-seconds"></span><small>s</small>
+                </span>
+            </div>
+
+            <h2>JavaScript Options</h2>
+
+            <div class="x-overflow-auto">
+                <table class="x-table x-table-striped">
+                    <thead>
+                        <tr>
+                            <th>Option</th>
+                            <th>Value</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>date</code></td>
+                            <td>String</td>
+                            <td>false</td>
+                            <td>Any string parsable by <code>Date.parse</code> - <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date/parse" target="_blank">Reference</a>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        
+
+    <div class="x-width-1-3:medium">
+        <ul x-accordion>
+            <li class="x-open">
+                <a class="x-accordion-title" href="#">Item 1</a>
+                <div class="x-accordion-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</p>
+                </div>
+            </li>
+            <li>
+                <a class="x-accordion-title" href="#">Item 2</a>
+                <div class="x-accordion-content">
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor reprehenderit.</p>
+                    <ul x-accordion>
+                        <li class="x-open">
+                            <a class="x-accordion-title" href="#">Item 1</a>
+                            <div class="x-accordion-content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="x-accordion-title" href="#">Item 2</a>
+                            <div class="x-accordion-content">
+                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                                    ea commodo consequat. Duis aute irure dolor reprehenderit.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="x-accordion-title" href="#">Item 3</a>
+                            <div class="x-accordion-content">
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat proident.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a class="x-accordion-title" href="#">Item 3</a>
+                <div class="x-accordion-content">
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Excepteur sint occaecat cupidatat proident.</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+	<div x-slider="clsActivated: x-transition-active">
+
+		<div class="x-position-relative x-visible-toggle x-light" tabindex="-1">
+
+			<ul class="x-slider-items x-child-width-1-2:small x-child-width-1-4:medium">
+				<li>
+					<img src="https://laravel.com/img/logotype.min.svg" alt="">
+					<div class="x-position-center x-panel"><h1 class="x-transition-slide-bottom-small">1</h1></div>
+				</li>
+				<li>
+					<img src="https://laravel.com/img/logotype.min.svg" alt="">
+					<div class="x-position-center x-panel"><h1 class="x-transition-slide-bottom-small">2</h1></div>
+				</li>
+				<li>
+					<img src="https://laravel.com/img/logotype.min.svg" alt="">
+					<div class="x-position-center x-panel"><h1 class="x-transition-slide-bottom-small">3</h1></div>
+				</li>
+				<li>
+					<img src="https://laravel.com/img/logotype.min.svg" alt="">
+					<div class="x-position-center x-panel"><h1 class="x-transition-slide-bottom-small">4</h1></div>
+				</li>
+				<li>
+					<img src="https://laravel.com/img/logotype.min.svg" alt="">
+					<div class="x-position-center x-panel"><h1 class="x-transition-slide-bottom-small">5</h1></div>
+				</li>
+				<li>
+					<img src="https://laravel.com/img/logotype.min.svg" alt="">
+					<div class="x-position-center x-panel"><h1 class="x-transition-slide-bottom-small">6</h1></div>
+				</li>
+				<li>
+					<img src="https://laravel.com/img/logotype.min.svg" alt="">
+					<div class="x-position-center x-panel"><h1 class="x-transition-slide-bottom-small">7</h1></div>
+				</li>
+				<li>
+					<img src="https://laravel.com/img/logotype.min.svg" alt="">
+					<div class="x-position-center x-panel"><h1 class="x-transition-slide-bottom-small">8</h1></div>
+				</li>
+				<li>
+					<img src="https://laravel.com/img/logotype.min.svg" alt="">
+					<div class="x-position-center x-panel"><h1 class="x-transition-slide-bottom-small">9</h1></div>
+				</li>
+				<li>
+					<img src="https://laravel.com/img/logotype.min.svg" alt="">
+					<div class="x-position-center x-panel"><h1 class="x-transition-slide-bottom-small">10</h1></div>
+				</li>
+			</ul>
+
+			<a class="x-position-center-left x-position-small x-hidden-hover" href="#" x-slidenav-previous x-slider-item="previous"></a>
+			<a class="x-position-center-right x-position-small x-hidden-hover" href="#" x-slidenav-next x-slider-item="next"></a>
+
+		</div>
+
+		<ul class="x-slider-nav x-dotnav x-flex-center x-margin"></ul>
+
+	</div>
+
+    <ul class="x-subnav x-subnav-pill" x-switcher>
+        <li><a href="#">Item</a></li>
+        <li><a href="#">Item</a></li>
+        <li><a href="#">Item</a></li>
+    </ul>
+
+    <ul class="x-switcher x-margin">
+        <li>Hello!</li>
+        <li>Hello again!</li>
+        <li>Bazinga!</li>
+    </ul>
+
+    <script src="./js/app.js"></script>
+    <script src="./js/icons.js"></script>
+
+    <script>
+
+        var date = (new Date(Date.now() + 864e5 * 7)).toISOString();
+
+        TAGSX.util.$$('[js-countdown]').forEach(function(el) {
+            TAGSX.countdown(el, {date: date});
+        });
+
+    </script>
+</body>
+
+</html>

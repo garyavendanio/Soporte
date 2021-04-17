@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Nav - Tests</title>
+        <script src="js/test.js"></script>
+    </head>
+
+    <body>
+
+        <div class="x-container">
+
+            <h1>Nav</h1>
+
+            <div class="x-child-width-1-4:medium" x-grid>
+                <div>
+
+                    <h2>Default</h2>
+
+                    <ul class="x-nav x-nav-default">
+                        <li class="x-active"><a href="#">Active</a></li>
+                        <li class="x-parent">
+                            <a href="#">Parent</a>
+                            <ul class="x-nav-sub">
+                                <li><a href="#">Sub item</a></li>
+                                <li><a href="#">Sub item</a>
+                                    <ul>
+                                        <li><a href="#">Sub item</a></li>
+                                        <li><a href="#">Sub item</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="x-parent">
+                            <a href="#">Parent</a>
+                            <ul class="x-nav-sub">
+                                <li class="x-active"><a href="#">Active</a></li>
+                                <li><a href="#">Sub item</a></li>
+                            </ul>
+                        </li>
+                        <li class="x-nav-header">Header</li>
+                        <li><a href="#"><span class="x-margin-small-right" x-icon="icon: table"></span> Item</a></li>
+                        <li><a href="#"><span class="x-margin-small-right" x-icon="icon: thumbnails"></span> Item</a></li>
+                        <li class="x-nav-divider"></li>
+                        <li><a href="#"><span class="x-margin-small-right" x-icon="icon: trash"></span> Item</a></li>
+                    </ul>
+
+                </div>
+                <div>
+
+                    <h2>Accordion</h2>
+                    <ul class="x-nav-default x-nav-parent-icon" x-nav>
+                        <li class="x-active"><a href="#">Active</a></li>
+                        <li class="x-parent">
+                            <a href="#">Parent</a>
+                            <ul class="x-nav-sub">
+                                <li><a href="#">Sub item</a></li>
+                                <li><a href="#">Sub item</a>
+                                    <ul>
+                                        <li><a href="#">Sub item</a></li>
+                                        <li><a href="#">Sub item</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="x-parent">
+                            <a href="#">Parent</a>
+                            <ul class="x-nav-sub">
+                                <li><a href="#">Sub item</a></li>
+                                <li><a href="#">Sub item</a></li>
+                            </ul>
+                        </li>
+                        <li class="x-nav-header">Header</li>
+                        <li><a href="#"><span class="x-margin-small-right" x-icon="icon: table"></span> Item</a></li>
+                        <li><a href="#"><span class="x-margin-small-right" x-icon="icon: thumbnails"></span> Item</a></li>
+                        <li class="x-nav-divider"></li>
+                        <li><a href="#"><span class="x-margin-small-right" x-icon="icon: trash"></span> Item</a></li>
+                    </ul>
+
+                </div>
+                <div>
+
+                    <h2>Multiple</h2>
+                    <ul class="x-nav-default x-nav-parent-icon" x-nav="multiple: true">
+                        <li class="x-active"><a href="#">Active</a></li>
+                        <li class="x-parent">
+                            <a href="#">Parent</a>
+                            <ul class="x-nav-sub">
+                                <li><a href="#">Sub item</a></li>
+                                <li><a href="#">Sub item</a>
+                                    <ul>
+                                        <li><a href="#">Sub item</a></li>
+                                        <li><a href="#">Sub item</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="x-parent">
+                            <a href="#">Parent</a>
+                            <ul class="x-nav-sub">
+                                <li><a href="#">Sub item</a></li>
+                                <li><a href="#">Sub item</a></li>
+                            </ul>
+                        </li>
+                        <li class="x-nav-header">Header</li>
+                        <li><a href="#"><span class="x-margin-small-right" x-icon="icon: table"></span> Item</a></li>
+                        <li><a href="#"><span class="x-margin-small-right" x-icon="icon: thumbnails"></span> Item</a></li>
+                        <li class="x-nav-divider"></li>
+                        <li><a href="#"><span class="x-margin-small-right" x-icon="icon: trash"></span> Item</a></li>
+                    </ul>
+
+                </div>
+                <div>
+
+                    <h2 class="x-text-center">Center</h2>
+
+                    <ul class="x-nav-default x-nav-center x-nav-parent-icon" x-nav>
+                        <li class="x-active"><a href="#">Active</a></li>
+                        <li class="x-parent">
+                            <a href="#">Parent</a>
+                            <ul class="x-nav-sub">
+                                <li><a href="#">Sub item</a></li>
+                                <li><a href="#">Sub item</a>
+                                    <ul>
+                                        <li><a href="#">Sub item</a></li>
+                                        <li><a href="#">Sub item</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="x-parent">
+                            <a href="#">Parent</a>
+                            <ul class="x-nav-sub">
+                                <li><a href="#">Sub item</a></li>
+                                <li><a href="#">Sub item</a></li>
+                            </ul>
+                        </li>
+                        <li class="x-nav-header">Header</li>
+                        <li><a href="#"><span class="x-margin-small-right" x-icon="icon: table"></span> Item</a></li>
+                        <li><a href="#"><span class="x-margin-small-right" x-icon="icon: thumbnails"></span> Item</a></li>
+                        <li class="x-nav-divider"></li>
+                        <li><a href="#"><span class="x-margin-small-right" x-icon="icon: trash"></span> Item</a></li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="x-child-width-1-4:medium" x-grid>
+                <div>
+
+                    <h2>Primary</h2>
+
+                    <ul class="x-nav x-nav-primary">
+                        <li class="x-active"><a href="#">Active</a></li>
+                        <li class="x-parent">
+                            <a href="#">Parent</a>
+                            <ul class="x-nav-sub">
+                                <li><a href="#">Sub item</a></li>
+                                <li><a href="#">Sub item</a>
+                                    <ul>
+                                        <li><a href="#">Sub item</a></li>
+                                        <li><a href="#">Sub item</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="x-parent">
+                            <a href="#">Parent</a>
+                            <ul class="x-nav-sub">
+                                <li class="x-active"><a href="#">Active</a></li>
+                                <li><a href="#">Sub item</a></li>
+                            </ul>
+                        </li>
+                        <li class="x-nav-header">Header</li>
+                        <li><a href="#"><span class="x-margin-small-right" x-icon="icon: table"></span> Item</a></li>
+                        <li><a href="#"><span class="x-margin-small-right" x-icon="icon: thumbnails"></span> Item</a></li>
+                        <li class="x-nav-divider"></li>
+                        <li><a href="#"><span class="x-margin-small-right" x-icon="icon: trash"></span> Item</a></li>
+                    </ul>
+
+                </div>
+                <div>
+
+                    <h2>Accordion</h2>
+                    <ul class="x-nav-primary x-nav-parent-icon" x-nav>
+                        <li class="x-active"><a href="#">Active</a></li>
+                        <li class="x-parent">
+                            <a href="#">Parent</a>
+                            <ul class="x-nav-sub">
+                                <li><a href="#">Sub item</a></li>
+                                <li><a href="#">Sub item</a>
+                                    <ul>
+                                        <li><a href="#">Sub item</a></li>
+                                        <li><a href="#">Sub item</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="x-parent">
+                            <a href="#">Parent</a>
+                            <ul class="x-nav-sub">
+                                <li><a href="#">Sub item</a></li>
+                                <li><a href="#">Sub item</a></li>
+                            </ul>
+                        </li>
+                        <li class="x-nav-header">Header</li>
+                        <li><a href="#"><span class="x-margin-small-right" x-icon="icon: table"></span> Item</a></li>
+                        <li><a href="#"><span class="x-margin-small-right" x-icon="icon: thumbnails"></span> Item</a></li>
+                        <li class="x-nav-divider"></li>
+                        <li><a href="#"><span class="x-margin-small-right" x-icon="icon: trash"></span> Item</a></li>
+                    </ul>
+
+                </div>
+                <div>
+
+                    <h2>Multiple</h2>
+                    <ul class="x-nav-primary x-nav-parent-icon" x-nav="multiple: true">
+                        <li class="x-active"><a href="#">Active</a></li>
+                        <li class="x-parent">
+                            <a href="#">Parent</a>
+                            <ul class="x-nav-sub">
+                                <li><a href="#">Sub item</a></li>
+                                <li><a href="#">Sub item</a>
+                                    <ul>
+                                        <li><a href="#">Sub item</a></li>
+                                        <li><a href="#">Sub item</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="x-parent">
+                            <a href="#">Parent</a>
+                            <ul class="x-nav-sub">
+                                <li><a href="#">Sub item</a></li>
+                                <li><a href="#">Sub item</a></li>
+                            </ul>
+                        </li>
+                        <li class="x-nav-header">Header</li>
+                        <li><a href="#"><span class="x-margin-small-right" x-icon="icon: table"></span> Item</a></li>
+                        <li><a href="#"><span class="x-margin-small-right" x-icon="icon: thumbnails"></span> Item</a></li>
+                        <li class="x-nav-divider"></li>
+                        <li><a href="#"><span class="x-margin-small-right" x-icon="icon: trash"></span> Item</a></li>
+                    </ul>
+
+                </div>
+                <div>
+
+                    <h2 class="x-text-center">Center</h2>
+
+                    <ul class="x-nav-primary x-nav-center x-nav-parent-icon" x-nav>
+                        <li class="x-active"><a href="#">Active</a></li>
+                        <li class="x-parent">
+                            <a href="#">Parent</a>
+                            <ul class="x-nav-sub">
+                                <li><a href="#">Sub item</a></li>
+                                <li><a href="#">Sub item</a>
+                                    <ul>
+                                        <li><a href="#">Sub item</a></li>
+                                        <li><a href="#">Sub item</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="x-parent">
+                            <a href="#">Parent</a>
+                            <ul class="x-nav-sub">
+                                <li><a href="#">Sub item</a></li>
+                                <li><a href="#">Sub item</a></li>
+                            </ul>
+                        </li>
+                        <li class="x-nav-header">Header</li>
+                        <li><a href="#"><span class="x-margin-small-right" x-icon="icon: table"></span> Item</a></li>
+                        <li><a href="#"><span class="x-margin-small-right" x-icon="icon: thumbnails"></span> Item</a></li>
+                        <li class="x-nav-divider"></li>
+                        <li><a href="#"><span class="x-margin-small-right" x-icon="icon: trash"></span> Item</a></li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <h2>JavaScript Options</h2>
+
+            <table class="x-table x-table-striped">
+                <thead>
+                    <tr>
+                        <th>Option</th>
+                        <th>Value</th>
+                        <th>Default</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>targets</code></td>
+                        <td>CSS selector</td>
+                        <td>> .x-parent</td>
+                        <td>The element(s) to toggle.</td>
+                    </tr>
+                    <tr>
+                        <td><code>toggle</code></td>
+                        <td>CSS selector</td>
+                        <td>> a</td>
+                        <td>The toggle element(s).</td>
+                    </tr>
+                    <tr>
+                        <td><code>content</code></td>
+                        <td>CSS selector</td>
+                        <td>> ul</td>
+                        <td>The content element(s).</td>
+                    </tr>
+                    <tr>
+                        <td><code>active</code></td>
+                        <td>Number</td>
+                        <td>false</td>
+                        <td>The element(s) to toggle.</td>
+                    </tr>
+                    <tr>
+                        <td><code>collapsible</code></td>
+                        <td>Boolean</td>
+                        <td>true</td>
+                        <td>Allow all items to be closed.</td>
+                    </tr>
+                    <tr>
+                        <td><code>multiple</code></td>
+                        <td>Boolean</td>
+                        <td>false</td>
+                        <td>Allow multiple open items.</td>
+                    </tr>
+                    <tr>
+                        <td><code>transition</code></td>
+                        <td>String</td>
+                        <td>ease</td>
+                        <td>The transition to use.</td>
+                    </tr>
+                    <tr>
+                        <td><code>animation</code></td>
+                        <td>String</td>
+                        <td>true</td>
+                        <td>The space separated names of animations to use. (Comma separate for animation out)</td>
+                    </tr>
+                    <tr>
+                        <td><code>duration</code></td>
+                        <td>Number</td>
+                        <td>200</td>
+                        <td>The animation duration.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </body>
+</html>

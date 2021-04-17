@@ -1,0 +1,220 @@
+// Name:            Transition
+// Description:     Utilities for transitions
+//
+// Component:       `x-transition-*`
+//
+// Modifiers:       `x-transition-fade`
+//                  `x-transition-scale-up`
+//                  `x-transition-scale-down`
+//                  `x-transition-slide-top-*`
+//                  `x-transition-slide-bottom-*`
+//                  `x-transition-slide-left-*`
+//                  `x-transition-slide-right-*`
+//                  `x-transition-opaque`
+//                  `x-transition-slow`
+//
+// Sub-objects:     `x-transition-toggle`,
+//                  `x-transition-active`
+//
+// States:          `x-active`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$transition-duration: 0.3s !default;
+
+$transition-scale: 1.03 !default;
+
+$transition-slide-small-translate : 10px !default;
+$transition-slide-medium-translate: 50px !default;
+
+$transition-slow-duration: 0.7s !default;
+
+
+/* ========================================================================
+   Component: Transition
+ ========================================================================== */
+
+
+/* Toggle (Hover + Focus)
+ ========================================================================== */
+
+/*
+ * 1. Prevent tab highlighting on iOS.
+ */
+
+.x-transition-toggle {
+    /* 1 */
+    -webkit-tap-highlight-color: transparent;
+}
+
+/*
+ * Remove outline for `tabindex`
+ */
+
+.x-transition-toggle:focus {
+    outline: none;
+}
+
+
+/* Transitions
+ ========================================================================== */
+
+/*
+ * The toggle is triggered on touch devices by two methods:
+ * 1. Using `:focus` and tabindex
+ * 2. Using `:hover` and a `touchstart` event listener registered on the document
+ *    (Doesn't work on Surface touch devices)
+ *
+ * Note: Transitions don't work with `x-postion-center-*` classes because they also use `transform`,
+ *       therefore it's recommended to use an extra `div` for the transition.
+ */
+
+.x-transition-fade,
+[class*='x-transition-scale'],
+[class*='x-transition-slide'] {
+    transition         : $transition-duration ease-out;
+    transition-property: opacity, transform, filter;
+    opacity            : 0;
+}
+
+/*
+ * Fade
+ */
+
+.x-transition-toggle:hover .x-transition-fade,
+.x-transition-toggle:focus .x-transition-fade,
+.x-transition-active.x-active .x-transition-fade {
+    opacity: 1;
+}
+
+/*
+ * Scale
+ */
+
+.x-transition-scale-up {
+    transform: scale(1, 1);
+}
+
+.x-transition-scale-down {
+    transform: scale($transition-scale, $transition-scale);
+}
+
+/* Show */
+.x-transition-toggle:hover .x-transition-scale-up,
+.x-transition-toggle:focus .x-transition-scale-up,
+.x-transition-active.x-active .x-transition-scale-up {
+    opacity  : 1;
+    transform: scale($transition-scale, $transition-scale);
+}
+
+.x-transition-toggle:hover .x-transition-scale-down,
+.x-transition-toggle:focus .x-transition-scale-down,
+.x-transition-active.x-active .x-transition-scale-down {
+    opacity  : 1;
+    transform: scale(1, 1);
+}
+
+/*
+ * Slide
+ */
+
+.x-transition-slide-top {
+    transform: translateY(-100%);
+}
+
+.x-transition-slide-bottom {
+    transform: translateY(100%);
+}
+
+.x-transition-slide-left {
+    transform: translateX(-100%);
+}
+
+.x-transition-slide-right {
+    transform: translateX(100%);
+}
+
+.x-transition-slide-top-small {
+    transform: translateY(-$transition-slide-small-translate);
+}
+
+.x-transition-slide-bottom-small {
+    transform: translateY($transition-slide-small-translate);
+}
+
+.x-transition-slide-left-small {
+    transform: translateX(-$transition-slide-small-translate);
+}
+
+.x-transition-slide-right-small {
+    transform: translateX($transition-slide-small-translate);
+}
+
+.x-transition-slide-top-medium {
+    transform: translateY(-$transition-slide-medium-translate);
+}
+
+.x-transition-slide-bottom-medium {
+    transform: translateY($transition-slide-medium-translate);
+}
+
+.x-transition-slide-left-medium {
+    transform: translateX(-$transition-slide-medium-translate);
+}
+
+.x-transition-slide-right-medium {
+    transform: translateX($transition-slide-medium-translate);
+}
+
+/* Show */
+.x-transition-toggle:hover [class*='x-transition-slide'],
+.x-transition-toggle:focus [class*='x-transition-slide'],
+.x-transition-active.x-active [class*='x-transition-slide'] {
+    opacity  : 1;
+    transform: translate(0, 0);
+}
+
+
+/* Opacity modifier
+ ========================================================================== */
+
+.x-transition-opaque {
+    opacity: 1;
+}
+
+
+/* Duration modifiers
+ ========================================================================== */
+
+.x-transition-slow {
+    transition-duration: $transition-slow-duration;
+}
+
+
+// Hooks
+// ========================================================================
+
+@if(mixin-exists(hook-transition-misc)) {
+    @include hook-transition-misc();
+}
+
+// @mixin hook-transition-misc(){}
+
+//
+// Component: Transition
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+
+// Miscellaneous
+// ========================================================================
+
+// @mixin hook-transition-misc(){}

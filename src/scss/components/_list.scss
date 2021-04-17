@@ -1,0 +1,330 @@
+// Name:            List
+// Description:     Styles for lists
+//
+// Component:       `x-list`
+//
+// Modifiers:       `x-list-disc`
+//                  `x-list-circle`
+//                  `x-list-square`
+//                  `x-list-decimal`
+//                  `x-list-hyphen`
+//                  `x-list-muted`
+//                  `x-list-emphasis`
+//                  `x-list-primary`
+//                  `x-list-secondary`
+//                  `x-list-bullet`
+//                  `x-list-divider`
+//                  `x-list-striped`
+//                  `x-list-large`
+//                  `x-list-collapse`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$list-margin-top: $global-small-margin !default;
+
+$list-padding-left: 30px !default;
+
+$list-marker-height: ($global-line-height * 1em) !default;
+
+$list-muted-color    : $global-muted-color !default;
+$list-emphasis-color : $global-emphasis-color !default;
+$list-primary-color  : $global-primary-background !default;
+$list-secondary-color: $global-secondary-background !default;
+
+$list-bullet-icon-color: $global-color !default;
+
+$list-divider-margin-top  : $global-small-margin !default;
+$list-divider-border-width: $global-border-width !default;
+$list-divider-border      : $global-border !default;
+
+$list-striped-padding-vertical  : $global-small-margin !default;
+$list-striped-padding-horizontal: $global-small-margin !default;
+$list-striped-background        : $global-muted-background !default;
+
+$list-large-margin-top                : $global-margin !default;
+$list-large-divider-margin-top        : $global-margin !default;
+$list-large-striped-padding-vertical  : $global-margin !default;
+$list-large-striped-padding-horizontal: $global-small-margin !default;
+
+$internal-list-bullet-image: "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%226%22%20height%3D%226%22%20viewBox%3D%220%200%206%206%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22#000%22%20cx%3D%223%22%20cy%3D%223%22%20r%3D%223%22%20%2F%3E%0A%3C%2Fsvg%3E" !default;
+
+
+/* ========================================================================
+   Component: List
+ ========================================================================== */
+
+.x-list {
+    padding   : 0;
+    list-style: none;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+
+.x-list>*> :last-child {
+    margin-bottom: 0;
+}
+
+/*
+ * Style
+ */
+
+.x-list> :nth-child(n+2),
+.x-list>*>ul {
+    margin-top: $list-margin-top;
+}
+
+
+/* Marker modifiers
+ * Moving `::marker` inside `::before` to style it differently
+ * To style the `::marker` is currently only supported in Firefox and Safari
+ ========================================================================== */
+
+.x-list-disc>*,
+.x-list-circle>*,
+.x-list-square>*,
+.x-list-decimal>*,
+.x-list-hyphen>* {
+    padding-left: $list-padding-left;
+}
+
+/*
+ * Type modifiers
+ */
+
+.x-list-decimal {
+    counter-reset: decimal;
+}
+
+.x-list-decimal>* {
+    counter-increment: decimal;
+}
+
+[class*='x-list']> ::before {
+    content            : '';
+    position           : relative;
+    left               : (-$list-padding-left);
+    width              : $list-padding-left;
+    height             : $list-marker-height;
+    margin-bottom      : (-$list-marker-height);
+    display            : list-item;
+    list-style-position: inside;
+    text-align         : right;
+}
+
+.x-list-disc> ::before {
+    list-style-type: disc;
+}
+
+.x-list-circle> ::before {
+    list-style-type: circle;
+}
+
+.x-list-square> ::before {
+    list-style-type: square;
+}
+
+.x-list-decimal> ::before {
+    content: counter(decimal, decimal) '\200A.\00A0';
+}
+
+.x-list-hyphen> ::before {
+    content: '–\00A0\00A0';
+}
+
+/*
+ * Color modifiers
+ */
+
+.x-list-muted> ::before {
+    color: $list-muted-color !important;
+}
+
+.x-list-emphasis> ::before {
+    color: $list-emphasis-color !important;
+}
+
+.x-list-primary> ::before {
+    color: $list-primary-color !important;
+}
+
+.x-list-secondary> ::before {
+    color: $list-secondary-color !important;
+}
+
+
+/* Image bullet modifier
+ ========================================================================== */
+
+.x-list-bullet>* {
+    padding-left: $list-padding-left;
+}
+
+.x-list-bullet> ::before {
+    content      : "";
+    position     : relative;
+    left         : (-$list-padding-left);
+    width        : $list-padding-left;
+    height       : $list-marker-height;
+    margin-bottom: (-$list-marker-height);
+    @include svg-fill($internal-list-bullet-image, "#000", $list-bullet-icon-color);
+    background-repeat  : no-repeat;
+    background-position: 50% 50%;
+}
+
+
+/* Style modifiers
+ ========================================================================== */
+
+/*
+ * Divider
+ */
+
+.x-list-divider> :nth-child(n+2) {
+    margin-top : $list-divider-margin-top;
+    padding-top: $list-divider-margin-top;
+    border-top : $list-divider-border-width solid $list-divider-border;
+
+    @if(mixin-exists(hook-list-divider)) {
+        @include hook-list-divider();
+    }
+}
+
+/*
+ * Striped
+ */
+
+.x-list-striped>* {
+    padding: $list-striped-padding-vertical $list-striped-padding-horizontal;
+
+    @if(mixin-exists(hook-list-striped)) {
+        @include hook-list-striped();
+    }
+}
+
+.x-list-striped> :nth-of-type(odd) {
+    background: $list-striped-background;
+}
+
+.x-list-striped> :nth-child(n+2) {
+    margin-top: 0;
+}
+
+
+/* Size modifier
+ ========================================================================== */
+
+.x-list-large> :nth-child(n+2),
+.x-list-large>*>ul {
+    margin-top: $list-large-margin-top;
+}
+
+.x-list-collapse> :nth-child(n+2),
+.x-list-collapse>*>ul {
+    margin-top: 0;
+}
+
+/*
+ * Divider
+ */
+
+.x-list-large.x-list-divider> :nth-child(n+2) {
+    margin-top : $list-large-divider-margin-top;
+    padding-top: $list-large-divider-margin-top;
+}
+
+.x-list-collapse.x-list-divider> :nth-child(n+2) {
+    margin-top : 0;
+    padding-top: 0;
+}
+
+/*
+ * Striped
+ */
+
+.x-list-large.x-list-striped>* {
+    padding: $list-large-striped-padding-vertical $list-large-striped-padding-horizontal;
+}
+
+.x-list-collapse.x-list-striped>* {
+    padding-top   : 0;
+    padding-bottom: 0;
+}
+
+.x-list-large.x-list-striped> :nth-child(n+2),
+.x-list-collapse.x-list-striped> :nth-child(n+2) {
+    margin-top: 0;
+}
+
+
+// Hooks
+// ========================================================================
+
+@if(mixin-exists(hook-list-misc)) {
+    @include hook-list-misc();
+}
+
+// @mixin hook-list-divider(){}
+// @mixin hook-list-striped(){}
+// @mixin hook-list-misc(){}
+
+
+// Inverse
+// ========================================================================
+
+$inverse-list-muted-color    : $inverse-global-muted-color !default;
+$inverse-list-emphasis-color : $inverse-global-emphasis-color !default;
+$inverse-list-primary-color  : $inverse-global-primary-background !default;
+$inverse-list-secondary-color: $inverse-global-primary-background !default;
+
+$inverse-list-divider-border    : $inverse-global-border !default;
+$inverse-list-striped-background: $inverse-global-muted-background !default;
+
+$inverse-list-bullet-icon-color: $inverse-global-color !default;
+
+
+
+// @mixin hook-inverse-list-divider(){}
+// @mixin hook-inverse-list-striped(){}
+
+//
+// Component: List
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+//
+// New
+//
+
+$list-striped-border-width:                      $global-border-width !default;
+$list-striped-border:                            $global-border !default;
+
+
+// Style modifiers
+// ========================================================================
+
+// @mixin hook-list-divider(){}
+
+
+
+
+// Miscellaneous
+// ========================================================================
+
+// @mixin hook-list-misc(){}
+
+
+// Inverse
+// ========================================================================
+
+// @mixin hook-inverse-list-divider(){}
+

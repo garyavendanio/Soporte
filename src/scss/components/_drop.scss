@@ -1,0 +1,106 @@
+// Name:            Drop
+// Description:     Component to position any element next to any other element.
+//
+// Component:       `x-drop`
+//
+// Modifiers:       `x-drop-top-*`
+//                  `x-drop-bottom-*`
+//                  `x-drop-left-*`
+//                  `x-drop-right-*`
+//                  `x-drop-stack`
+//                  `x-drop-grid`
+//
+// States:          `x-open`
+//
+// Uses:            Animation
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$drop-z-index: $global-z-index+20 !default;
+$drop-width  : 300px !default;
+$drop-margin : $global-margin !default;
+
+
+/* ========================================================================
+   Component: Drop
+ ========================================================================== */
+
+/*
+ * 1. Hide by default
+ * 2. Set position
+ * 3. Set a default width
+ */
+
+.x-drop {
+  /* 1 */
+  display   : none;
+  /* 2 */
+  position  : absolute;
+  z-index   : $drop-z-index;
+  /* 3 */
+  box-sizing: border-box;
+  width     : $drop-width;
+}
+
+/* Show */
+.x-drop.x-open {
+  display: block;
+}
+
+
+/* Direction / Alignment modifiers
+ ========================================================================== */
+
+/* Direction */
+[class*='x-drop-top'] {
+  margin-top: (-$drop-margin);
+}
+
+[class*='x-drop-bottom'] {
+  margin-top: $drop-margin;
+}
+
+[class*='x-drop-left'] {
+  margin-left: (-$drop-margin);
+}
+
+[class*='x-drop-right'] {
+  margin-left: $drop-margin;
+}
+
+
+/* Grid modifiers
+ ========================================================================== */
+
+.x-drop-stack .x-drop-grid>* {
+  width: 100% !important;
+}
+
+
+// Hooks
+// ========================================================================
+
+@if(mixin-exists(hook-drop-misc)) {
+  @include hook-drop-misc();
+}
+
+// @mixin hook-drop-misc(){}
+
+//
+// Component: Drop
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+
+// Miscellaneous
+// ========================================================================
+
+// @mixin hook-drop-misc(){}

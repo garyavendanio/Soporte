@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Height - Tests</title>
+        <script src="js/test.js"></script>
+        <style type="text/css">
+
+            [x-height-match] > * > .x-panel {
+                padding: 10px;
+                text-align: center;
+            }
+
+            [x-height-match] > :nth-child(10n-9) > .x-panel { background: rgba(0,0,0,0.1); }
+            [x-height-match] > :nth-child(10n-8) > .x-panel { background: rgba(0,0,0,0.15); }
+            [x-height-match] > :nth-child(10n-7) > .x-panel { background: rgba(0,0,0,0.2); }
+            [x-height-match] > :nth-child(10n-6) > .x-panel { background: rgba(0,0,0,0.25); }
+            [x-height-match] > :nth-child(10n-5) > .x-panel { background: rgba(0,0,0,0.3); }
+            [x-height-match] > :nth-child(10n-4) > .x-panel { background: rgba(0,0,0,0.35); }
+            [x-height-match] > :nth-child(10n-3) > .x-panel { background: rgba(0,0,0,0.40); }
+            [x-height-match] > :nth-child(10n-2) > .x-panel { background: rgba(0,0,0,0.45); }
+            [x-height-match] > :nth-child(10n-1) > .x-panel { background: rgba(0,0,0,0.50); }
+            [x-height-match] > :nth-child(10n) > .x-panel { background: rgba(0,0,0,0.55); }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div class="x-container">
+
+            <h2>Height Match</h2>
+
+            <div class="x-grid x-child-width-1-2:small">
+                <div>
+
+                    <h3>Each Row</h3>
+
+                    <div class="x-child-width-1-2:medium" x-grid x-height-match="target: > div > .x-panel">
+                        <div><div class="x-panel">1-2-M<br>...<br>...</div></div>
+                        <div><div class="x-panel">1-2-M</div></div>
+                        <div><div class="x-panel">1-2-M<br>...</div></div>
+                        <div><div class="x-panel">1-2-M</div></div>
+                    </div>
+
+                </div>
+                <div>
+
+                    <h3>All Rows</h3>
+
+                    <div class="x-child-width-1-2:medium" x-grid x-height-match="target: > div > .x-panel; row: false">
+                        <div><div class="x-panel">1-2-M<br>...<br>...</div></div>
+                        <div><div class="x-panel">1-2-M</div></div>
+                        <div><div class="x-panel">1-2-M<br>...</div></div>
+                        <div><div class="x-panel">1-2-M</div></div>
+                    </div>
+
+                </div>
+                <div>
+
+                    <h3>Hidden Panels</h3>
+
+                    <div class="x-child-width-1-2:medium" x-grid x-height-match="target: > div > .x-panel; row: false">
+                        <div><div class="x-panel" style="display: none;">1-2-M<br>...<br>...</div></div>
+                        <div><div class="x-panel">1-2-M<br>...</div></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <h2>JavaScript Options</h2>
+
+            <table class="x-table x-table-striped">
+                <thead>
+                    <tr>
+                        <th>Option</th>
+                        <th>Value</th>
+                        <th>Default</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>target</code></td>
+                        <td>CSS selector</td>
+                        <td><code>> *</code></td>
+                        <td>Elements that should match. By default the children will match.</td>
+                    </tr>
+                    <tr>
+                        <td><code>row</code></td>
+                        <td>Boolean</td>
+                        <td><code>true</code></td>
+                        <td>By default only items in the same row will be matched. For example, once grid columns extend to a width of 100%, their heights will no longer be matched. This makes sense, for example, if they stack vertically in narrower viewports.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Visibility - Tests</title>
+        <script src="js/test.js"></script>
+    </head>
+
+    <body>
+
+        <div class="x-container">
+
+            <h1>Visibility</h1>
+
+            <h2>Hidden</h2>
+
+            <div class="x-child-width-1-2:small x-child-width-1-4:medium x-text-center" x-grid>
+                <div>
+                    <div class="x-panel">
+                        <div class="x-alert x-margin-remove x-alert-success">✔ Small<br>(Phone Landscape)</div>
+                        <div class="x-alert x-position-cover x-margin-remove x-hidden:small">Small<br>(Phone Landscape)</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="x-panel">
+                        <div class="x-alert x-margin-remove x-alert-success">✔ Medium<br>(Tablet Landscape)</div>
+                        <div class="x-alert x-position-cover x-margin-remove x-hidden:medium">Medium<br>(Tablet Landscape)</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="x-panel">
+                        <div class="x-alert x-margin-remove x-alert-success">✔ Large<br>(Desktop)</div>
+                        <div class="x-alert x-position-cover x-margin-remove x-hidden:large">Large<br>(Desktop)</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="x-panel">
+                        <div class="x-alert x-margin-remove x-alert-success">✔ X-Large<br>(Large Screens)</div>
+                        <div class="x-alert x-position-cover x-margin-remove x-hidden:xlarge">X-Large<br>(Large Screens)</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Visible</h2>
+
+            <div class="x-child-width-1-2:small x-child-width-1-4:medium x-text-center" x-grid>
+                <div>
+                    <div class="x-panel">
+                        <div class="x-alert x-margin-remove">Small<br>(Phone Landscape)</div>
+                        <div class="x-alert x-alert-success x-position-cover x-margin-remove x-visible:small">✔ Small<br>(Phone Landscape)</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="x-panel">
+                        <div class="x-alert x-margin-remove">Medium<br>(Tablet Landscape)</div>
+                        <div class="x-alert x-alert-success x-position-cover x-margin-remove x-visible:medium">✔ Medium<br>(Tablet Landscape)</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="x-panel">
+                        <div class="x-alert x-margin-remove">Large<br>(Desktop)</div>
+                        <div class="x-alert x-alert-success x-position-cover x-margin-remove x-visible:large">✔ Large<br>(Desktop)</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="x-panel">
+                        <div class="x-alert x-margin-remove">X-Large<br>(Large Screens)</div>
+                        <div class="x-alert x-alert-success x-position-cover x-margin-remove x-visible:xlarge">✔ X-Large<br>(Large Screens)</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Toggle (Hover + Focus)</h2>
+
+            <div class="x-child-width-1-2:small x-child-width-1-4:medium x-text-center" x-grid>
+                <div>
+                    <div class="x-panel x-visible-toggle" tabindex="0">
+                        <div class="x-alert x-margin-remove">Hidden Hover<br><br></div>
+                        <div class="x-alert x-alert-success x-position-cover x-margin-remove x-hidden-hover">✔ Hidden Hover<br><a href>Focus Test</a></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="x-panel x-visible-toggle" tabindex="0">
+                        <div class="x-alert x-margin-remove">Invisible Hover<br><br></div>
+                        <div class="x-alert x-alert-success x-position-cover x-margin-remove x-invisible-hover">✔ Invisible Hover<br><a href>Focus Test</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Touch</h2>
+
+            <div class="x-child-width-1-2:small x-child-width-1-4:medium x-text-center" x-grid>
+                <div>
+                    <div class="x-panel">
+                        <div class="x-alert x-margin-remove x-alert-success">✔ Hidden Touch</div>
+                        <div class="x-alert x-position-cover x-margin-remove x-hidden-touch">Hidden Touch</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="x-panel">
+                        <div class="x-alert x-margin-remove x-alert-success">✔ Hidden No-Touch</div>
+                        <div class="x-alert x-position-cover x-margin-remove x-hidden-notouch">Hidden No-Touch</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+</html>

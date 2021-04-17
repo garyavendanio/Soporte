@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Position - Tests</title>
+        <script src="js/test.js"></script>
+        <style>
+
+            /* JavaScript */
+            #js-boundary {
+                height: 300px;
+                outline: 1px solid rgba(0,0,0,0.1);
+                position: relative;
+            }
+
+            #js-target {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 200px;
+                height: 100px;
+                background: rgba(0,0,0,0.1);
+            }
+
+            #js-element {
+                position: absolute;
+                display: none;
+                width: 75px;
+                height: 75px;
+                background: rgba(0,0,0,0.1);
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div class="x-container">
+
+            <h1>Position</h1>
+
+            <div class="x-position-relative">
+
+                <div class="x-child-width-1-2:small" x-grid>
+                    <div>
+
+                        <div class="x-inline">
+                            <a class="x-display-block" href="#"><img src="images/photo.jpg" alt=""></a>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-top-left">Top Left</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-top-center">Top Center</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-top-right">Top Right</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-center-left">Center Left</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-center">Center Center</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-center-right">Center Right</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-bottom-left">Bottom Left</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-bottom-center">Bottom Center</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-bottom-right">Bottom Right</div>
+                        </div>
+
+                    </div>
+                    <div>
+
+                        <div class="x-inline">
+                            <a class="x-display-block" href="#"><img src="images/photo.jpg" alt=""></a>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-top x-text-center">Top</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-bottom x-text-center">Bottom</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-left x-flex x-flex-middle">Left</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-right x-flex x-flex-middle">Right</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-center">Test if the text uses the available width if centered</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="x-overlay x-overlay-primary x-padding-small x-position-center-left-out x-visible:xlarge">Out Test</div>
+                <div class="x-overlay x-overlay-primary x-padding-small x-position-center-right-out x-visible:xlarge">Out Test</div>
+
+            </div>
+
+            <h2>Small</h2>
+
+            <div class="x-position-relative">
+
+                <div class="x-child-width-1-2:small" x-grid>
+                    <div>
+
+                        <div class="x-inline">
+                            <a class="x-display-block" href="#"><img src="images/photo.jpg" alt=""></a>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-small x-position-top-left">Top Left</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-small x-position-top-center">Top Center</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-small x-position-top-right">Top Right</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-small x-position-center-left">Center Left</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-small x-position-center">Center Center</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-small x-position-center-right">Center Right</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-small x-position-bottom-left">Bottom Left</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-small x-position-bottom-center">Bottom Center</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-small x-position-bottom-right">Bottom Right</div>
+                        </div>
+
+                    </div>
+                    <div>
+
+                        <div class="x-inline">
+                            <a class="x-display-block" href="#"><img src="images/photo.jpg" alt=""></a>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-small x-position-top x-text-center">Top</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-small x-position-bottom x-text-center">Bottom</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-small x-position-left x-flex x-flex-middle">Left</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-small x-position-right x-flex x-flex-middle">Right</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-small x-position-center">
+                                <div class="x-width-xlarge">Test if the overlay does not succeed the container width and position margin is taken into account.</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="x-overlay x-overlay-primary x-padding-small x-position-small x-position-center-left-out x-visible:xlarge">Out</div>
+                <div class="x-overlay x-overlay-primary x-padding-small x-position-small x-position-center-right-out x-visible:xlarge">Out</div>
+
+            </div>
+
+            <h2>Medium</h2>
+
+            <div class="x-position-relative">
+
+                <div class="x-child-width-1-2:small" x-grid>
+                    <div>
+
+                        <div class="x-inline">
+                            <a class="x-display-block" href="#"><img src="images/photo.jpg" alt=""></a>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-medium x-position-top-left">Top Left</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-medium x-position-top-center">Top Center</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-medium x-position-top-right">Top Right</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-medium x-position-center-left">Center Left</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-medium x-position-center">Center Center</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-medium x-position-center-right">Center Right</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-medium x-position-bottom-left">Bottom Left</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-medium x-position-bottom-center">Bottom Center</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-medium x-position-bottom-right">Bottom Right</div>
+                        </div>
+
+                    </div>
+                    <div>
+
+                        <div class="x-inline">
+                            <a class="x-display-block" href="#"><img src="images/photo.jpg" alt=""></a>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-medium x-position-top x-text-center">Top</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-medium x-position-bottom x-text-center">Bottom</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-medium x-position-left x-flex x-flex-middle">Left</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-medium x-position-right x-flex x-flex-middle">Right</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="x-overlay x-overlay-primary x-padding-small x-position-medium x-position-center-left-out x-visible:xlarge">Out</div>
+                <div class="x-overlay x-overlay-primary x-padding-small x-position-medium x-position-center-right-out x-visible:xlarge">Out</div>
+
+            </div>
+
+            <h2>Large</h2>
+
+            <div class="x-position-relative">
+
+                <div class="x-child-width-1-2:small" x-grid>
+                    <div>
+
+                        <div class="x-inline">
+                            <a class="x-display-block" href="#"><img src="images/photo.jpg" alt=""></a>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-large x-position-top-left">Top Left</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-large x-position-top-center">Top Center</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-large x-position-top-right">Top Right</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-large x-position-center-left">Center Left</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-large x-position-center">Center Center</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-large x-position-center-right">Center Right</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-large x-position-bottom-left">Bottom Left</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-large x-position-bottom-center">Bottom Center</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-large x-position-bottom-right">Bottom Right</div>
+                        </div>
+
+                    </div>
+                    <div>
+
+                        <div class="x-inline">
+                            <a class="x-display-block" href="#"><img src="images/photo.jpg" alt=""></a>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-large x-position-top x-text-center">Top</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-large x-position-bottom x-text-center">Bottom</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-large x-position-left x-flex x-flex-middle">Left</div>
+                            <div class="x-overlay x-overlay-default x-padding-small x-position-large x-position-right x-flex x-flex-middle">Right</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="x-overlay x-overlay-primary x-padding-small x-position-large x-position-center-left-out x-visible:xlarge">Out</div>
+                <div class="x-overlay x-overlay-primary x-padding-small x-position-large x-position-center-right-out x-visible:xlarge">Out</div>
+
+            </div>
+
+            <h2>Cover</h2>
+
+            <div class="x-child-width-1-4:small" x-grid>
+                <div>
+
+                    <div class="x-inline">
+                        <a class="x-display-block" href="#"><img src="images/photo.jpg" alt=""></a>
+                        <div class="x-overlay x-overlay-default x-padding-small x-position-cover x-flex x-flex-center x-flex-middle">Cover</div>
+                    </div>
+
+                </div>
+                <div>
+
+                    <div class="x-inline">
+                        <a class="x-display-block" href="#"><img src="images/photo.jpg" alt=""></a>
+                        <div class="x-overlay x-overlay-default x-padding-small x-position-small x-position-cover x-flex x-flex-center x-flex-middle">Cover</div>
+                    </div>
+
+                </div>
+                <div>
+
+                    <div class="x-inline">
+                        <a class="x-display-block" href="#"><img src="images/photo.jpg" alt=""></a>
+                        <div class="x-overlay x-overlay-default x-padding-small x-position-medium x-position-cover x-flex x-flex-center x-flex-middle">Cover</div>
+                    </div>
+
+                </div>
+                <div>
+
+                    <div class="x-inline">
+                        <a class="x-display-block" href="#"><img src="images/photo.jpg" alt=""></a>
+                        <div class="x-overlay x-overlay-default x-padding-small x-position-large x-position-cover x-flex x-flex-center x-flex-middle">Cover</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <h2>JavaScript</h2>
+
+            <div id="js-boundary" class="x-margin">
+                <div id="js-target" class="x-flex x-flex-center x-flex-middle" draggable="true">Drag me!</div>
+            </div>
+
+            <div id="js-element"></div>
+
+            <div class="x-grid x-child-width-auto x-form-stacked">
+                <div>
+
+                    <div class="x-margin">
+                        <span class="x-form-label">Element</span>
+                        <label>
+                            Horizontal
+                            <select id="js-element_x" class="x-select x-form-small x-form-width-xsmall">
+                                <option value="left">left</option>
+                                <option value="center">center</option>
+                                <option value="right">right</option>
+                            </select>
+                        </label>
+                        <label>
+                            Vertical
+                            <select id="js-element_y" class="x-select x-form-small x-form-width-xsmall">
+                                <option value="top">top</option>
+                                <option value="center">center</option>
+                                <option value="bottom">bottom</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="x-margin">
+                        <span class="x-form-label">Target</span>
+                        <label>
+                            Horizontal
+                            <select id="js-target_x" class="x-select x-form-small x-form-width-xsmall">
+                                <option value="left">left</option>
+                                <option value="center">center</option>
+                                <option value="right">right</option>
+                            </select>
+                        </label>
+                        <label>
+                            Vertical
+                            <select id="js-target_y" class="x-select x-form-small x-form-width-xsmall">
+                                <option value="top">top</option>
+                                <option value="center">center</option>
+                                <option value="bottom">bottom</option>
+                            </select>
+                        </label>
+                    </div>
+
+                </div>
+                <div>
+
+                    <div class="x-margin">
+                        <span class="x-form-label">Offset</span>
+                        <label>
+                            Horizontal
+                            <input id="js-offset_x" class="x-input x-form-small x-form-width-xsmall" type="text">
+                        </label>
+                        <label>
+                            Vertical
+                            <input id="js-offset_y" class="x-input x-form-small x-form-width-xsmall" type="text">
+                        </label>
+                    </div>
+
+                    <div class="x-margin">
+                        <span class="x-form-label">Flip</span>
+                        <label>
+                            Horizontal
+                            <select id="js-flip_x" class="x-select x-form-small x-form-width-xsmall">
+                                <option value="x">flip</option>
+                                <option value="">none</option>
+                            </select>
+                        </label>
+                        <label>
+                            Vertical
+                            <select id="js-flip_y" class="x-select x-form-small x-form-width-xsmall">
+                                <option value="y">flip</option>
+                                <option value="">none</option>
+                            </select>
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+
+            var util = TAGSX.util,
+                $ = util.$,
+                on = util.on,
+                offset = util.offset,
+                ticking,
+                element = $('#js-element'),
+                boundary = $('#js-boundary'),
+                target = $('#js-target'),
+                offsetX,
+                offsetY;
+
+            function position() {
+                util.positionAt(
+                    element,
+                    target,
+                    $('#js-element_x').value + ' ' + $('#js-element_y').value,
+                    $('#js-target_x').value + ' ' + $('#js-target_y').value,
+                    $('#js-offset_x').value + ' ' + $('#js-offset_y').value,
+                    null,
+                    $('#js-flip_x').value + $('#js-flip_y').value,
+                    boundary
+                );
+            }
+
+            on(window, 'dragstart', function (e) {
+                e.dataTransfer.setDragImage(new Image(), 0, 0);
+
+                offsetX = Math.round(e.pageX - offset(target).left);
+                offsetY = Math.round(e.pageY - offset(target).top);
+
+            });
+
+            on(window, 'dragover', function (e) {
+
+                e.preventDefault();
+
+                if (!ticking) {
+                    requestAnimationFrame(function () {
+
+                        util.positionAt(
+                            target,
+                            boundary,
+                            'left top',
+                            'left top',
+                            (e.pageX - offset(boundary).left - offsetX) + ' ' + (e.pageY - offset(boundary).top - offsetY)
+                        );
+
+                        position();
+
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+
+            });
+
+            util.$$('select,input').forEach(el => on(el, 'change', position));
+
+            util.css(element, 'display', 'block');
+            position();
+
+        </script>
+
+    </body>
+</html>

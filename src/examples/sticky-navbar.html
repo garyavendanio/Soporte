@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Sticky Navbar - Tests</title>
+        <script src="js/test.js"></script>
+    </head>
+
+    <body style="padding-bottom: 1100px;">
+
+        <div class="x-container x-margin-bottom">
+
+            <h1>Sticky Navbar</h1>
+
+        </div>
+
+        <div class="tm-header">
+            <div x-sticky="sel-target: .x-navbar-container; cls-active: x-navbar-sticky; bottom: #sticky-dropdown">
+                <nav class="x-navbar-container">
+                    <div class="x-container">
+                        <div x-navbar>
+                            <div class="x-navbar-left">
+
+                                <a class="x-navbar-item x-logo" href="#">Sticky + Dropdown</a>
+
+                                <ul class="x-navbar-nav">
+                                    <li class="x-active"><a href="">Active</a></li>
+                                    <li>
+                                        <a href="">Parent</a>
+                                        <div class="x-navbar-dropdown">
+                                            <ul class="x-nav x-navbar-dropdown-nav">
+                                                <li class="x-active"><a href="#">Active</a></li>
+                                                <li class="x-parent">
+                                                    <a href="#">Parent</a>
+                                                    <ul class="x-nav-sub">
+                                                        <li><a href="#">Sub item</a></li>
+                                                        <li><a href="#">Sub item</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="x-nav-header">Header</li>
+                                                <li><a href="#"><span class="x-margin-small-right" x-icon="icon: table"></span> Item</a></li>
+                                                <li><a href="#"><span class="x-margin-small-right" x-icon="icon: thumbnails"></span> Item</a></li>
+                                                <li class="x-nav-divider"></li>
+                                                <li><a href="#"><span class="x-margin-small-right" x-icon="icon: trash"></span> Item</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="">Parent</a>
+                                        <div class="x-navbar-dropdown">
+                                            <ul class="x-nav x-navbar-dropdown-nav">
+                                                <li class="x-active"><a href="#">Active</a></li>
+                                                <li class="x-parent">
+                                                    <a href="#">Parent</a>
+                                                    <ul class="x-nav-sub">
+                                                        <li><a href="#">Sub item</a></li>
+                                                        <li><a href="#">Sub item</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="x-nav-header">Header</li>
+                                                <li><a href="#"><span class="x-margin-small-right" x-icon="icon: table"></span> Item</a></li>
+                                                <li><a href="#"><span class="x-margin-small-right" x-icon="icon: thumbnails"></span> Item</a></li>
+                                                <li class="x-nav-divider"></li>
+                                                <li><a href="#"><span class="x-margin-small-right" x-icon="icon: trash"></span> Item</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="">Item</a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="x-section x-section-default">
+            <div id="sticky-dropdown" class="x-container">
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+
+            </div>
+        </div>
+
+        <div class="tm-header">
+            <div x-sticky="sel-target: .x-navbar-container; cls-active: x-navbar-sticky; bottom: #sticky-dropbar">
+                <nav class="x-navbar-container">
+                    <div class="x-container">
+                        <div x-navbar="dropbar: true; dropbar-anchor: !.x-navbar-container">
+                            <div class="x-navbar-left">
+
+                                <a class="x-navbar-item x-logo" href="#">Sticky + Dropbar</a>
+
+                                <ul class="x-navbar-nav">
+                                    <li class="x-active"><a href="">Active</a></li>
+                                    <li>
+                                        <a href="">Parent</a>
+                                        <div class="x-navbar-dropdown">
+                                            <ul class="x-nav x-navbar-dropdown-nav">
+                                                <li class="x-active"><a href="#">Active</a></li>
+                                                <li class="x-parent">
+                                                    <a href="#">Parent</a>
+                                                    <ul class="x-nav-sub">
+                                                        <li><a href="#">Sub item</a></li>
+                                                        <li><a href="#">Sub item</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="x-nav-header">Header</li>
+                                                <li><a href="#"><span class="x-margin-small-right" x-icon="icon: table"></span> Item</a></li>
+                                                <li><a href="#"><span class="x-margin-small-right" x-icon="icon: thumbnails"></span> Item</a></li>
+                                                <li class="x-nav-divider"></li>
+                                                <li><a href="#"><span class="x-margin-small-right" x-icon="icon: trash"></span> Item</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="">Parent</a>
+                                        <div class="x-navbar-dropdown">
+                                            <ul class="x-nav x-navbar-dropdown-nav">
+                                                <li class="x-active"><a href="#">Active</a></li>
+                                                <li class="x-parent">
+                                                    <a href="#">Parent</a>
+                                                    <ul class="x-nav-sub">
+                                                        <li><a href="#">Sub item</a></li>
+                                                        <li><a href="#">Sub item</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="x-nav-header">Header</li>
+                                                <li><a href="#"><span class="x-margin-small-right" x-icon="icon: table"></span> Item</a></li>
+                                                <li><a href="#"><span class="x-margin-small-right" x-icon="icon: thumbnails"></span> Item</a></li>
+                                                <li class="x-nav-divider"></li>
+                                                <li><a href="#"><span class="x-margin-small-right" x-icon="icon: trash"></span> Item</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="">Item</a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="x-section x-section-default">
+            <div id="sticky-dropbar" class="x-container">
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+
+            </div>
+        </div>
+
+        <div class="tm-header">
+            <div x-sticky="show-on-up: true; animation: x-animation-slide-top; sel-target: .x-navbar-container; cls-active: x-navbar-sticky; bottom: #scrollup-dropdown">
+                <nav class="x-navbar-container">
+                    <div class="x-container x-container-expand">
+                        <div x-navbar>
+                            <div class="x-navbar-left">
+
+                                <a class="x-navbar-item x-logo" href="#">Scroll Up + Dropdown</a>
+
+                                <ul class="x-navbar-nav">
+                                    <li class="x-active"><a href="">Active</a></li>
+                                    <li>
+                                        <a href="">Parent</a>
+                                        <div class="x-navbar-dropdown">
+                                            <ul class="x-nav x-navbar-dropdown-nav">
+                                                <li class="x-active"><a href="#">Active</a></li>
+                                                <li class="x-parent">
+                                                    <a href="#">Parent</a>
+                                                    <ul class="x-nav-sub">
+                                                        <li><a href="#">Sub item</a></li>
+                                                        <li><a href="#">Sub item</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="x-nav-header">Header</li>
+                                                <li><a href="#"><span class="x-margin-small-right" x-icon="icon: table"></span> Item</a></li>
+                                                <li><a href="#"><span class="x-margin-small-right" x-icon="icon: thumbnails"></span> Item</a></li>
+                                                <li class="x-nav-divider"></li>
+                                                <li><a href="#"><span class="x-margin-small-right" x-icon="icon: trash"></span> Item</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="">Parent</a>
+                                        <div class="x-navbar-dropdown">
+                                            <ul class="x-nav x-navbar-dropdown-nav">
+                                                <li class="x-active"><a href="#">Active</a></li>
+                                                <li class="x-parent">
+                                                    <a href="#">Parent</a>
+                                                    <ul class="x-nav-sub">
+                                                        <li><a href="#">Sub item</a></li>
+                                                        <li><a href="#">Sub item</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="x-nav-header">Header</li>
+                                                <li><a href="#"><span class="x-margin-small-right" x-icon="icon: table"></span> Item</a></li>
+                                                <li><a href="#"><span class="x-margin-small-right" x-icon="icon: thumbnails"></span> Item</a></li>
+                                                <li class="x-nav-divider"></li>
+                                                <li><a href="#"><span class="x-margin-small-right" x-icon="icon: trash"></span> Item</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="">Item</a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="x-section x-section-default">
+            <div id="scrollup-dropdown" class="x-container">
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+
+            </div>
+        </div>
+
+        <div class="tm-header">
+            <div x-sticky="show-on-up: true; animation: x-animation-slide-top; sel-target: .x-navbar-container; cls-active: x-navbar-sticky; bottom: #scrollup-dropbar">
+                <nav class="x-navbar-container">
+                    <div class="x-container x-container-expand">
+                        <div x-navbar="dropbar: true; dropbar-anchor: !.x-navbar-container">
+                            <div class="x-navbar-left">
+
+                                <a class="x-navbar-item x-logo" href="#">Scroll Up + Dropbar</a>
+
+                                <ul class="x-navbar-nav">
+                                    <li class="x-active"><a href="">Active</a></li>
+                                    <li>
+                                        <a href="">Parent</a>
+                                        <div class="x-navbar-dropdown">
+                                            <ul class="x-nav x-navbar-dropdown-nav">
+                                                <li class="x-active"><a href="#">Active</a></li>
+                                                <li class="x-parent">
+                                                    <a href="#">Parent</a>
+                                                    <ul class="x-nav-sub">
+                                                        <li><a href="#">Sub item</a></li>
+                                                        <li><a href="#">Sub item</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="x-nav-header">Header</li>
+                                                <li><a href="#"><span class="x-margin-small-right" x-icon="icon: table"></span> Item</a></li>
+                                                <li><a href="#"><span class="x-margin-small-right" x-icon="icon: thumbnails"></span> Item</a></li>
+                                                <li class="x-nav-divider"></li>
+                                                <li><a href="#"><span class="x-margin-small-right" x-icon="icon: trash"></span> Item</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="">Parent</a>
+                                        <div class="x-navbar-dropdown">
+                                            <ul class="x-nav x-navbar-dropdown-nav">
+                                                <li class="x-active"><a href="#">Active</a></li>
+                                                <li class="x-parent">
+                                                    <a href="#">Parent</a>
+                                                    <ul class="x-nav-sub">
+                                                        <li><a href="#">Sub item</a></li>
+                                                        <li><a href="#">Sub item</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="x-nav-header">Header</li>
+                                                <li><a href="#"><span class="x-margin-small-right" x-icon="icon: table"></span> Item</a></li>
+                                                <li><a href="#"><span class="x-margin-small-right" x-icon="icon: thumbnails"></span> Item</a></li>
+                                                <li class="x-nav-divider"></li>
+                                                <li><a href="#"><span class="x-margin-small-right" x-icon="icon: trash"></span> Item</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="">Item</a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="x-section x-section-default">
+            <div id="scrollup-dropbar" class="x-container">
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+
+            </div>
+        </div>
+
+        <div id="transparent-dropdown" class="x-section-primary x-preserve-color">
+
+            <div class="tm-header">
+                <div x-sticky="show-on-up: true; animation: x-animation-slide-top; sel-target: .x-navbar-container; cls-active: x-navbar-sticky; cls-inactive: x-navbar-transparent x-light; top: 200; bottom: #transparent-dropdown;">
+                    <nav class="x-navbar-container">
+                        <div class="x-container x-container-expand">
+                            <div x-navbar>
+                                <div class="x-navbar-left">
+
+                                    <a class="x-navbar-item x-logo" href="#">Transparent + Dropdown</a>
+
+                                    <ul class="x-navbar-nav">
+                                        <li class="x-active"><a href="">Active</a></li>
+                                        <li>
+                                            <a href="">Parent</a>
+                                            <div class="x-navbar-dropdown">
+                                                <ul class="x-nav x-navbar-dropdown-nav">
+                                                    <li class="x-active"><a href="#">Active</a></li>
+                                                    <li class="x-parent">
+                                                        <a href="#">Parent</a>
+                                                        <ul class="x-nav-sub">
+                                                            <li><a href="#">Sub item</a></li>
+                                                            <li><a href="#">Sub item</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="x-nav-header">Header</li>
+                                                    <li><a href="#"><span class="x-margin-small-right" x-icon="icon: table"></span> Item</a></li>
+                                                    <li><a href="#"><span class="x-margin-small-right" x-icon="icon: thumbnails"></span> Item</a></li>
+                                                    <li class="x-nav-divider"></li>
+                                                    <li><a href="#"><span class="x-margin-small-right" x-icon="icon: trash"></span> Item</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="">Parent</a>
+                                            <div class="x-navbar-dropdown">
+                                                <ul class="x-nav x-navbar-dropdown-nav">
+                                                    <li class="x-active"><a href="#">Active</a></li>
+                                                    <li class="x-parent">
+                                                        <a href="#">Parent</a>
+                                                        <ul class="x-nav-sub">
+                                                            <li><a href="#">Sub item</a></li>
+                                                            <li><a href="#">Sub item</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="x-nav-header">Header</li>
+                                                    <li><a href="#"><span class="x-margin-small-right" x-icon="icon: table"></span> Item</a></li>
+                                                    <li><a href="#"><span class="x-margin-small-right" x-icon="icon: thumbnails"></span> Item</a></li>
+                                                    <li class="x-nav-divider"></li>
+                                                    <li><a href="#"><span class="x-margin-small-right" x-icon="icon: trash"></span> Item</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><a href="">Item</a></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="x-section x-light">
+                <div class="x-container">
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div id="transparent-dropbar" class="x-section-secondary x-preserve-color">
+
+            <div class="tm-header">
+                <div x-sticky="show-on-up: true; animation: x-animation-slide-top; sel-target: .x-navbar-container; cls-active: x-navbar-sticky; cls-inactive: x-navbar-transparent x-light; top: 200; bottom: #transparent-dropbar">
+                    <nav class="x-navbar-container">
+                        <div class="x-container x-container-expand">
+                            <div x-navbar="dropbar: true; dropbar-anchor: !.x-navbar-container">
+                                <div class="x-navbar-left">
+
+                                    <a class="x-navbar-item x-logo" href="#">Transparent + Dropbar</a>
+
+                                    <ul class="x-navbar-nav">
+                                        <li class="x-active"><a href="">Active</a></li>
+                                        <li>
+                                            <a href="">Parent</a>
+                                            <div class="x-navbar-dropdown">
+                                                <ul class="x-nav x-navbar-dropdown-nav">
+                                                    <li class="x-active"><a href="#">Active</a></li>
+                                                    <li class="x-parent">
+                                                        <a href="#">Parent</a>
+                                                        <ul class="x-nav-sub">
+                                                            <li><a href="#">Sub item</a></li>
+                                                            <li><a href="#">Sub item</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="x-nav-header">Header</li>
+                                                    <li><a href="#"><span class="x-margin-small-right" x-icon="icon: table"></span> Item</a></li>
+                                                    <li><a href="#"><span class="x-margin-small-right" x-icon="icon: thumbnails"></span> Item</a></li>
+                                                    <li class="x-nav-divider"></li>
+                                                    <li><a href="#"><span class="x-margin-small-right" x-icon="icon: trash"></span> Item</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="">Parent</a>
+                                            <div class="x-navbar-dropdown">
+                                                <ul class="x-nav x-navbar-dropdown-nav">
+                                                    <li class="x-active"><a href="#">Active</a></li>
+                                                    <li class="x-parent">
+                                                        <a href="#">Parent</a>
+                                                        <ul class="x-nav-sub">
+                                                            <li><a href="#">Sub item</a></li>
+                                                            <li><a href="#">Sub item</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="x-nav-header">Header</li>
+                                                    <li><a href="#"><span class="x-margin-small-right" x-icon="icon: table"></span> Item</a></li>
+                                                    <li><a href="#"><span class="x-margin-small-right" x-icon="icon: thumbnails"></span> Item</a></li>
+                                                    <li class="x-nav-divider"></li>
+                                                    <li><a href="#"><span class="x-margin-small-right" x-icon="icon: trash"></span> Item</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><a href="">Item</a></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="x-section x-light">
+                <div class="x-container">
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+</html>

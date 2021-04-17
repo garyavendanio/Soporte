@@ -1,0 +1,246 @@
+.x-datatable-wrapper.x-no-header {
+	.x-datatable-container {
+		border-top: 1px solid $global-muted-background;
+	}
+}
+
+.x-datatable-wrapper.x-no-footer {
+	.x-datatable-container {
+		border-bottom: 1px solid $global-muted-background;
+	}
+}
+
+.x-datatable-top {
+	padding: 8px 10px;
+	>nav {
+		&:first-child {
+			float: left;
+		}
+		&:last-child {
+			float: right;
+		}
+	}
+	>div {
+		&:first-child {
+			float: left;
+		}
+		&:last-child {
+			float: right;
+		}
+	}
+	&::after {
+		clear: both;
+		content: " ";
+		display: table;
+	}
+}
+
+.x-datatable-bottom {
+	padding: 8px 10px;
+	>nav {
+		&:first-child {
+			float: left;
+		}
+		&:last-child {
+			float: right;
+		}
+	}
+	>div {
+		&:first-child {
+			float: left;
+		}
+		&:last-child {
+			float: right;
+		}
+	}
+	&::after {
+		clear: both;
+		content: " ";
+		display: table;
+	}
+}
+
+.x-datatable-selector {
+	padding: 6px;
+}
+
+.x-datatable-input {
+	padding: 6px 12px;
+}
+
+.x-datatable-info {
+	margin: 7px 0;
+}
+
+.x-datatable-pagination {
+	ul {
+		margin: 0;
+		padding-left: 0;
+	}
+	li {
+		list-style: none;
+		float: left;
+	}
+	a {
+		border: 1px solid transparent;
+		float: left;
+		margin-left: 2px;
+		padding: 6px 12px;
+		position: relative;
+		text-decoration: none;
+		color: #333;
+		&:hover {
+			background-color: $global-muted-background;
+		}
+	}
+	.x-active {
+		a {
+			background-color: $global-muted-background;
+			cursor: default;
+			&:focus {
+				background-color: $global-muted-background;
+				cursor: default;
+			}
+			&:hover {
+				background-color: $global-muted-background;
+				cursor: default;
+			}
+		}
+	}
+	.x-ellipsis {
+		a {
+			cursor: not-allowed;
+		}
+	}
+	.x-disabled {
+		a {
+			cursor: not-allowed;
+			cursor: not-allowed;
+			opacity: 0.4;
+			&:focus {
+				cursor: not-allowed;
+				cursor: not-allowed;
+				opacity: 0.4;
+			}
+			&:hover {
+				cursor: not-allowed;
+				cursor: not-allowed;
+				opacity: 0.4;
+			}
+		}
+	}
+	.x-pager {
+		a {
+			font-weight: bold;
+		}
+	}
+}
+
+.x-datatable-table {
+	max-width: 100%;
+	width: 100%;
+	border-spacing: 0;
+	border-collapse: separate;
+	>tbody {
+		>tr {
+			>td {
+				vertical-align: top;
+				padding: 8px 10px;
+			}
+			>th {
+				vertical-align: top;
+				padding: 8px 10px;
+			}
+		}
+	}
+	>tfoot {
+		>tr {
+			>td {
+				vertical-align: top;
+				padding: 8px 10px;
+			}
+			>th {
+				vertical-align: top;
+				padding: 8px 10px;
+				vertical-align: bottom;
+				text-align: left;
+				border-top: 1px solid $global-muted-background;
+			}
+		}
+	}
+	>thead {
+		>tr {
+			>td {
+				vertical-align: top;
+				padding: 8px 10px;
+			}
+			>th {
+				vertical-align: top;
+				padding: 8px 10px;
+				vertical-align: bottom;
+				text-align: left;
+				border-bottom: 1px solid $global-muted-background;
+			}
+		}
+	}
+	th {
+		vertical-align: bottom;
+		text-align: left;
+		a {
+			text-decoration: none;
+			color: inherit;
+		}
+	}
+}
+
+.x-datatable-sorter {
+	display: inline-block;
+	height: 100%;
+	position: relative;
+	width: 100%;
+	&::before {
+		content: "";
+		height: 0;
+		width: 0;
+		position: absolute;
+		right: 4px;
+		border-left: 4px solid transparent;
+		border-right: 4px solid transparent;
+		opacity: 0.2;
+		border-top: 4px solid $global-secondary-background;
+		bottom: 0px;
+	}
+	&::after {
+		content: "";
+		height: 0;
+		width: 0;
+		position: absolute;
+		right: 4px;
+		border-left: 4px solid transparent;
+		border-right: 4px solid transparent;
+		opacity: 0.2;
+		border-bottom: 4px solid $global-secondary-background;
+		border-top: 4px solid transparent;
+		top: 0px;
+	}
+}
+
+.x-asc {
+	.dataTable-sorter {
+		&::after {
+			opacity: 0.6;
+		}
+	}
+}
+
+.x-desc {
+	.dataTable-sorter {
+		&::before {
+			opacity: 0.6;
+		}
+	}
+}
+
+.datatable-empty {
+	text-align: center;
+}

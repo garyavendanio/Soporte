@@ -1,0 +1,126 @@
+// Name:            Tooltip
+// Description:     Component to create tooltips
+//
+// Component:       `x-tooltip`
+//
+// Modifiers        `x-tooltip-top`
+//                  `x-tooltip-top-left`
+//                  `x-tooltip-top-right`
+//                  `x-tooltip-bottom`
+//                  `x-tooltip-bottom-left`
+//                  `x-tooltip-bottom-right`
+//                  `x-tooltip-left`
+//                  `x-tooltip-right`
+//
+// States:          `x-active`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$tooltip-z-index           : $global-z-index+30 !default;
+$tooltip-max-width         : 200px !default;
+$tooltip-padding-vertical  : 3px !default;
+$tooltip-padding-horizontal: 6px !default;
+$tooltip-background        : #666 !default;
+$tooltip-border-radius     : 2px !default;
+$tooltip-color             : $global-inverse-color !default;
+$tooltip-font-size         : 12px !default;
+
+$tooltip-margin: 10px !default;
+
+
+/* ========================================================================
+   Component: Tooltip
+ ========================================================================== */
+
+/*
+ * 1. Hide by default
+ * 2. Position
+ * 3. Remove tooltip from document flow to keep the container from changing its size when injected into the document initially
+ * 4. Dimensions
+ * 5. Style
+ */
+
+.x-tooltip {
+  /* 1 */
+  display      : none;
+  /* 2 */
+  position     : absolute;
+  z-index      : $tooltip-z-index;
+  /* 3 */
+  top          : 0;
+  /* 4 */
+  box-sizing   : border-box;
+  max-width    : $tooltip-max-width;
+  padding      : $tooltip-padding-vertical $tooltip-padding-horizontal;
+  /* 5 */
+  background   : $tooltip-background;
+  border-radius: $tooltip-border-radius;
+  color        : $tooltip-color;
+  font-size    : $tooltip-font-size;
+
+  @if(mixin-exists(hook-tooltip)) {
+    @include hook-tooltip();
+  }
+}
+
+/* Show */
+.x-tooltip.x-active {
+  display: block;
+}
+
+
+/* Direction / Alignment modifiers
+ ========================================================================== */
+
+/* Direction */
+[class*='x-tooltip-top'] {
+  margin-top: (-$tooltip-margin);
+}
+
+[class*='x-tooltip-bottom'] {
+  margin-top: $tooltip-margin;
+}
+
+[class*='x-tooltip-left'] {
+  margin-left: (-$tooltip-margin);
+}
+
+[class*='x-tooltip-right'] {
+  margin-left: $tooltip-margin;
+}
+
+
+// Hooks
+// ========================================================================
+
+@if(mixin-exists(hook-tooltip-misc)) {
+  @include hook-tooltip-misc();
+}
+
+// @mixin hook-tooltip(){}
+// @mixin hook-tooltip-misc(){}
+
+//
+// Component: Tooltip
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+
+// Component
+// ========================================================================
+
+// @mixin hook-tooltip(){}
+
+
+// Miscellaneous
+// ========================================================================
+
+// @mixin hook-tooltip-misc(){}

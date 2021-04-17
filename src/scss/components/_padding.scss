@@ -1,0 +1,122 @@
+// Name:            Padding
+// Description:     Utilities for padding
+//
+// Component:       `x-padding`
+//                  `x-padding-large`
+//                  `x-padding-remove-*`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$padding-padding  : $global-gutter !default;
+$padding-padding-l: $global-medium-gutter !default;
+
+$padding-small-padding: $global-small-gutter !default;
+
+$padding-large-padding  : $global-gutter !default;
+$padding-large-padding-l: $global-large-gutter !default;
+
+
+/* ========================================================================
+   Component: Padding
+ ========================================================================== */
+
+.x-padding {
+    padding: $padding-padding;
+}
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large) {
+
+    .x-padding {
+        padding: $padding-padding-l;
+    }
+
+}
+
+
+/* Small
+ ========================================================================== */
+
+.x-padding-small {
+    padding: $padding-small-padding;
+}
+
+
+/* Large
+ ========================================================================== */
+
+.x-padding-large {
+    padding: $padding-large-padding;
+}
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large) {
+
+    .x-padding-large {
+        padding: $padding-large-padding-l;
+    }
+
+}
+
+
+/* Remove
+ ========================================================================== */
+
+.x-padding-remove {
+    padding: 0 !important;
+}
+
+.x-padding-remove-top {
+    padding-top: 0 !important;
+}
+
+.x-padding-remove-bottom {
+    padding-bottom: 0 !important;
+}
+
+.x-padding-remove-left {
+    padding-left: 0 !important;
+}
+
+.x-padding-remove-right {
+    padding-right: 0 !important;
+}
+
+.x-padding-remove-vertical {
+    padding-top   : 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.x-padding-remove-horizontal {
+    padding-left : 0 !important;
+    padding-right: 0 !important;
+}
+
+
+// Hooks
+// ========================================================================
+
+@if(mixin-exists(hook-padding-misc)) {
+    @include hook-padding-misc();
+}
+
+// @mixin hook-padding-misc(){}
+
+//
+// Component: Padding
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+
+// Miscellaneous
+// ========================================================================
+
+// @mixin hook-padding-misc(){}

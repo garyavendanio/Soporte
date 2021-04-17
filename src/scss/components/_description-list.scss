@@ -1,0 +1,114 @@
+// Name:            Description list
+// Description:     Styles for description lists
+//
+// Component:       `x-description-list`
+//
+// Modifiers:       `x-description-list-divider`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$description-list-term-color     : $global-emphasis-color !default;
+$description-list-term-margin-top: $global-margin !default;
+
+$description-list-divider-term-margin-top  : $global-margin !default;
+$description-list-divider-term-border-width: $global-border-width !default;
+$description-list-divider-term-border      : $global-border !default;
+
+
+/* ========================================================================
+   Component: Description list
+ ========================================================================== */
+
+/*
+ * Term
+ */
+
+.x-description-list>dt {
+    color: $description-list-term-color;
+
+    @if(mixin-exists(hook-description-list-term)) {
+        @include hook-description-list-term();
+    }
+}
+
+.x-description-list>dt:nth-child(n+2) {
+    margin-top: $description-list-term-margin-top;
+}
+
+/*
+ * Description
+ */
+
+.x-description-list>dd {
+    @if(mixin-exists(hook-description-list-description)) {
+        @include hook-description-list-description();
+    }
+}
+
+
+/* Style modifier
+ ========================================================================== */
+
+/*
+ * Line
+ */
+
+.x-description-list-divider>dt:nth-child(n+2) {
+    margin-top : $description-list-divider-term-margin-top;
+    padding-top: $description-list-divider-term-margin-top;
+    border-top : $description-list-divider-term-border-width solid $description-list-divider-term-border;
+
+    @if(mixin-exists(hook-description-list-divider-term)) {
+        @include hook-description-list-divider-term();
+    }
+}
+
+
+// Hooks
+// ========================================================================
+
+@if(mixin-exists(hook-description-list-misc)) {
+    @include hook-description-list-misc();
+}
+
+// @mixin hook-description-list-term(){}
+// @mixin hook-description-list-description(){}
+// @mixin hook-description-list-divider-term(){}
+// @mixin hook-description-list-misc(){}
+
+//
+// Component: Description list
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$description-list-term-font-size:                       $global-small-font-size !default;
+$description-list-term-font-weight:                     normal !default;
+$description-list-term-text-transform:                  uppercase !default;
+
+
+// Component
+// ========================================================================
+
+
+
+// @mixin hook-description-list-description(){}
+
+
+// Style modifier
+// ========================================================================
+
+// @mixin hook-description-list-divider-term(){}
+
+
+// Miscellaneous
+// ========================================================================
+
+// @mixin hook-description-list-misc(){}

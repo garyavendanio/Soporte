@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Sortable - Tests</title>
+        <script src="js/test.js"></script>
+
+        <style>
+
+            .test-item {
+                font-size: 0.875rem;
+            }
+
+        </style>
+        <script>
+
+            var util = TAGSX.util;
+
+            util.ready(function () {
+
+                util.on(document.body, 'start moved added removed stop', function (e, sortable, el) {
+                    console.log(e.type, sortable, el);
+                });
+
+            });
+
+        </script>
+    </head>
+
+    <body>
+
+        <div class="x-container">
+
+            <h1>Sortable</h1>
+
+            <h2>Grid</h2>
+
+            <ul class="x-grid-match x-child-width-1-2 x-child-width-1-5:medium" x-sortable="handle: .x-card" x-grid>
+                <li>
+                    <div class="x-card x-card-default x-card-body">
+                        <a href="https://tags.dev">Link</a>
+                        <img src="images/avatar.jpg" width="40" alt="">
+                    </div>
+                </li>
+                <li><a class="x-card x-card-default x-card-body x-display-block" href="https://tags.dev">Link Handle</a></li>
+                <li><div class="x-card x-card-default x-card-body">Item 3</div></li>
+                <li><div class="x-card x-card-default x-card-body">Item 4</div></li>
+                <li><div class="x-card x-card-default x-card-body">Item 5</div></li>
+                <li><div class="x-card x-card-default x-card-body">Item 6</div></li>
+                <li><div class="x-card x-card-default x-card-body">Item 7</div></li>
+                <li><div class="x-card x-card-default x-card-body">Item 8</div></li>
+                <li><div class="x-card x-card-default x-card-body">Item 9</div></li>
+                <li><div class="x-card x-card-default x-card-body">Item 10</div></li>
+                <li><div class="x-card x-card-default x-card-body">Item 11</div></li>
+                <li><div class="x-card x-card-default x-card-body">Item 12</div></li>
+            </ul>
+
+            <div class="x-grid x-child-width-1-3">
+                <div>
+
+                    <h2>Group</h2>
+
+                    <div x-sortable="group: test">
+                        <div class="x-margin">
+                            <div class="x-card x-card-default x-card-body x-card-small">Item 1</div>
+                        </div>
+                        <div class="x-margin">
+                            <div class="x-card x-card-default x-card-body x-card-small">Item 2</div>
+                        </div>
+                        <div class="x-margin">
+                            <div class="x-card x-card-default x-card-body x-card-small">Item 3</div>
+                        </div>
+                        <div class="x-margin">
+                            <div class="x-card x-card-default x-card-body x-card-small">Item 4</div>
+                        </div>
+                        <div class="x-margin">
+                            <div class="x-card x-card-default x-card-body x-card-small">Item 5</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div>
+
+                    <h2>Handle</h2>
+
+                    <div x-sortable="handle: .x-sortable-handle; group: test">
+                        <div class="x-margin">
+                            <div class="x-card x-card-default x-card-body x-card-small">
+                                <span class="x-sortable-handle x-margin-small-right" x-icon="icon: table"></span> Item 1
+                            </div>
+                        </div>
+                        <div class="x-margin">
+                            <div class="x-card x-card-default x-card-body x-card-small">
+                                <span class="x-sortable-handle x-margin-small-right" x-icon="icon: table"></span> Item 2
+                            </div>
+                        </div>
+                        <div class="x-margin">
+                            <div class="x-card x-card-default x-card-body x-card-small">
+                                <span class="x-sortable-handle x-margin-small-right" x-icon="icon: table"></span> Item 3
+                            </div>
+                        </div>
+                        <div class="x-margin">
+                            <div class="x-card x-card-default x-card-body x-card-small">
+                                <span class="x-sortable-handle x-margin-small-right" x-icon="icon: table"></span> Item 4
+                            </div>
+                        </div>
+                        <div class="x-margin">
+                            <div class="x-card x-card-default x-card-body x-card-small">
+                                <span class="x-sortable-handle x-margin-small-right" x-icon="icon: table"></span> Item 5
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div>
+
+                    <h2>Empty</h2>
+
+                    <div x-sortable="group: test"></div>
+
+                </div>
+            </div>
+
+            <h2>Nav + Custom Drag Class</h2>
+
+            <ul class="x-nav x-nav-default x-width-1-4:medium" x-sortable="cls-custom: test-item x-box-shadow-small x-link-muted x-flex x-flex-middle x-background-default">
+                <li class="x-active"><a href="#">Active</a></li>
+                <li><a href="#">Item</a></li>
+                <li><a href="#">Item</a></li>
+                <li><a href="#">Item</a></li>
+                <li><a href="#">Item</a></li>
+                <li><a href="#">Item</a></li>
+                <li><a href="#">Item</a></li>
+                <li><a href="#">Item</a></li>
+                <li><a href="#">Item</a></li>
+            </ul>
+
+            <h2>Nested Lists</h2>
+
+            <ul class="x-grid-small x-grid-match x-child-width-1-2:medium" x-sortable="group: first" x-grid>
+                <li><div class="x-card x-card-default x-padding-small">
+                    <ul class="x-grid-match x-child-width-1-3" x-sortable="group: second" x-grid>
+                        <li><div class="x-card x-card-secondary x-padding-small">
+                            <ul class="x-grid-small x-grid-match x-child-width-1-1" x-sortable="group: third" x-grid>
+                                <li><div class="x-card x-card-primary x-padding-small">Item 1</div></li>
+                                <li><div class="x-card x-card-primary x-padding-small">Item 2</div></li>
+                                <li><div class="x-card x-card-primary x-padding-small">Item 3</div></li>
+                            </ul>
+                        </div></li>
+                        <li><div class="x-card x-card-secondary x-padding-small">
+                            <ul class="x-grid-small x-grid-match x-child-width-1-1" x-sortable="group: third" x-grid>
+                                <li><div class="x-card x-card-primary x-padding-small">Item 4</div></li>
+                                <li><div class="x-card x-card-primary x-padding-small">Item 5</div></li>
+                            </ul>
+                        </div></li>
+                        <li><div class="x-card x-card-secondary x-padding-small">
+                            <ul class="x-grid-small x-grid-match x-child-width-1-1" x-sortable="group: third" x-grid>
+                            </ul>
+                        </div></li>
+                    </ul>
+                </div></li>
+                <li><div class="x-card x-card-default x-padding-small">
+                    <ul class="x-grid-match x-child-width-1-3" x-sortable="group: second" x-grid>
+                        <li><div class="x-card x-card-secondary x-padding-small">
+                            <ul class="x-grid-small x-grid-match x-child-width-1-1" x-sortable="group: third" x-grid>
+                                <li><div class="x-card x-card-primary x-padding-small">Item 6</div></li>
+                                <li><div class="x-card x-card-primary x-padding-small">Item 7</div></li>
+                            </ul>
+                        </div></li>
+                        <li><div class="x-card x-card-secondary x-padding-small">
+                            <ul class="x-grid-small x-grid-match x-child-width-1-1" x-sortable="group: third" x-grid>
+                                <li><div class="x-card x-card-primary x-padding-small">Item 8</div></li>
+                                <li><div class="x-card x-card-primary x-padding-small">Item 9</div></li>
+                            </ul>
+                        </div></li>
+                        <li><div class="x-card x-card-secondary x-padding-small">
+                            <ul class="x-grid-small x-grid-match x-child-width-1-1" x-sortable="group: third" x-grid>
+                            </ul>
+                        </div></li>
+                    </ul>
+                </div></li>
+                <li><div class="x-card x-card-default x-padding-small">
+                    <ul class="x-grid-match x-child-width-1-3" x-sortable="group: second" x-grid>
+                        <li><div class="x-card x-card-secondary x-padding-small">
+                            <ul class="x-grid-small x-grid-match x-child-width-1-1" x-sortable="group: third" x-grid>
+                                <li><div class="x-card x-card-primary x-padding-small">Item 10</div></li>
+                            </ul>
+                        </div></li>
+                        <li><div class="x-card x-card-secondary x-padding-small">
+                            <ul class="x-grid-small x-grid-match x-child-width-1-1" x-sortable="group: third" x-grid>
+                                <li><div class="x-card x-card-primary x-padding-small">Item 11</div></li>
+                            </ul>
+                        </div></li>
+                        <li><div class="x-card x-card-secondary x-padding-small">
+                            <ul class="x-grid-small x-grid-match x-child-width-1-1" x-sortable="group: third" x-grid>
+                            </ul>
+                        </div></li>
+                    </ul>
+                </div></li>
+            </ul>
+
+            <h2>JavaScript Options</h2>
+
+            <div class="x-overflow-auto">
+                <table class="x-table x-table-striped">
+                    <thead>
+                        <tr>
+                            <th>Option</th>
+                            <th>Value</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>group</code></td>
+                            <td>String</td>
+                            <td>''</td>
+                            <td>The group</td>
+                        </tr>
+                        <tr>
+                            <td><code>animation</code></td>
+                            <td>Number</td>
+                            <td>150</td>
+                            <td>The animation duration.</td>
+                        </tr>
+                        <tr>
+                            <td><code>threshold</code></td>
+                            <td>Number</td>
+                            <td>10</td>
+                            <td>Mouse move threshold before dragging starts.</td>
+                        </tr>
+                        <tr>
+                            <td><code>cls-item</code></td>
+                            <td>String</td>
+                            <td>x-sortable-item</td>
+                            <td>The item class.</td>
+                        </tr>
+                        <tr>
+                            <td><code>cls-placeholder</code></td>
+                            <td>String</td>
+                            <td>x-sortable-placeholder</td>
+                            <td>The placeholder class.</td>
+                        </tr>
+                        <tr>
+                            <td><code>cls-drag</code></td>
+                            <td>String</td>
+                            <td>x-sortable-drag</td>
+                            <td>The ghost class.</td>
+                        </tr>
+                        <tr>
+                            <td><code>cls-drag-state</code></td>
+                            <td>String</td>
+                            <td>x-sortable-dragging</td>
+                            <td>The body's dragging class.</td>
+                        </tr>
+                        <tr>
+                            <td><code>cls-base</code></td>
+                            <td>String</td>
+                            <td>x-sortable</td>
+                            <td>The list's class.</td>
+                        </tr>
+                        <tr>
+                            <td><code>cls-no-drag</code></td>
+                            <td>String</td>
+                            <td>x-sortable-nodrag</td>
+                            <td>Prevent dragging on elements with this class.</td>
+                        </tr>
+                        <tr>
+                            <td><code>cls-empty</code></td>
+                            <td>String</td>
+                            <td>x-sortable-empty</td>
+                            <td>The empty list class.</td>
+                        </tr>
+                        <tr>
+                            <td><code>cls-custom</code></td>
+                            <td>String</td>
+                            <td>''</td>
+                            <td>The ghost's custom class.</td>
+                        </tr>
+                        <tr>
+                            <td><code>handle</code></td>
+                            <td>String</td>
+                            <td>false</td>
+                            <td>The handle selector.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </body>
+</html>

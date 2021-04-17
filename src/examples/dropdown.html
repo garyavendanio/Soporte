@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Dropdown - Tests</title>
+        <script src="js/test.js"></script>
+        <style type="text/css">
+
+            .test {
+                display: block;
+                position: relative;
+                width: 100%;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div class="x-container">
+
+            <h1>Dropdown</h1>
+
+            <div x-grid>
+                <div class="x-width-1-3:medium">
+
+                    <div class="x-dropdown test">
+
+                        <ul class="x-nav x-dropdown-nav">
+                            <li class="x-active"><a href="#">Active</a></li>
+                            <li class="x-parent">
+                                <a href="#">Parent</a>
+                                <ul class="x-nav-sub">
+                                    <li><a href="#">Sub item</a></li>
+                                    <li><a href="#">Sub item</a>
+                                        <ul>
+                                            <li><a href="#">Sub item</a></li>
+                                            <li><a href="#">Sub item</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="x-parent">
+                                <a href="#">Parent</a>
+                                <ul class="x-nav-sub">
+                                    <li class="x-active"><a href="#">Active</a></li>
+                                    <li><a href="#">Sub item</a></li>
+                                </ul>
+                            </li>
+                            <li class="x-nav-header">Header</li>
+                            <li><a href="#"><span class="x-margin-small-right" x-icon="icon: table"></span> Item</a></li>
+                            <li><a href="#"><span class="x-margin-small-right" x-icon="icon: thumbnails"></span> Item</a></li>
+                            <li class="x-nav-divider"></li>
+                            <li><a href="#"><span class="x-margin-small-right" x-icon="icon: trash"></span> Item</a></li>
+                        </ul>
+
+                    </div>
+
+                </div>
+                <div class="x-width-2-3:medium">
+
+                    <div class="x-margin" x-margin>
+
+                        <div class="x-inline">
+                            <button class="x-button x-button-default" type="button">Hover</button>
+                            <div x-dropdown>
+                                <ul class="x-nav x-dropdown-nav">
+                                    <li class="x-active"><a href="#">Active</a></li>
+                                    <li class="x-parent">
+                                        <a href="#">Parent</a>
+                                        <ul class="x-nav-sub">
+                                            <li><a href="#">Sub item</a></li>
+                                            <li><a href="#">Sub item</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="x-nav-header">Header</li>
+                                    <li><a href="#"><span class="x-margin-small-right" x-icon="icon: table"></span> Item</a></li>
+                                    <li><a href="#"><span class="x-margin-small-right" x-icon="icon: thumbnails"></span> Item</a></li>
+                                    <li class="x-nav-divider"></li>
+                                    <li><a href="#"><span class="x-margin-small-right" x-icon="icon: trash"></span> Item</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="x-inline">
+                            <button class="x-button x-button-default" type="button">Click</button>
+                            <div x-dropdown="mode: click">
+                                <ul class="x-nav x-dropdown-nav">
+                                    <li class="x-active"><a href="#">Active</a></li>
+                                    <li class="x-parent">
+                                        <a href="#">Parent</a>
+                                        <ul class="x-nav-sub">
+                                            <li><a href="#">Sub item</a></li>
+                                            <li><a href="#">Sub item</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="x-nav-header">Header</li>
+                                    <li><a href="#"><span class="x-margin-small-right" x-icon="icon: table"></span> Item</a></li>
+                                    <li><a href="#"><span class="x-margin-small-right" x-icon="icon: thumbnails"></span> Item</a></li>
+                                    <li class="x-nav-divider"></li>
+                                    <li><a href="#"><span class="x-margin-small-right" x-icon="icon: trash"></span> Item</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="x-inline">
+                            <button class="x-button x-button-default" type="button" disabled>Disabled</button>
+                            <div x-dropdown="mode: click">
+                                <ul class="x-nav x-dropdown-nav">
+                                    <li class="x-active"><a href="#">Active</a></li>
+                                    <li><a href="#">Item</a></li>
+                                    <li><a href="#">Item</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="x-inline">
+                            <button class="x-button x-button-default" type="button">Scrollable</button>
+                            <div class="x-overflow-auto x-height-medium" x-dropdown>
+                                <ul class="x-nav x-dropdown-nav">
+                                    <li class="x-active"><a href="#">Active</a></li>
+                                    <li class="x-parent">
+                                        <a href="#">Parent</a>
+                                        <ul class="x-nav-sub">
+                                            <li><a href="#">Sub item</a></li>
+                                            <li><a href="#">Sub item</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="x-nav-header">Header</li>
+                                    <li><a href="#"><span class="x-margin-small-right" x-icon="icon: table"></span> Item</a></li>
+                                    <li><a href="#"><span class="x-margin-small-right" x-icon="icon: thumbnails"></span> Item</a></li>
+                                    <li class="x-nav-divider"></li>
+                                    <li><a href="#"><span class="x-margin-small-right" x-icon="icon: trash"></span> Item</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="x-inline">
+                            <button class="x-button x-button-default" type="button">Hover only</button>
+                            <div x-dropdown="mode: hover; delay-hide: 0">
+                                <ul class="x-nav x-dropdown-nav">
+                                    <li class="x-active"><a href="#">Active</a></li>
+                                    <li><a href="#">Item</a></li>
+                                    <li><a href="#">Item</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="x-inline">
+                            <button class="x-button x-button-default" type="button" x-toggle="target: ~div; mode: click,hover">Same</button>
+                            <button class="x-button x-button-default" type="button" x-toggle="target: ~div; mode: click,hover">Same</button>
+                            <button class="x-button x-button-default" type="button">Target</button>
+                            <div x-dropdown>
+                                <ul class="x-nav x-dropdown-nav">
+                                    <li class="x-active"><a href="#">Active</a></li>
+                                    <li><a href="#">Item</a></li>
+                                    <li><a href="#">Item</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <h2>Position</h2>
+
+                    <div class="x-margin" x-margin>
+
+                        <div class="x-inline">
+                            <button class="x-button x-button-default" type="button">Bottom Left</button>
+                            <div x-dropdown>
+                                <ul class="x-nav x-dropdown-nav">
+                                    <li class="x-active"><a href="#">Active</a></li>
+                                    <li><a href="#">Item</a></li>
+                                    <li><a href="#">Item</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="x-inline">
+                            <button class="x-button x-button-default" type="button">Bottom Center</button>
+                            <div x-dropdown="pos: bottom-center">
+                                <ul class="x-nav x-dropdown-nav">
+                                    <li class="x-active"><a href="#">Active</a></li>
+                                    <li><a href="#">Item</a></li>
+                                    <li><a href="#">Item</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="x-inline">
+                            <button class="x-button x-button-default" type="button">Bottom Right</button>
+                            <div x-dropdown="pos: bottom-right">
+                                <ul class="x-nav x-dropdown-nav">
+                                    <li class="x-active"><a href="#">Active</a></li>
+                                    <li><a href="#">Item</a></li>
+                                    <li><a href="#">Item</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="x-inline">
+                            <button class="x-button x-button-default" type="button">Bottom Justify</button>
+                            <div x-dropdown="pos: bottom-justify">
+                                <ul class="x-nav x-dropdown-nav">
+                                    <li class="x-active"><a href="#">Active</a></li>
+                                    <li><a href="#">Item</a></li>
+                                    <li><a href="#">Item</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="x-margin" x-margin>
+
+                        <div class="x-inline">
+                            <button class="x-button x-button-default" type="button">Top Left</button>
+                            <div x-dropdown="pos: top-left">
+                                <ul class="x-nav x-dropdown-nav">
+                                    <li class="x-active"><a href="#">Active</a></li>
+                                    <li><a href="#">Item</a></li>
+                                    <li><a href="#">Item</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="x-inline">
+                            <button class="x-button x-button-default" type="button">Top Center</button>
+                            <div x-dropdown="pos: top-center">
+                                <ul class="x-nav x-dropdown-nav">
+                                    <li class="x-active"><a href="#">Active</a></li>
+                                    <li><a href="#">Item</a></li>
+                                    <li><a href="#">Item</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="x-inline">
+                            <button class="x-button x-button-default" type="button">Top Right</button>
+                            <div x-dropdown="pos: top-right">
+                                <ul class="x-nav x-dropdown-nav">
+                                    <li class="x-active"><a href="#">Active</a></li>
+                                    <li><a href="#">Item</a></li>
+                                    <li><a href="#">Item</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="x-inline">
+                            <button class="x-button x-button-default" type="button">Top Justify</button>
+                            <div x-dropdown="pos: top-justify">
+                                <ul class="x-nav x-dropdown-nav">
+                                    <li class="x-active"><a href="#">Active</a></li>
+                                    <li><a href="#">Item</a></li>
+                                    <li><a href="#">Item</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="x-margin" x-margin>
+
+                        <div class="x-inline">
+                            <button class="x-button x-button-default" type="button">Left Top</button>
+                            <div x-dropdown="pos: left-top">
+                                <ul class="x-nav x-dropdown-nav">
+                                    <li class="x-active"><a href="#">Active</a></li>
+                                    <li><a href="#">Item</a></li>
+                                    <li><a href="#">Item</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="x-inline">
+                            <button class="x-button x-button-default" type="button">Left Center</button>
+                            <div x-dropdown="pos: left-center">
+                                <ul class="x-nav x-dropdown-nav">
+                                    <li class="x-active"><a href="#">Active</a></li>
+                                    <li><a href="#">Item</a></li>
+                                    <li><a href="#">Item</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="x-inline">
+                            <button class="x-button x-button-default" type="button">Left Bottom</button>
+                            <div x-dropdown="pos: left-bottom">
+                                <ul class="x-nav x-dropdown-nav">
+                                    <li class="x-active"><a href="#">Active</a></li>
+                                    <li><a href="#">Item</a></li>
+                                    <li><a href="#">Item</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="x-margin" x-margin>
+
+                        <div class="x-inline">
+                            <button class="x-button x-button-default" type="button">Right Top</button>
+                            <div x-dropdown="pos: right-top">
+                                <ul class="x-nav x-dropdown-nav">
+                                    <li class="x-active"><a href="#">Active</a></li>
+                                    <li><a href="#">Item</a></li>
+                                    <li><a href="#">Item</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="x-inline">
+                            <button class="x-button x-button-default" type="button">Right Center</button>
+                            <div x-dropdown="pos: right-center">
+                                <ul class="x-nav x-dropdown-nav">
+                                    <li class="x-active"><a href="#">Active</a></li>
+                                    <li><a href="#">Item</a></li>
+                                    <li><a href="#">Item</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="x-inline">
+                            <button class="x-button x-button-default" type="button">Right Bottom</button>
+                            <div x-dropdown="pos: right-bottom">
+                                <ul class="x-nav x-dropdown-nav">
+                                    <li class="x-active"><a href="#">Active</a></li>
+                                    <li><a href="#">Item</a></li>
+                                    <li><a href="#">Item</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <h2>JavaScript Options</h2>
+
+            <div class="x-overflow-auto">
+                <table class="x-table x-table-striped">
+                    <thead>
+                        <tr>
+                            <th>Option</th>
+                            <th>Value</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>toggle</code></td>
+                            <td>String, Boolean</td>
+                            <td>'- *'</td>
+                            <td>CSS selector for the element to be used as toggle. By default, the preceding element is used.</td>
+                        </tr>
+                        <tr>
+                            <td><code>pos</code></td>
+                            <td>String</td>
+                            <td>'bottom-left'</td>
+                            <td>Dropdown position.</td>
+                        </tr>
+                        <tr>
+                            <td><code>mode</code></td>
+                            <td>hover | click</td>
+                            <td>click,hover</td>
+                            <td>Comma separated list of dropdown trigger behaviour modes.</td>
+                        </tr>
+                        <tr>
+                            <td><code>delay-show</code></td>
+                            <td>Number</td>
+                            <td>0</td>
+                            <td>Delay time in hover mode before a Dropdown is shown in ms.</td>
+                        </tr>
+                        <tr>
+                            <td><code>delay-hide</code></td>
+                            <td>Number</td>
+                            <td>800</td>
+                            <td>Delay time in hover mode before a Dropdown is hidden in ms.</td>
+                        </tr>
+                        <tr>
+                            <td><code>boundary</code></td>
+                            <td>CSS selector</td>
+                            <td>window</td>
+                            <td>Referenced element to keep Dropdown's visibility.</td>
+                        </tr>
+                        <tr>
+                            <td><code>boundary-align</code></td>
+                            <td>Boolean</td>
+                            <td>false</td>
+                            <td>Align Drop to boundary.</td>
+                        </tr>
+                        <tr>
+                            <td><code>flip</code></td>
+                            <td>false|true|'x'|'y'</td>
+                            <td>true</td>
+                            <td>Automatic Dropdown flip.</td>
+                        </tr>
+                        <tr>
+                            <td><code>cls</code></td>
+                            <td>String</td>
+                            <td>'x-dropdown'</td>
+                            <td>The Dropdown container class.</td>
+                        </tr>
+                        <tr>
+                            <td><code>offset</code></td>
+                            <td>Number</td>
+                            <td>0</td>
+                            <td>The offset of the Dropdown container.</td>
+                        </tr>
+                        <tr>
+                            <td><code>animation</code></td>
+                            <td>String</td>
+                            <td>false</td>
+                            <td>The space separated names of animations to use.</td>
+                        </tr>
+                        <tr>
+                            <td><code>duration</code></td>
+                            <td>Number</td>
+                            <td>200</td>
+                            <td>The animation duration.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </body>
+</html>

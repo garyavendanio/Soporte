@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>List - Tests</title>
+        <script src="js/test.js"></script>
+        <style>
+
+            @supports not selector(::marker) {
+                .x-list > li[value]::before {
+                    content: attr(value) "\200A.\00A0";
+                }
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div class="x-container">
+
+            <h1>List</h1>
+
+            <h2>Marker</h2>
+
+            <div class="x-margin">
+                <select id="js-color-switcher" class="x-select x-form-width-small">
+                    <option value="">Default</option>
+                    <option value="x-list-muted">Muted</option>
+                    <option value="x-list-emphasis">Emphasis</option>
+                    <option value="x-list-primary">Primary</option>
+                    <option value="x-list-secondary">Secondary</option>
+                </select>
+            </div>
+
+            <div class="x-child-width-1-6" x-grid>
+                <div>
+
+                    <h3>Disc</h3>
+
+                    <ul class="x-list x-list-disc">
+                        <li>List <a>item</a> 1</li>
+                        <li>List item 2</li>
+                        <li>List item 3</li>
+                        <li>List item 4 with some more text wrapping into the next line</li>
+                        <li>
+                            List item 5
+                            <ul class="x-list x-list-disc">
+                                <li>List item 1</li>
+                                <li>List item 2
+                                    <ul class="x-list x-list-disc">
+                                        <li>List item 1</li>
+                                        <li>List item 2</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>List item 6</li>
+                        <li>List item 7</li>
+                    </ul>
+
+                </div>
+                <div>
+
+                    <h3>Circle</h3>
+
+                    <ul class="x-list x-list-circle">
+                        <li>List item 1</li>
+                        <li>List item 2</li>
+                        <li>List item 3</li>
+                        <li>List item 4 with some more text wrapping into the next line</li>
+                        <li>List item 5
+                            <ul class="x-list x-list-circle">
+                                <li>List item 1</li>
+                                <li>List item 2
+                                    <ul class="x-list x-list-circle">
+                                        <li>List item 1</li>
+                                        <li>List item 2</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>List item 6</li>
+                        <li>List item 7</li>
+                    </ul>
+
+                </div>
+                <div>
+
+                    <h3>Square</h3>
+
+                    <ul class="x-list x-list-square">
+                        <li>List item 1</li>
+                        <li>List item 2</li>
+                        <li>List item 3</li>
+                        <li>List item 4 with some more text wrapping into the next line</li>
+                        <li>List item 5
+                            <ul class="x-list x-list-square">
+                                <li>List item 1</li>
+                                <li>List item 2
+                                    <ul class="x-list x-list-square">
+                                        <li>List item 1</li>
+                                        <li>List item 2</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>List item 6</li>
+                        <li>List item 7</li>
+                    </ul>
+
+                </div>
+                <div>
+
+                    <h3>Decimal</h3>
+
+                    <ul class="x-list x-list-decimal">
+                        <li>List item 1</li>
+                        <li>List item 2</li>
+                        <li>List item 3</li>
+                        <li>List item 4 with some more text wrapping into the next line</li>
+                        <li>List item 5
+                            <ul class="x-list x-list-decimal">
+                                <li>List item 1</li>
+                                <li>List item 2
+                                    <ul class="x-list x-list-decimal">
+                                        <li>List item 1</li>
+                                        <li>List item 2</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>List item 6</li>
+                        <li value="10">List item 7</li>
+                    </ul>
+
+                </div>
+                <div>
+
+                    <h3>Hyphen</h3>
+
+                    <ul class="x-list x-list-hyphen">
+                        <li>List item 1</li>
+                        <li>List item 2</li>
+                        <li>List item 3</li>
+                        <li>List item 4 with some more text wrapping into the next line</li>
+                        <li>List item 5
+                            <ul class="x-list x-list-hyphen">
+                                <li>List item 1</li>
+                                <li>List item 2
+                                    <ul class="x-list x-list-hyphen">
+                                        <li>List item 1</li>
+                                        <li>List item 2</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>List item 6</li>
+                        <li>List item 7</li>
+                    </ul>
+
+                </div>
+                <div>
+
+                    <h3>Image Bullet</h3>
+
+                    <ul class="x-list x-list-bullet">
+                        <li>List item 1</li>
+                        <li>List item 2</li>
+                        <li>List item 3</li>
+                        <li>List item 4 with some more text wrapping into the next line</li>
+                        <li>List item 5
+                            <ul class="x-list x-list-bullet">
+                                <li>List item 1</li>
+                                <li>List item 2
+                                    <ul class="x-list x-list-bullet">
+                                        <li>List item 1</li>
+                                        <li>List item 2</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>List item 6</li>
+                        <li>List item 7</li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <h2>Style</h2>
+
+            <div class="x-child-width-1-4" x-grid>
+                <div>
+
+                    <h3>Divider</h3>
+
+                    <ul class="x-list x-list-divider">
+                        <li>List item 1</li>
+                        <li>List item 2</li>
+                        <li>List item 3</li>
+                        <li>List item 4 with some more text wrapping into the next line</li>
+                        <li>List item 5
+                            <ul>
+                                <li>List item 1</li>
+                                <li>List item 2
+                                    <ul>
+                                        <li>List item 1</li>
+                                        <li>List item 2</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>List item 6</li>
+                    </ul>
+
+                </div>
+                <div>
+
+                    <h3>Striped</h3>
+
+                    <ul class="x-list x-list-striped">
+                        <li>List item 1</li>
+                        <li>List item 2</li>
+                        <li>List item 3</li>
+                        <li>List item 4 with some more text wrapping into the next line</li>
+                        <li>List item 5
+                            <ul>
+                                <li>List item 1</li>
+                                <li>List item 2
+                                    <ul>
+                                        <li>List item 1</li>
+                                        <li>List item 2</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>List item 6</li>
+                    </ul>
+
+                </div>
+                <div>
+
+                    <h3>Divider</h3>
+
+                    <ul class="x-list x-list-divider x-list-decimal">
+                        <li>List item 1</li>
+                        <li>List item 2</li>
+                        <li>List item 3</li>
+                        <li>List item 4 with some more text wrapping into the next line</li>
+                        <li>List item 5
+                            <ul>
+                                <li>List item 1</li>
+                                <li>List item 2
+                                    <ul>
+                                        <li>List item 1</li>
+                                        <li>List item 2</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>List item 6</li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <h2>Large</h2>
+
+            <div class="x-child-width-1-4" x-grid>
+                <div>
+
+                    <h3>Default</h3>
+
+                    <ul class="x-list x-list-large">
+                        <li>List item 1</li>
+                        <li>List item 2</li>
+                        <li>List item 3</li>
+                        <li>List item 4 with some more text wrapping into the next line</li>
+                        <li>List item 5
+                            <ul>
+                                <li>List item 1</li>
+                                <li>List item 2
+                                    <ul>
+                                        <li>List item 1</li>
+                                        <li>List item 2</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>List item 6</li>
+                    </ul>
+
+                </div>
+                <div>
+
+                    <h3>Disc</h3>
+
+                    <ul class="x-list x-list-large x-list-disc">
+                        <li>List item 1</li>
+                        <li>List item 2</li>
+                        <li>List item 3</li>
+                        <li>List item 4 with some more text wrapping into the next line</li>
+                        <li>
+                            List item 5
+                            <ul>
+                                <li>List item 1</li>
+                                <li>List item 2
+                                    <ul>
+                                        <li>List item 1</li>
+                                        <li>List item 2</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>List item 6</li>
+                    </ul>
+
+                </div>
+                <div>
+
+                    <h3>Divider</h3>
+
+                    <ul class="x-list x-list-large x-list-divider">
+                        <li>List item 1</li>
+                        <li>List item 2</li>
+                        <li>List item 3</li>
+                        <li>List item 4 with some more text wrapping into the next line</li>
+                        <li>List item 5
+                            <ul>
+                                <li>List item 1</li>
+                                <li>List item 2
+                                    <ul>
+                                        <li>List item 1</li>
+                                        <li>List item 2</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>List item 6</li>
+                    </ul>
+
+                </div>
+                <div>
+
+                    <h3>Striped</h3>
+
+                    <ul class="x-list x-list-large x-list-striped">
+                        <li>List item 1</li>
+                        <li>List item 2</li>
+                        <li>List item 3</li>
+                        <li>List item 4 with some more text wrapping into the next line</li>
+                        <li>List item 5
+                            <ul>
+                                <li>List item 1</li>
+                                <li>List item 2
+                                    <ul>
+                                        <li>List item 1</li>
+                                        <li>List item 2</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>List item 6</li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <h2>Collapse</h2>
+
+            <div class="x-child-width-1-4" x-grid>
+                <div>
+
+                    <h3>Default</h3>
+
+                    <ul class="x-list x-list-collapse">
+                        <li>List item 1</li>
+                        <li>List item 2</li>
+                        <li>List item 3</li>
+                        <li>List item 4 with some more text wrapping into the next line</li>
+                        <li>List item 5
+                            <ul>
+                                <li>List item 1</li>
+                                <li>List item 2
+                                    <ul>
+                                        <li>List item 1</li>
+                                        <li>List item 2</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>List item 6</li>
+                    </ul>
+
+                </div>
+                <div>
+
+                    <h3>Disc</h3>
+
+                    <ul class="x-list x-list-collapse x-list-disc">
+                        <li>List item 1</li>
+                        <li>List item 2</li>
+                        <li>List item 3</li>
+                        <li>List item 4 with some more text wrapping into the next line</li>
+                        <li>
+                            List item 5
+                            <ul>
+                                <li>List item 1</li>
+                                <li>List item 2
+                                    <ul>
+                                        <li>List item 1</li>
+                                        <li>List item 2</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>List item 6</li>
+                    </ul>
+
+                </div>
+                <div>
+
+                    <h3>Divider</h3>
+
+                    <ul class="x-list x-list-collapse x-list-divider">
+                        <li>List item 1</li>
+                        <li>List item 2</li>
+                        <li>List item 3</li>
+                        <li>List item 4 with some more text wrapping into the next line</li>
+                        <li>List item 5
+                            <ul>
+                                <li>List item 1</li>
+                                <li>List item 2
+                                    <ul>
+                                        <li>List item 1</li>
+                                        <li>List item 2</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>List item 6</li>
+                    </ul>
+
+                </div>
+                <div>
+
+                    <h3>Striped</h3>
+
+                    <ul class="x-list x-list-collapse x-list-striped">
+                        <li>List item 1</li>
+                        <li>List item 2</li>
+                        <li>List item 3</li>
+                        <li>List item 4 with some more text wrapping into the next line</li>
+                        <li>List item 5
+                            <ul>
+                                <li>List item 1</li>
+                                <li>List item 2
+                                    <ul>
+                                        <li>List item 1</li>
+                                        <li>List item 2</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>List item 6</li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+
+            var options = TAGSX.util.$$('#js-color-switcher option').map(function (option) { return option.value; });
+
+            TAGSX.util.on('#js-color-switcher', 'change', function () {
+                var value = this.value;
+                TAGSX.util.$$('.x-list').forEach(function (table) {
+                    TAGSX.util.removeClass(table, options);
+                    TAGSX.util.addClass(table, value);
+                });
+            });
+
+        </script>
+
+    </body>
+</html>

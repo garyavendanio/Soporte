@@ -1,0 +1,196 @@
+// Name:            Slidenav
+// Description:     Component to create previous/next icon navigations
+//
+// Component:       `x-slidenav`
+//
+// Sub-objects:     `x-slidenav-container`
+//
+// Modifiers:       `x-slidenav-previous`
+//                  `x-slidenav-next`
+//                  `x-slidenav-large`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$slidenav-padding-vertical  : 5px !default;
+$slidenav-padding-horizontal: 10px !default;
+
+$slidenav-color       : rgba($global-color, 0.5) !default;
+$slidenav-hover-color : rgba($global-color, 0.9) !default;
+$slidenav-active-color: rgba($global-color, 0.5) !default;
+
+$slidenav-large-padding-vertical  : 10px !default;
+$slidenav-large-padding-horizontal: $slidenav-large-padding-vertical !default;
+
+
+/* ========================================================================
+   Component: Slidenav
+ ========================================================================== */
+
+/*
+ * Adopts `x-icon`
+ */
+
+.x-slidenav {
+    padding: $slidenav-padding-vertical $slidenav-padding-horizontal;
+    color  : $slidenav-color;
+
+    @if(mixin-exists(hook-slidenav)) {
+        @include hook-slidenav();
+    }
+}
+
+/* Hover + Focus */
+.x-slidenav:hover,
+.x-slidenav:focus {
+    color  : $slidenav-hover-color;
+    outline: none;
+
+    @if(mixin-exists(hook-slidenav-hover)) {
+        @include hook-slidenav-hover();
+    }
+}
+
+/* OnClick */
+.x-slidenav:active {
+    color: $slidenav-active-color;
+
+    @if(mixin-exists(hook-slidenav-active)) {
+        @include hook-slidenav-active();
+    }
+}
+
+
+/* Icon modifier
+ ========================================================================== */
+
+/*
+ * Previous
+ */
+
+.x-slidenav-previous {
+    @if(mixin-exists(hook-slidenav-previous)) {
+        @include hook-slidenav-previous();
+    }
+}
+
+/*
+ * Next
+ */
+
+.x-slidenav-next {
+    @if(mixin-exists(hook-slidenav-next)) {
+        @include hook-slidenav-next();
+    }
+}
+
+
+/* Size modifier
+ ========================================================================== */
+
+.x-slidenav-large {
+    padding: $slidenav-large-padding-vertical $slidenav-large-padding-horizontal;
+
+    @if(mixin-exists(hook-slidenav-large)) {
+        @include hook-slidenav-large();
+    }
+}
+
+
+/* Container
+ ========================================================================== */
+
+.x-slidenav-container {
+    display: flex;
+
+    @if(mixin-exists(hook-slidenav-container)) {
+        @include hook-slidenav-container();
+    }
+}
+
+
+// Hooks
+// ========================================================================
+
+@if(mixin-exists(hook-slidenav-misc)) {
+    @include hook-slidenav-misc();
+}
+
+// @mixin hook-slidenav(){}
+// @mixin hook-slidenav-hover(){}
+// @mixin hook-slidenav-active(){}
+// @mixin hook-slidenav-previous(){}
+// @mixin hook-slidenav-next(){}
+// @mixin hook-slidenav-large(){}
+// @mixin hook-slidenav-container(){}
+// @mixin hook-slidenav-misc(){}
+
+
+// Inverse
+// ========================================================================
+
+$inverse-slidenav-color       : rgba($inverse-global-color, 0.7) !default;
+$inverse-slidenav-hover-color : rgba($inverse-global-color, 0.95) !default;
+$inverse-slidenav-active-color: rgba($inverse-global-color, 0.7) !default;
+
+
+
+// @mixin hook-inverse-slidenav(){}
+// @mixin hook-inverse-slidenav-hover(){}
+// @mixin hook-inverse-slidenav-active(){}
+
+//
+// Component: Slidenav
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+
+// Component
+// ========================================================================
+
+
+
+// @mixin hook-slidenav-hover(){}
+
+// @mixin hook-slidenav-active(){}
+
+
+// Icon modifier
+// ========================================================================
+
+// @mixin hook-slidenav-previous(){}
+
+// @mixin hook-slidenav-next(){}
+
+
+// Size modifier
+// ========================================================================
+
+// @mixin hook-slidenav-large(){}
+
+
+// Container
+// ========================================================================
+
+// @mixin hook-slidenav-container(){}
+
+
+// Miscellaneous
+// ========================================================================
+
+// @mixin hook-slidenav-misc(){}
+
+
+// Inverse
+// ========================================================================
+
+// @mixin hook-inverse-slidenav(){}
+// @mixin hook-inverse-slidenav-hover(){}
+// @mixin hook-inverse-slidenav-active(){}

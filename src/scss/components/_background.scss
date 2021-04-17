@@ -1,0 +1,269 @@
+// Name:            Background
+// Description:     Utilities for backgrounds
+//
+// Component:       `x-background-*`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$background-default-background  : $global-background !default;
+$background-muted-background    : $global-muted-background !default;
+$background-primary-background  : $global-primary-background !default;
+$background-secondary-background: $global-secondary-background !default;
+
+
+/* ========================================================================
+   Component: Background
+ ========================================================================== */
+
+
+/* Color
+ ========================================================================== */
+
+.x-background-default {
+    background-color: $background-default-background;
+}
+
+.x-background-muted {
+    background-color: $background-muted-background;
+}
+
+.x-background-primary {
+    background-color: $background-primary-background;
+}
+
+.x-background-secondary {
+    background-color: $background-secondary-background;
+}
+
+
+/* Size
+ ========================================================================== */
+
+.x-background-cover,
+.x-background-contain,
+.x-background-width-1-1,
+.x-background-height-1-1 {
+    background-position: 50% 50%;
+    background-repeat  : no-repeat;
+}
+
+.x-background-cover {
+    background-size: cover;
+}
+
+.x-background-contain {
+    background-size: contain;
+}
+
+.x-background-width-1-1 {
+    background-size: 100%;
+}
+
+.x-background-height-1-1 {
+    background-size: auto 100%;
+}
+
+
+/* Position
+ ========================================================================== */
+
+.x-background-top-left {
+    background-position: 0 0;
+}
+
+.x-background-top-center {
+    background-position: 50% 0;
+}
+
+.x-background-top-right {
+    background-position: 100% 0;
+}
+
+.x-background-center-left {
+    background-position: 0 50%;
+}
+
+.x-background-center-center {
+    background-position: 50% 50%;
+}
+
+.x-background-center-right {
+    background-position: 100% 50%;
+}
+
+.x-background-bottom-left {
+    background-position: 0 100%;
+}
+
+.x-background-bottom-center {
+    background-position: 50% 100%;
+}
+
+.x-background-bottom-right {
+    background-position: 100% 100%;
+}
+
+
+/* Repeat
+ ========================================================================== */
+
+.x-background-norepeat {
+    background-repeat: no-repeat;
+}
+
+
+/* Attachment
+ ========================================================================== */
+
+/*
+ * 1. Fix bug introduced in Chrome 67: the background image is not visible if any element on the page uses `translate3d`
+ */
+
+.x-background-fixed {
+    background-attachment: fixed;
+    /* 1 */
+    backface-visibility  : hidden;
+}
+
+/*
+ * Exclude touch devices because `fixed` doesn't work on iOS and Android
+ */
+
+@media (pointer: coarse) {
+    .x-background-fixed {
+        background-attachment: scroll;
+    }
+}
+
+
+/* Image
+ ========================================================================== */
+
+/* Phone portrait and smaller */
+@media (max-width: $breakpoint-xsmall-max) {
+
+    .x-background-image\:small {
+        background-image: none !important;
+    }
+
+}
+
+/* Phone landscape and smaller */
+@media (max-width: $breakpoint-small-max) {
+
+    .x-background-image\:medium {
+        background-image: none !important;
+    }
+
+}
+
+/* Tablet landscape and smaller */
+@media (max-width: $breakpoint-medium-max) {
+
+    .x-background-image\:large {
+        background-image: none !important;
+    }
+
+}
+
+/* Desktop and smaller */
+@media (max-width: $breakpoint-large-max) {
+
+    .x-background-image\:xlarge {
+        background-image: none !important;
+    }
+
+}
+
+
+/* Blend modes
+ ========================================================================== */
+
+.x-background-blend-multiply {
+    background-blend-mode: multiply;
+}
+
+.x-background-blend-screen {
+    background-blend-mode: screen;
+}
+
+.x-background-blend-overlay {
+    background-blend-mode: overlay;
+}
+
+.x-background-blend-darken {
+    background-blend-mode: darken;
+}
+
+.x-background-blend-lighten {
+    background-blend-mode: lighten;
+}
+
+.x-background-blend-color-dodge {
+    background-blend-mode: color-dodge;
+}
+
+.x-background-blend-color-burn {
+    background-blend-mode: color-burn;
+}
+
+.x-background-blend-hard-light {
+    background-blend-mode: hard-light;
+}
+
+.x-background-blend-soft-light {
+    background-blend-mode: soft-light;
+}
+
+.x-background-blend-difference {
+    background-blend-mode: difference;
+}
+
+.x-background-blend-exclusion {
+    background-blend-mode: exclusion;
+}
+
+.x-background-blend-hue {
+    background-blend-mode: hue;
+}
+
+.x-background-blend-saturation {
+    background-blend-mode: saturation;
+}
+
+.x-background-blend-color {
+    background-blend-mode: color;
+}
+
+.x-background-blend-luminosity {
+    background-blend-mode: luminosity;
+}
+
+
+// Hooks
+// ========================================================================
+
+@if(mixin-exists(hook-background-misc)) {
+    @include hook-background-misc();
+}
+
+// @mixin hook-background-misc(){}
+
+//
+// Component: Background
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+
+// Miscellaneous
+// ========================================================================
+
+// @mixin hook-background-misc(){}

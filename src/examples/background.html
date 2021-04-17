@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Background - Tests</title>
+        <script src="js/test.js"></script>
+    </head>
+
+    <body>
+
+        <div class="x-container">
+
+            <h1>Background</h1>
+
+            <h2>Color, Position, No Repeat, Image</h2>
+
+            <div class="x-child-width-1-4" x-grid>
+                <div>
+
+                    <div class="x-background-norepeat x-background-image:small x-background-default x-background-top-left x-padding x-flex x-flex-center x-flex-middle x-text-center" style="background-image: url('images/photo.jpg'); background-size: 60px 40px;">Default<br>Top Left<br>S</div>
+
+                </div>
+                <div>
+
+                    <div class="x-background-norepeat x-background-image:medium x-background-muted x-background-top-right x-padding x-flex x-flex-center x-flex-middle x-text-center" style="background-image: url('images/photo.jpg'); background-size: 60px 40px;">Muted<br>Top Right<br>M</div>
+
+                </div>
+                <div>
+
+                    <div class="x-background-norepeat x-background-image:large x-background-primary x-background-bottom-left x-padding x-flex x-flex-center x-flex-middle x-text-center" style="background-image: url('images/photo.jpg'); background-size: 60px 40px;">Primary<br>Bottom Left<br>L</div>
+
+                </div>
+                <div>
+
+                    <div class="x-background-norepeat x-background-image:xlarge x-background-secondary x-background-bottom-right x-padding x-flex x-flex-center x-flex-middle x-text-center" style="background-image: url('images/photo.jpg'); background-size: 60px 40px;">Secondary<br>Bottom Right<br>XL</div>
+
+                </div>
+            </div>
+
+            <h2>Cover</h2>
+
+            <div class="x-child-width-1-2:small" x-grid>
+                <div>
+
+                    <div class="x-background-cover x-flex x-flex-center x-flex-middle x-light" style="height: 300px; background-image: url('images/photo.jpg');">
+                        <h1 class="x-heading-large">Fixed Height</h1>
+                    </div>
+
+                </div>
+                <div>
+
+                    <div class="x-background-cover x-position-relative x-light" style="background-image: url('images/photo.jpg');">
+                        <img class="x-invisible" src="images/photo.jpg" alt="">
+                        <div class="x-position-cover x-flex x-flex-center x-flex-middle">
+                            <h1>Responsive Height</h1>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+</html>

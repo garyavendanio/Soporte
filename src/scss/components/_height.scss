@@ -1,0 +1,93 @@
+// Name:            Height
+// Description:     Utilities for heights
+//
+// Component:       `x-height-*`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$height-small-height : 150px !default;
+$height-medium-height: 300px !default;
+$height-large-height : 450px !default;
+
+
+/* ========================================================================
+   Component: Height
+ ========================================================================== */
+
+[class*='x-height'] {
+  box-sizing: border-box;
+}
+
+/*
+ * Only works if parent element has a height set
+ */
+
+.x-height-1-1 {
+  height: 100%;
+}
+
+/*
+ * Useful to create image teasers
+ */
+
+.x-height-viewport {
+  min-height: 100vh;
+}
+
+/*
+ * Pixel
+ * Useful for `overflow: auto`
+ */
+
+.x-height-small {
+  height: $height-small-height;
+}
+
+.x-height-medium {
+  height: $height-medium-height;
+}
+
+.x-height-large {
+  height: $height-large-height;
+}
+
+.x-height-max-small {
+  max-height: $height-small-height;
+}
+
+.x-height-max-medium {
+  max-height: $height-medium-height;
+}
+
+.x-height-max-large {
+  max-height: $height-large-height;
+}
+
+
+// Hooks
+// ========================================================================
+
+@if(mixin-exists(hook-height-misc)) {
+  @include hook-height-misc();
+}
+
+// @mixin hook-height-misc(){}
+
+//
+// Component: Height
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+
+// Miscellaneous
+// ========================================================================
+
+// @mixin hook-height-misc(){}

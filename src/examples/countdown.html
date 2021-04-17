@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Countdown - Tests</title>
+        <script src="js/test.js"></script>
+    </head>
+
+    <body>
+
+        <div class="x-container">
+
+            <h1>Countdown</h1>
+
+            <h2>Grid</h2>
+
+            <div class="x-grid-small x-child-width-auto x-margin" x-grid js-countdown>
+                <div>
+                    <div class="x-countdown-number x-countdown-days"></div>
+                </div>
+                <div class="x-countdown-separator">:</div>
+                <div>
+                    <div class="x-countdown-number x-countdown-hours"></div>
+                </div>
+                <div class="x-countdown-separator">:</div>
+                <div>
+                    <div class="x-countdown-number x-countdown-minutes"></div>
+                </div>
+                <div class="x-countdown-separator">:</div>
+                <div>
+                    <div class="x-countdown-number x-countdown-seconds"></div>
+                </div>
+            </div>
+
+            <div class="x-grid-small x-child-width-auto" x-grid js-countdown>
+                <div>
+                    <div class="x-countdown-number x-countdown-days"></div>
+                    <div class="x-countdown-label x-margin-small x-text-center x-visible:small">Days</div>
+                </div>
+                <div class="x-countdown-separator">:</div>
+                <div>
+                    <div class="x-countdown-number x-countdown-hours"></div>
+                    <div class="x-countdown-label x-margin-small x-text-center x-visible:small">Hours</div>
+                </div>
+                <div class="x-countdown-separator">:</div>
+                <div>
+                    <div class="x-countdown-number x-countdown-minutes"></div>
+                    <div class="x-countdown-label x-margin-small x-text-center x-visible:small">Minutes</div>
+                </div>
+                <div class="x-countdown-separator">:</div>
+                <div>
+                    <div class="x-countdown-number x-countdown-seconds"></div>
+                    <div class="x-countdown-label x-margin-small x-text-center x-visible:small">Seconds</div>
+                </div>
+            </div>
+
+            <h2>Text</h2>
+
+            <div class="x-margin" js-countdown>
+                <span class="x-countdown-number x-countdown-days x-text-middle"></span>
+                <span class="x-countdown-separator x-text-middle">:</span>
+                <span class="x-countdown-number x-countdown-hours x-text-middle"></span>
+                <span class="x-countdown-separator x-text-middle">:</span>
+                <span class="x-countdown-number x-countdown-minutes x-text-middle"></span>
+                <span class="x-countdown-separator x-text-middle">:</span>
+                <span class="x-countdown-number x-countdown-seconds x-text-middle"></span>
+            </div>
+
+            <div js-countdown>
+                <span class="x-countdown-number">
+                    <span class="x-countdown-days"></span><small>d</small>
+                </span>
+                <span class="x-countdown-number">
+                    <span class="x-countdown-hours"></span><small>h</small>
+                </span>
+                <span class="x-countdown-number">
+                    <span class="x-countdown-minutes"></span><small>m</small>
+                </span>
+                <span class="x-countdown-number">
+                    <span class="x-countdown-seconds"></span><small>s</small>
+                </span>
+            </div>
+
+            <h2>JavaScript Options</h2>
+
+            <div class="x-overflow-auto">
+                <table class="x-table x-table-striped">
+                    <thead>
+                        <tr>
+                            <th>Option</th>
+                            <th>Value</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>date</code></td>
+                            <td>String</td>
+                            <td>false</td>
+                            <td>Any string parsable by <code>Date.parse</code> - <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date/parse" target="_blank">Reference</a>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <script>
+
+            var date = (new Date(Date.now() + 864e5 * 7)).toISOString();
+
+            TAGSDEV.util.$$('[js-countdown]').forEach(function(el) {
+                TAGSDEV.countdown(el, {date: date});
+            });
+
+        </script>
+    </body>
+</html>

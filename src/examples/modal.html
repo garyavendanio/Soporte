@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Modal - Tests</title>
+        <script src="js/test.js"></script>
+    </head>
+
+    <body>
+
+        <div class="x-container">
+
+            <h1>Modal</h1>
+
+            <div class="x-margin">
+                <button class="x-button x-button-default" type="button" x-toggle="target: #scrollbar">Toggle scrollbar</button>
+            </div>
+
+            <div class="x-child-width-1-4:medium" x-grid>
+                <div>
+
+                    <h2>Objects</h2>
+
+                    <p x-margin>
+                        <a class="x-button x-button-default" href="#modal" x-toggle>Default</a>
+                        <a class="x-button x-button-default" href="#modal-sections" x-toggle>Sections</a>
+                        <a class="x-button x-button-default" href="#modal-close-outside" x-toggle>Close Outside</a>
+                    </p>
+
+                </div>
+                <div>
+
+                    <h2>Scrollbar</h2>
+
+                    <p x-margin>
+                        <a class="x-button x-button-default" href="#modal-scrollbar" x-toggle>Scrollbar</a>
+                        <a class="x-button x-button-default" href="#modal-overflow" x-toggle>Overflow Auto</a>
+                    </p>
+
+                </div>
+                <div>
+
+                    <h2>Sizes</h2>
+
+                    <p x-margin>
+                        <a class="x-button x-button-default" href="#modal-container" x-toggle>Container</a>
+                        <a class="x-button x-button-default" href="#modal-expand" x-toggle>Expand</a>
+                        <a class="x-button x-button-default" href="#modal-widths" x-toggle>Widths</a>
+                        <a class="x-button x-button-default" href="#modal-full" x-toggle>Full</a>
+                        <a class="x-button x-button-default" href="#modal-full-split" x-toggle>Full Split</a>
+                    </p>
+
+                </div>
+                <div>
+
+                    <h2>Center</h2>
+
+                    <p x-margin>
+                        <a class="x-button x-button-default" href="#modal-center" x-toggle>Center</a>
+                        <a class="x-button x-button-default" href="#modal-center-scrollbar" x-toggle>With scrollbar</a>
+
+                    </p>
+
+                </div>
+                <div>
+
+                    <h2>Media</h2>
+
+                    <p x-margin>
+                        <a class="x-button x-button-default" href="#modal-media-image" x-toggle>Image</a>
+                        <a class="x-button x-button-default" href="#modal-media-video" x-toggle>Video</a>
+                        <a class="x-button x-button-default" href="#modal-media-youtube" x-toggle>YouTube</a>
+                        <a class="x-button x-button-default" href="#modal-media-vimeo" x-toggle>Vimeo</a>
+                    </p>
+
+                </div>
+                <div>
+
+                    <h2>Dialogs</h2>
+
+                    <p x-margin>
+                        <a id="js-modal-dialog" class="x-button x-button-default" href="#">Dialog</a>
+                        <a id="js-modal-alert" class="x-button x-button-default" href="#">Alert</a>
+                        <a id="js-modal-confirm" class="x-button x-button-default" href="#">Confirm</a>
+                        <a id="js-modal-prompt" class="x-button x-button-default" href="#">Prompt</a>
+                    </p>
+
+                </div>
+                <div>
+
+                    <h2>Group</h2>
+
+                    <p x-margin>
+                        <a class="x-button x-button-default" href="#modal-group-1" x-toggle>Modal 1</a>
+                        <a class="x-button x-button-default" href="#modal-group-2" x-toggle>Modal 2</a>
+                    </p>
+
+                </div>
+                <div>
+
+                    <h2>Stack</h2>
+
+                    <p x-margin>
+                        <a class="x-button x-button-default" href="#modal-stack-1" x-toggle>Modal 1</a>
+                        <a class="x-button x-button-default" href="#modal-stack-2" x-toggle>Modal 2</a>
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="x-section x-section-muted x-section-small x-margin">
+            <div class="x-float-left">Left</div>
+            <div class="x-float-right">Right</div>
+            <div class="x-container">Container</div>
+        </div>
+
+        <div id="scrollbar" class="x-container">
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+
+            <h2>JavaScript Options</h2>
+
+            <div class="x-overflow-auto">
+                <table class="x-table x-table-striped">
+                    <thead>
+                        <tr>
+                            <th>Option</th>
+                            <th>Value</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>container</code></td>
+                            <td>Boolean</td>
+                            <td>true</td>
+                            <td>Define a target container via a selector to specify where the modal should be appended in the DOM.</td>
+                        </tr>
+                        <tr>
+                            <td><code>esc-close</code></td>
+                            <td>Boolean</td>
+                            <td>true</td>
+                            <td>Close the modal when <em>Esc</em> key is pressed.</td>
+                        </tr>
+                        <tr>
+                            <td><code>bg-close</code></td>
+                            <td>Boolean</td>
+                            <td>true</td>
+                            <td>Close the modal when background is clicked.</td>
+                        </tr>
+                        <tr>
+                            <td><code>stack</code></td>
+                            <td>Boolean</td>
+                            <td>false</td>
+                            <td>Stack modals, when more than one is open? By default, the previous modal will be hidden.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <div id="modal" x-modal>
+            <div class="x-modal-dialog x-modal-body">
+                <button class="x-modal-close-default" type="button" x-close></button>
+                <h2 class="x-modal-title">Headline</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p class="x-text-right">
+                    <button class="x-button x-button-default x-modal-close" type="button">Cancel</button>
+                    <button class="x-button x-button-primary" type="button">Save</button>
+                </p>
+            </div>
+        </div>
+
+        <div id="modal-sections" x-modal>
+            <div class="x-modal-dialog">
+                <button class="x-modal-close-default" type="button" x-close></button>
+                <div class="x-modal-header">
+                    <h2 class="x-modal-title">Headline</h2>
+                </div>
+                <div class="x-modal-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="x-modal-footer x-text-right">
+                    <button class="x-button x-button-default x-modal-close" type="button">Cancel</button>
+                    <button class="x-button x-button-primary" type="button">Save</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-close-outside" x-modal>
+            <div class="x-modal-dialog x-modal-body">
+                <button class="x-modal-close-outside" type="button" x-close></button>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+
+        <div id="modal-scrollbar" x-modal>
+            <div class="x-modal-dialog x-modal-body">
+
+                <button class="x-modal-close-default" type="button" x-close></button>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            </div>
+        </div>
+
+        <div id="modal-overflow" class="x-modal-container" x-modal>
+            <div class="x-modal-dialog">
+
+                <button class="x-modal-close-default" type="button" x-close></button>
+
+                <div class="x-modal-header">
+                    <h2 class="x-modal-title">Headline</h2>
+                </div>
+
+                <div class="x-modal-body" x-overflow-auto>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                </div>
+
+                <div class="x-modal-footer x-text-right">
+                    <button class="x-button x-button-default x-modal-close" type="button">Cancel</button>
+                    <button class="x-button x-button-primary" type="button">Save</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="modal-container" class="x-modal-container" x-modal>
+            <div class="x-modal-dialog x-modal-body">
+                <button class="x-modal-close-default" type="button" x-close></button>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+
+        <div id="modal-expand" x-modal>
+            <div class="x-modal-dialog x-modal-body x-width-1-1">
+                <button class="x-modal-close-default" type="button" x-close></button>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+
+        <div id="modal-widths" x-modal>
+            <div class="x-modal-dialog x-modal-body x-width-3-4:medium x-width-2-3:large x-width-1-2:xlarge">
+                <button class="x-modal-close-default" type="button" x-close></button>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+
+        <div id="modal-full" class="x-modal-full" x-modal>
+            <div class="x-modal-dialog x-flex x-flex-center x-flex-middle" x-height-viewport>
+                <button class="x-modal-close-full x-close-large" type="button" x-close></button>
+                <div class="x-width-2xlarge x-padding-large">
+                    <h1>Headline</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-full-split" class="x-modal-full" x-modal>
+            <div class="x-modal-dialog">
+                <button class="x-modal-close-full" type="button" x-close></button>
+                <div class="x-grid-collapse x-child-width-1-2:small x-flex-middle" x-grid>
+                    <div class="x-background-cover" style="background-image: url('images/photo.jpg');" x-height-viewport></div>
+                    <div class="x-padding-large">
+                        <h1>Headline</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- x-flex-top is needed to make vertical margin work for IE11 -->
+        <div id="modal-center" class="x-flex-top" x-modal>
+            <div class="x-modal-dialog x-modal-body x-margin-auto-vertical">
+
+                <button class="x-modal-close-default" type="button" x-close></button>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            </div>
+        </div>
+
+        <div id="modal-center-scrollbar" class="x-flex-top" x-modal>
+            <div class="x-modal-dialog x-modal-body x-margin-auto-vertical">
+
+                <button class="x-modal-close-default" type="button" x-close></button>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            </div>
+        </div>
+
+        <div id="modal-media-image" class="x-flex-top" x-modal>
+            <div class="x-modal-dialog x-width-auto x-margin-auto-vertical">
+                <button class="x-modal-close-outside" type="button" x-close></button>
+                <img src="images/photo.jpg" alt="">
+            </div>
+        </div>
+
+        <div id="modal-media-video" class="x-flex-top" x-modal>
+            <div class="x-modal-dialog x-width-auto x-margin-auto-vertical">
+                <button class="x-modal-close-outside" type="button" x-close></button>
+                <video src="https://yootheme.com/site/images/media/yootheme-pro.mp4" controls playsinline x-video></video>
+            </div>
+        </div>
+
+        <div id="modal-media-youtube" class="x-flex-top" x-modal>
+            <div class="x-modal-dialog x-width-auto x-margin-auto-vertical">
+                <button class="x-modal-close-outside" type="button" x-close></button>
+                <iframe src="https://www.youtube-nocookie.com/embed/c2pz2mlSfXA" width="1920" height="1080" frameborder="0" x-video></iframe>
+            </div>
+        </div>
+
+        <div id="modal-media-vimeo" class="x-flex-top" x-modal>
+            <div class="x-modal-dialog x-width-auto x-margin-auto-vertical">
+                <button class="x-modal-close-outside" type="button" x-close></button>
+                <iframe src="https://player.vimeo.com/video/1084537" width="500" height="281" frameborder="0" x-video></iframe>
+            </div>
+        </div>
+
+        <div id="modal-group-1" x-modal>
+            <div class="x-modal-dialog">
+                <button class="x-modal-close-default" type="button" x-close></button>
+                <div class="x-modal-header">
+                    <h2 class="x-modal-title">Headline 1</h2>
+                </div>
+                <div class="x-modal-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="x-modal-footer x-text-right">
+                    <button class="x-button x-button-default x-modal-close" type="button">Cancel</button>
+                    <a href="#modal-group-2" class="x-button x-button-primary" x-toggle>Next</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-group-2" x-modal>
+            <div class="x-modal-dialog">
+                <button class="x-modal-close-default" type="button" x-close></button>
+                <div class="x-modal-header">
+                    <h2 class="x-modal-title">Headline 2</h2>
+                </div>
+                <div class="x-modal-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="x-modal-footer x-text-right">
+                    <button class="x-button x-button-default x-modal-close" type="button">Cancel</button>
+                    <a href="#modal-group-1" class="x-button x-button-primary" x-toggle>Previous</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-stack-1" x-modal>
+            <div class="x-modal-dialog">
+                <button class="x-modal-close-default" type="button" x-close></button>
+                <div class="x-modal-header">
+                    <h2 class="x-modal-title">Headline 1</h2>
+                </div>
+                <div class="x-modal-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="x-modal-footer x-text-right">
+                    <button class="x-button x-button-default x-modal-close" type="button">Cancel</button>
+                    <a href="#modal-stack-2" class="x-button x-button-primary" x-toggle>Next</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-stack-2" x-modal="stack: true">
+            <div class="x-modal-dialog">
+                <button class="x-modal-close-default" type="button" x-close></button>
+                <div class="x-modal-header">
+                    <h2 class="x-modal-title">Headline 2</h2>
+                </div>
+                <div class="x-modal-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="x-modal-footer x-text-right">
+                    <button class="x-button x-button-default x-modal-close" type="button">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+
+            TAGSX.util.on('#js-modal-dialog', 'click', function (e) {
+                e.preventDefault();
+                e.target.blur();
+                TAGSX.modal.dialog('<p class="x-modal-body">TAGSX dialog!</p>');
+            });
+
+            TAGSX.util.on('#js-modal-alert', 'click', function (e) {
+                e.preventDefault();
+                e.target.blur();
+                TAGSX.modal.alert('TAGSX alert!').then(function () {
+                    console.log('Alert closed.')
+                });
+            });
+
+            TAGSX.util.on('#js-modal-confirm', 'click', function (e) {
+                e.preventDefault();
+                e.target.blur();
+                TAGSX.modal.confirm('TAGSX confirm!').then(function () {
+                    console.log('Confirmed.')
+                }, function () {
+                    console.log('Rejected.')
+                });
+            });
+
+            TAGSX.util.on('#js-modal-prompt', 'click', function (e) {
+                e.preventDefault();
+                e.target.blur();
+                TAGSX.modal.prompt('Name:', 'Your name').then(function (name) {
+                    console.log('Prompted:', name)
+                });
+            });
+
+          </script>
+
+    </body>
+</html>

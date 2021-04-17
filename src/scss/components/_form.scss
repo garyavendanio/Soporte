@@ -1,0 +1,1069 @@
+// Name:            Form
+// Description:     Styles for forms
+//
+// Component:       `x-form-*`
+//                  `x-input`
+//                  `x-select`
+//                  `x-textarea`
+//                  `x-radio`
+//                  `x-checkbox`
+//                  `x-legend`
+//                  `x-fieldset`
+//
+// Sub-objects:     `x-form-custom`
+//                  `x-form-stacked`
+//                  `x-form-horizontal`
+//                  `x-form-label`
+//                  `x-form-controls`
+//                  `x-form-icon`
+//                  `x-form-icon-flip`
+//
+// Modifiers:       `x-form-small`
+//                  `x-form-large`
+//                  `x-form-danger`
+//                  `x-form-success`
+//                  `x-form-blank`
+//                  `x-form-width-xsmall`
+//                  `x-form-width-small`
+//                  `x-form-width-medium`
+//                  `x-form-width-large`
+//                  `x-form-controls-text`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$form-height            : $global-control-height !default;
+$form-line-height       : $form-height !default;
+$form-padding-horizontal: 10px !default;
+$form-padding-vertical  : 4px !default;
+
+$form-background: $global-muted-background !default;
+$form-color     : $global-color !default;
+
+$form-focus-background: $global-muted-background !default;
+$form-focus-color     : $global-color !default;
+
+$form-disabled-background: $global-muted-background !default;
+$form-disabled-color     : $global-muted-color !default;
+
+$form-placeholder-color: $global-muted-color !default;
+
+$form-small-height            : $global-control-small-height !default;
+$form-small-padding-horizontal: 8px !default;
+$form-small-line-height       : $form-small-height !default;
+$form-small-font-size         : $global-small-font-size !default;
+
+$form-large-height            : $global-control-large-height !default;
+$form-large-padding-horizontal: 12px !default;
+$form-large-line-height       : $form-large-height !default;
+$form-large-font-size         : $global-medium-font-size !default;
+
+$form-danger-color : $global-danger-background !default;
+$form-success-color: $global-success-background !default;
+
+$form-width-xsmall: 50px !default;
+$form-width-small : 130px !default;
+$form-width-medium: 200px !default;
+$form-width-large : 500px !default;
+
+$form-select-padding-right      : 20px !default;
+$form-select-icon-color         : $global-color !default;
+$form-select-option-color       : #444 !default;
+$form-select-disabled-icon-color: $global-muted-color !default;
+
+$form-datalist-padding-right: 20px !default;
+$form-datalist-icon-color   : $global-color !default;
+
+$form-radio-size      : 16px !default;
+$form-radio-margin-top: -4px !default;
+$form-radio-background: darken($global-muted-background, 5%) !default;
+
+$form-radio-checked-background: $global-primary-background !default;
+$form-radio-checked-icon-color: $global-inverse-color !default;
+
+$form-radio-checked-focus-background: darken($global-primary-background, 10%) !default;
+
+$form-radio-disabled-background: $global-muted-background !default;
+$form-radio-disabled-icon-color: $global-muted-color !default;
+
+$form-legend-font-size  : $global-large-font-size !default;
+$form-legend-line-height: 1.4 !default;
+
+$form-stacked-margin-bottom: $global-small-margin !default;
+
+$form-horizontal-label-width              : 200px !default;
+$form-horizontal-label-margin-top         : 7px !default;
+$form-horizontal-controls-margin-left     : 215px !default;
+$form-horizontal-controls-text-padding-top: 7px !default;
+
+$form-icon-width      : $form-height !default;
+$form-icon-color      : $global-muted-color !default;
+$form-icon-hover-color: $global-color !default;
+
+$internal-form-select-image                : "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22#000%22%20points%3D%2212%201%209%206%2015%206%22%20%2F%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22#000%22%20points%3D%2212%2013%209%208%2015%208%22%20%2F%3E%0A%3C%2Fsvg%3E%0A" !default;
+$internal-form-datalist-image              : "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22#000%22%20points%3D%2212%2012%208%206%2016%206%22%20%2F%3E%0A%3C%2Fsvg%3E%0A" !default;
+$internal-form-radio-image                 : "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22#000%22%20cx%3D%228%22%20cy%3D%228%22%20r%3D%222%22%20%2F%3E%0A%3C%2Fsvg%3E" !default;
+$internal-form-checkbox-image              : "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2211%22%20viewBox%3D%220%200%2014%2011%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22#000%22%20points%3D%2212%201%205%207.5%202%205%201%205.5%205%2010%2013%201.5%22%20%2F%3E%0A%3C%2Fsvg%3E%0A" !default;
+$internal-form-checkbox-indeterminate-image: "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22#000%22%20x%3D%223%22%20y%3D%228%22%20width%3D%2210%22%20height%3D%221%22%20%2F%3E%0A%3C%2Fsvg%3E" !default;
+
+
+/* ========================================================================
+   Component: Form
+ ========================================================================== */
+
+/*
+ * 1. Define consistent box sizing.
+ *    Default is `content-box` with following exceptions set to `border-box`
+ *    `select`, `input[type="checkbox"]` and `input[type="radio"]`
+ *    `input[type="search"]` in Chrome, Safari and Opera
+ *    `input[type="color"]` in Firefox
+ * 2. Address margins set differently in Firefox/IE and Chrome/Safari/Opera.
+ * 3. Remove `border-radius` in iOS.
+ * 4. Change font properties to `inherit` in all browsers.
+ */
+
+.x-input,
+.x-select,
+.x-textarea,
+.x-radio,
+.x-checkbox {
+    /* 1 */
+    box-sizing   : border-box;
+    /* 2 */
+    margin       : 0;
+    /* 3 */
+    border-radius: 0;
+    /* 4 */
+    font         : inherit;
+}
+
+/*
+ * Show the overflow in Edge.
+ */
+
+.x-input {
+    overflow: visible;
+}
+
+/*
+ * Remove the inheritance of text transform in Firefox.
+ */
+
+.x-select {
+    text-transform: none;
+}
+
+/*
+ * 1. Change font properties to `inherit` in all browsers
+ * 2. Don't inherit the `font-weight` and use `bold` instead.
+ * NOTE: Both declarations don't work in Chrome, Safari and Opera.
+ */
+
+.x-select optgroup {
+    /* 1 */
+    font       : inherit;
+    /* 2 */
+    font-weight: bold;
+}
+
+/*
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+.x-textarea {
+    overflow: auto;
+}
+
+/*
+ * Remove the inner padding and cancel buttons in Chrome on OS X and Safari on OS X.
+ */
+
+.x-input[type="search"]::-webkit-search-cancel-button,
+.x-input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+
+/*
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+.x-input[type="number"]::-webkit-inner-spin-button,
+.x-input[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+/*
+ * Removes placeholder transparency in Firefox.
+ */
+
+.x-input::-moz-placeholder,
+.x-textarea::-moz-placeholder {
+    opacity: 1;
+}
+
+/*
+ * Improves consistency of cursor style for clickable elements
+ */
+
+.x-radio:not(:disabled),
+.x-checkbox:not(:disabled) {
+    cursor: pointer;
+}
+
+/*
+ * Define consistent border, margin, and padding.
+ */
+
+.x-fieldset {
+    border : none;
+    margin : 0;
+    padding: 0;
+}
+
+
+/* Input, select and textarea
+ * Allowed: `text`, `password`, `datetime`, `datetime-local`, `date`,  `month`,
+            `time`, `week`, `number`, `email`, `url`, `search`, `tel`, `color`
+ * Disallowed: `range`, `radio`, `checkbox`, `file`, `submit`, `reset` and `image`
+ ========================================================================== */
+
+/*
+ * Remove default style in iOS.
+ */
+
+.x-input,
+.x-textarea {
+    -webkit-appearance: none;
+}
+
+/*
+ * 1. Prevent content overflow if a fixed width is used
+ * 2. Take the full width
+ * 3. Reset default
+ * 4. Style
+ */
+
+.x-input,
+.x-select,
+.x-textarea {
+    /* 1 */
+    max-width : 100%;
+    /* 2 */
+    width     : 100%;
+    /* 3 */
+    border    : 0 none;
+    /* 4 */
+    padding   : 0 $form-padding-horizontal;
+    background: $form-background;
+    color     : $form-color;
+
+    @if(mixin-exists(hook-form)) {
+        @include hook-form();
+    }
+}
+
+/*
+ * Single-line
+ * 1. Allow any element to look like an `input` or `select` element
+ * 2. Make sure line-height is not larger than height
+ *    Also needed to center the text vertically
+ */
+
+.x-input,
+.x-select:not([multiple]):not([size]) {
+    height        : $form-height;
+    vertical-align: middle;
+    /* 1 */
+    display       : inline-block;
+
+    @if(mixin-exists(hook-form-single-line)) {
+        @include hook-form-single-line();
+    }
+}
+
+/* 2 */
+.x-input:not(input),
+.x-select:not(select) {
+    line-height: $form-line-height;
+}
+
+/*
+ * Multi-line
+ */
+
+.x-select[multiple],
+.x-select[size],
+.x-textarea {
+    padding-top   : $form-padding-vertical;
+    padding-bottom: $form-padding-vertical;
+    vertical-align: top;
+
+    @if(mixin-exists(hook-form-multi-line)) {
+        @include hook-form-multi-line();
+    }
+}
+
+.x-select[multiple],
+.x-select[size] {
+    resize: vertical;
+}
+
+/* Focus */
+.x-input:focus,
+.x-select:focus,
+.x-textarea:focus {
+    outline         : none;
+    background-color: $form-focus-background;
+    color           : $form-focus-color;
+
+    @if(mixin-exists(hook-form-focus)) {
+        @include hook-form-focus();
+    }
+}
+
+/* Disabled */
+.x-input:disabled,
+.x-select:disabled,
+.x-textarea:disabled {
+    background-color: $form-disabled-background;
+    color           : $form-disabled-color;
+
+    @if(mixin-exists(hook-form-disabled)) {
+        @include hook-form-disabled();
+    }
+}
+
+/*
+ * Placeholder
+ */
+
+.x-input::-ms-input-placeholder {
+    color: $form-placeholder-color !important;
+}
+
+.x-input::placeholder {
+    color: $form-placeholder-color;
+}
+
+.x-textarea::-ms-input-placeholder {
+    color: $form-placeholder-color !important;
+}
+
+.x-textarea::placeholder {
+    color: $form-placeholder-color;
+}
+
+
+/* Style modifier (`x-input`, `x-select` and `x-textarea`)
+ ========================================================================== */
+
+/*
+ * Small
+ */
+
+.x-form-small {
+    font-size: $form-small-font-size;
+}
+
+.x-form-small:not(textarea):not([multiple]):not([size]) {
+    height       : $form-small-height;
+    padding-left : $form-small-padding-horizontal;
+    padding-right: $form-small-padding-horizontal;
+}
+
+.x-form-small:not(select):not(input):not(textarea) {
+    line-height: $form-small-line-height;
+}
+
+/*
+ * Large
+ */
+
+.x-form-large {
+    font-size: $form-large-font-size;
+}
+
+.x-form-large:not(textarea):not([multiple]):not([size]) {
+    height       : $form-large-height;
+    padding-left : $form-large-padding-horizontal;
+    padding-right: $form-large-padding-horizontal;
+}
+
+.x-form-large:not(select):not(input):not(textarea) {
+    line-height: $form-large-line-height;
+}
+
+
+/* Style modifier (`x-input`, `x-select` and `x-textarea`)
+ ========================================================================== */
+
+/*
+ * Error
+ */
+
+.x-form-danger,
+.x-form-danger:focus {
+    color: $form-danger-color;
+
+    @if(mixin-exists(hook-form-danger)) {
+        @include hook-form-danger();
+    }
+}
+
+/*
+ * Success
+ */
+
+.x-form-success,
+.x-form-success:focus {
+    color: $form-success-color;
+
+    @if(mixin-exists(hook-form-success)) {
+        @include hook-form-success();
+    }
+}
+
+/*
+ * Blank
+ */
+
+.x-form-blank {
+    background: none;
+
+    @if(mixin-exists(hook-form-blank)) {
+        @include hook-form-blank();
+    }
+}
+
+.x-form-blank:focus {
+    @if(mixin-exists(hook-form-blank-focus)) {
+        @include hook-form-blank-focus();
+    }
+}
+
+
+/* Width modifiers (`x-input`, `x-select` and `x-textarea`)
+ ========================================================================== */
+
+/*
+ * Fixed widths
+ * Different widths for mini sized `input` and `select` elements
+ */
+
+input.x-form-width-xsmall {
+    width: $form-width-xsmall;
+}
+
+select.x-form-width-xsmall {
+    width: ($form-width-xsmall + 25px);
+}
+
+.x-form-width-small {
+    width: $form-width-small;
+}
+
+.x-form-width-medium {
+    width: $form-width-medium;
+}
+
+.x-form-width-large {
+    width: $form-width-large;
+}
+
+
+/* Select
+ ========================================================================== */
+
+/*
+ * 1. Remove default style. Also works in Firefox
+ * 2. Style
+ * 3. Remove default style in IE 10/11
+ * 4. Set `color` for options in the select dropdown, because the inherited `color` might be too light.
+ */
+
+.x-select:not([multiple]):not([size]) {
+    /* 1 */
+    -webkit-appearance: none;
+    -moz-appearance   : none;
+    /* 2 */
+    padding-right     : $form-select-padding-right;
+    @include svg-fill($internal-form-select-image, "#000", $form-select-icon-color);
+    background-repeat  : no-repeat;
+    background-position: 100% 50%;
+}
+
+/* 3 */
+.x-select:not([multiple]):not([size])::-ms-expand {
+    display: none;
+}
+
+/* 4 */
+.x-select:not([multiple]):not([size]) option {
+    color: $form-select-option-color;
+}
+
+/*
+ * Disabled
+ */
+
+.x-select:not([multiple]):not([size]):disabled {
+    @include svg-fill($internal-form-select-image, "#000", $form-select-disabled-icon-color);
+}
+
+
+/* Datalist
+ ========================================================================== */
+
+/*
+ * 1. Remove default style in Chrome
+ */
+
+.x-input[list] {
+    padding-right      : $form-datalist-padding-right;
+    background-repeat  : no-repeat;
+    background-position: 100% 50%;
+}
+
+.x-input[list]:hover,
+.x-input[list]:focus {
+    @include svg-fill($internal-form-datalist-image, "#000", $form-datalist-icon-color);
+}
+
+/* 1 */
+.x-input[list]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+
+/* Radio and checkbox
+ * Note: Does not work in IE11
+ ========================================================================== */
+
+/*
+ * 1. Style
+ * 2. Make box more robust so it clips the child element
+ * 3. Vertical alignment
+ * 4. Remove default style
+ * 5. Fix black background on iOS
+ * 6. Center icons
+ */
+
+.x-radio,
+.x-checkbox {
+    /* 1 */
+    display            : inline-block;
+    height             : $form-radio-size;
+    width              : $form-radio-size;
+    /* 2 */
+    overflow           : hidden;
+    /* 3 */
+    margin-top         : $form-radio-margin-top;
+    vertical-align     : middle;
+    /* 4 */
+    -webkit-appearance : none;
+    -moz-appearance    : none;
+    /* 5 */
+    background-color   : $form-radio-background;
+    /* 6 */
+    background-repeat  : no-repeat;
+    background-position: 50% 50%;
+
+    @if(mixin-exists(hook-form-radio)) {
+        @include hook-form-radio();
+    }
+}
+
+.x-radio {
+    border-radius: 50%;
+}
+
+/* Focus */
+.x-radio:focus,
+.x-checkbox:focus {
+    outline: none;
+
+    @if(mixin-exists(hook-form-radio-focus)) {
+        @include hook-form-radio-focus();
+    }
+}
+
+/*
+ * Checked
+ */
+
+.x-radio:checked,
+.x-checkbox:checked,
+.x-checkbox:indeterminate {
+    background-color: $form-radio-checked-background;
+
+    @if(mixin-exists(hook-form-radio-checked)) {
+        @include hook-form-radio-checked();
+    }
+}
+
+/* Focus */
+.x-radio:checked:focus,
+.x-checkbox:checked:focus,
+.x-checkbox:indeterminate:focus {
+    background-color: $form-radio-checked-focus-background;
+
+    @if(mixin-exists(hook-form-radio-checked-focus)) {
+        @include hook-form-radio-checked-focus();
+    }
+}
+
+/*
+ * Icons
+ */
+
+.x-radio:checked {
+    @include svg-fill($internal-form-radio-image, "#000", $form-radio-checked-icon-color);
+}
+
+.x-checkbox:checked {
+    @include svg-fill($internal-form-checkbox-image, "#000", $form-radio-checked-icon-color);
+}
+
+.x-checkbox:indeterminate {
+    @include svg-fill($internal-form-checkbox-indeterminate-image, "#000", $form-radio-checked-icon-color);
+}
+
+/*
+ * Disabled
+ */
+
+.x-radio:disabled,
+.x-checkbox:disabled {
+    background-color: $form-radio-disabled-background;
+
+    @if(mixin-exists(hook-form-radio-disabled)) {
+        @include hook-form-radio-disabled();
+    }
+}
+
+.x-radio:disabled:checked {
+    @include svg-fill($internal-form-radio-image, "#000", $form-radio-disabled-icon-color);
+}
+
+.x-checkbox:disabled:checked {
+    @include svg-fill($internal-form-checkbox-image, "#000", $form-radio-disabled-icon-color);
+}
+
+.x-checkbox:disabled:indeterminate {
+    @include svg-fill($internal-form-checkbox-indeterminate-image, "#000", $form-radio-disabled-icon-color);
+}
+
+
+/* Legend
+ ========================================================================== */
+
+/*
+ * Legend
+ * 1. Behave like block element
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove padding so people aren't caught out if they zero out fieldsets.
+ * 4. Style
+ */
+
+.x-legend {
+    /* 1 */
+    width      : 100%;
+    /* 2 */
+    color      : inherit;
+    /* 3 */
+    padding    : 0;
+    /* 4 */
+    font-size  : $form-legend-font-size;
+    line-height: $form-legend-line-height;
+
+    @if(mixin-exists(hook-form-legend)) {
+        @include hook-form-legend();
+    }
+}
+
+
+/* Custom controls
+ ========================================================================== */
+
+/*
+ * 1. Container fits its content
+ * 2. Create position context
+ * 3. Prevent content overflow
+ * 4. Behave like most inline-block elements
+ */
+
+.x-form-custom {
+    /* 1 */
+    display       : inline-block;
+    /* 2 */
+    position      : relative;
+    /* 3 */
+    max-width     : 100%;
+    /* 4 */
+    vertical-align: middle;
+}
+
+/*
+ * 1. Position and resize the form control to always cover its container
+ * 2. Required for Firefox for positioning to the left
+ * 3. Required for Webkit to make `height` work
+ * 4. Hide controle and show cursor
+ * 5. Needed for the cursor
+ * 6. Clip height caused by 5. Needed for Webkit only
+ */
+
+.x-form-custom select,
+.x-form-custom input[type="file"] {
+    /* 1 */
+    position          : absolute;
+    top               : 0;
+    z-index           : 1;
+    width             : 100%;
+    height            : 100%;
+    /* 2 */
+    left              : 0;
+    /* 3 */
+    -webkit-appearance: none;
+    /* 4 */
+    opacity           : 0;
+    cursor            : pointer;
+}
+
+.x-form-custom input[type="file"] {
+    /* 5 */
+    font-size: 500px;
+    /* 6 */
+    overflow : hidden;
+}
+
+
+/* Label
+ ========================================================================== */
+
+.x-form-label {
+    @if(mixin-exists(hook-form-label)) {
+        @include hook-form-label();
+    }
+}
+
+
+/* Layout
+ ========================================================================== */
+
+/*
+ * Stacked
+ */
+
+.x-form-stacked .x-form-label {
+    display      : block;
+    margin-bottom: $form-stacked-margin-bottom;
+
+    @if(mixin-exists(hook-form-stacked-label)) {
+        @include hook-form-stacked-label();
+    }
+}
+
+/*
+ * Horizontal
+ */
+
+/* Tablet portrait and smaller */
+@media (max-width: $breakpoint-small-max) {
+
+    /* Behave like `x-form-stacked` */
+    .x-form-horizontal .x-form-label {
+        display      : block;
+        margin-bottom: $form-stacked-margin-bottom;
+
+        @if(mixin-exists(hook-form-stacked-label)) {
+            @include hook-form-stacked-label();
+        }
+    }
+
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium) {
+
+    .x-form-horizontal .x-form-label {
+        width     : $form-horizontal-label-width;
+        margin-top: $form-horizontal-label-margin-top;
+        float     : left;
+
+        @if(mixin-exists(hook-form-horizontal-label)) {
+            @include hook-form-horizontal-label();
+        }
+    }
+
+    .x-form-horizontal .x-form-controls {
+        margin-left: $form-horizontal-controls-margin-left;
+    }
+
+    /* Better vertical alignment if controls are checkboxes and radio buttons with text */
+    .x-form-horizontal .x-form-controls-text {
+        padding-top: $form-horizontal-controls-text-padding-top;
+    }
+
+}
+
+
+/* Icons
+ ========================================================================== */
+
+/*
+ * 1. Set position
+ * 2. Set width
+ * 3. Center icon vertically and horizontally
+ * 4. Style
+ */
+
+.x-form-icon {
+    /* 1 */
+    position       : absolute;
+    top            : 0;
+    bottom         : 0;
+    left           : 0;
+    /* 2 */
+    width          : $form-icon-width;
+    /* 3 */
+    display        : inline-flex;
+    justify-content: center;
+    align-items    : center;
+    /* 4 */
+    color          : $form-icon-color;
+}
+
+/*
+ * Required for `a`.
+ */
+
+.x-form-icon:hover {
+    color: $form-icon-hover-color;
+}
+
+/*
+ * Make `input` element clickable through icon, e.g. if it's a `span`
+ */
+
+.x-form-icon:not(a):not(button):not(input) {
+    pointer-events: none;
+}
+
+/*
+ * Input padding
+ */
+
+.x-form-icon:not(.x-form-icon-flip)~.x-input {
+    padding-left: $form-icon-width !important;
+}
+
+/*
+ * Position modifier
+ */
+
+.x-form-icon-flip {
+    right: 0;
+    left : auto;
+}
+
+.x-form-icon-flip~.x-input {
+    padding-right: $form-icon-width !important;
+}
+
+
+// Hooks
+// ========================================================================
+
+@if(mixin-exists(hook-form-misc)) {
+    @include hook-form-misc();
+}
+
+// @mixin hook-form(){}
+// @mixin hook-form-single-line(){}
+// @mixin hook-form-multi-line(){}
+// @mixin hook-form-focus(){}
+// @mixin hook-form-disabled(){}
+// @mixin hook-form-danger(){}
+// @mixin hook-form-success(){}
+// @mixin hook-form-blank(){}
+// @mixin hook-form-blank-focus(){}
+// @mixin hook-form-radio(){}
+// @mixin hook-form-radio-focus(){}
+// @mixin hook-form-radio-checked(){}
+// @mixin hook-form-radio-checked-focus(){}
+// @mixin hook-form-radio-disabled(){}
+// @mixin hook-form-legend(){}
+// @mixin hook-form-label(){}
+// @mixin hook-form-stacked-label(){}
+// @mixin hook-form-horizontal-label(){}
+// @mixin hook-form-misc(){}
+
+
+// Inverse
+// ========================================================================
+
+$inverse-form-background       : $inverse-global-muted-background !default;
+$inverse-form-color            : $inverse-global-color !default;
+$inverse-form-focus-background : $inverse-global-muted-background !default;
+$inverse-form-focus-color      : $inverse-global-color !default;
+$inverse-form-placeholder-color: $inverse-global-muted-color !default;
+
+$inverse-form-select-icon-color: $inverse-global-color !default;
+
+$inverse-form-datalist-icon-color: $inverse-global-color !default;
+
+$inverse-form-radio-background: darken($inverse-global-muted-background, 5%) !default;
+
+$inverse-form-radio-checked-background: $inverse-global-primary-background !default;
+$inverse-form-radio-checked-icon-color: $inverse-global-inverse-color !default;
+
+$inverse-form-radio-checked-focus-background: darken($inverse-global-primary-background, 10%) !default;
+
+$inverse-form-icon-color      : $inverse-global-muted-color !default;
+$inverse-form-icon-hover-color: $inverse-global-color !default;
+
+
+
+// @mixin hook-inverse-form(){}
+// @mixin hook-inverse-form-focus(){}
+// @mixin hook-inverse-form-radio(){}
+// @mixin hook-inverse-form-radio-focus(){}
+// @mixin hook-inverse-form-radio-checked(){}
+// @mixin hook-inverse-form-radio-checked-focus(){}
+// @mixin hook-inverse-form-label(){}
+
+//
+// Component: Form
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$form-line-height:                               $form-height - (2* $form-border-width) !default;
+
+$form-background:                                $global-background !default;
+$form-focus-background:                          $global-background !default;
+
+$form-small-line-height:                         $form-small-height - (2* $form-border-width) !default;
+$form-large-line-height:                         $form-large-height - (2* $form-border-width) !default;
+
+$form-radio-background:                          transparent !default;
+
+$form-stacked-margin-bottom:                     5px !default;
+
+//
+// New
+//
+
+$form-border-width:                              $global-border-width !default;
+$form-border:                                    $global-border !default;
+
+$form-focus-border:                              $global-primary-background !default;
+
+$form-disabled-border:                           $global-border !default;
+
+$form-danger-border:                             $global-danger-background !default;
+$form-success-border:                            $global-success-background !default;
+
+$form-blank-focus-border:                        $global-border !default;
+$form-blank-focus-border-style:                  dashed !default;
+
+$form-radio-border-width:                        $global-border-width !default;
+$form-radio-border:                              darken($global-border, 10%) !default;
+
+$form-radio-focus-border:                        $global-primary-background !default;
+
+$form-radio-checked-border:                      transparent !default;
+
+$form-radio-disabled-border:                     $global-border !default;
+
+$form-label-color:                               $global-emphasis-color !default;
+$form-label-font-size:                           $global-small-font-size !default;
+
+
+// Component
+// ========================================================================
+
+
+
+// @mixin hook-form-single-line(){}
+
+// @mixin hook-form-multi-line(){}
+
+
+
+
+
+
+// Style modifiers
+// ========================================================================
+
+
+
+
+
+
+
+
+
+
+// Radio and checkbox
+// ========================================================================
+
+
+
+
+
+
+
+// @mixin hook-form-radio-checked-focus(){}
+
+
+
+
+// Legend
+// ========================================================================
+
+// @mixin hook-form-legend(){}
+
+
+// Label
+// ========================================================================
+
+
+
+
+// Layout
+// ========================================================================
+
+// @mixin hook-form-stacked-label(){}
+
+// @mixin hook-form-horizontal-label(){}
+
+
+// Miscellaneous
+// ========================================================================
+
+// @mixin hook-form-misc(){}
+
+
+// Inverse
+// ========================================================================
+
+$inverse-form-label-color:                       $inverse-global-emphasis-color !default;
+
+
+
+
+
+
+
+
+// @mixin hook-inverse-form-radio-checked-focus(){}
+

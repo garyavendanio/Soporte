@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Grid - Tests</title>
+        <script src="js/test.js"></script>
+        <style type="text/css">
+
+            .x-panel {
+                padding: 10px;
+                text-align: center;
+            }
+
+            :nth-child(10n-9) > .x-panel { background: rgba(0,0,0,0.1); }
+            :nth-child(10n-8) > .x-panel { background: rgba(0,0,0,0.15); }
+            :nth-child(10n-7) > .x-panel { background: rgba(0,0,0,0.2); }
+            :nth-child(10n-6) > .x-panel { background: rgba(0,0,0,0.25); }
+            :nth-child(10n-5) > .x-panel { background: rgba(0,0,0,0.3); }
+            :nth-child(10n-4) > .x-panel { background: rgba(0,0,0,0.35); }
+            :nth-child(10n-3) > .x-panel { background: rgba(0,0,0,0.40); }
+            :nth-child(10n-2) > .x-panel { background: rgba(0,0,0,0.45); }
+            :nth-child(10n-1) > .x-panel { background: rgba(0,0,0,0.50); }
+            :nth-child(10n) > .x-panel { background: rgba(0,0,0,0.55); }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div class="x-container">
+
+            <h1>Grid</h1>
+
+            <div class="x-child-width-1-2" x-grid>
+                <div><div class="x-panel">1-2</div></div>
+                <div><div class="x-panel">1-2</div></div>
+            </div>
+
+            <div class="x-child-width-1-2:medium x-grid-match" x-grid>
+                <div><div class="x-panel">1-2-M</div></div>
+                <div>
+                    <div class="x-child-width-1-2:large" x-grid>
+                        <div><div class="x-panel">1-2-L</div></div>
+                        <div><div class="x-panel">1-2-L</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="x-child-width-1-4:medium x-grid-match" x-grid>
+                <div><div class="x-panel">1-4-M<br>...<br>...</div></div>
+                <div><div class="x-panel">1-4-M</div></div>
+                <div class="x-width-1-2:medium">
+                    <div class="x-child-width-1-2:large x-grid-match" x-grid>
+                        <div><div class="x-panel">1-2-L<br>...</div></div>
+                        <div><div class="x-panel">1-2-L</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="x-child-width-1-2:medium x-grid-match" x-grid>
+                <div><div class="x-panel">1-2-M</div></div>
+                <div>
+                    <div class="x-panel">1-2-M</div>
+                    <div class="x-panel x-margin-medium">1-2-M</div>
+                </div>
+            </div>
+
+            <div x-grid>
+                <div class="x-width-1-2:medium"><div class="x-panel">1-2-M</div></div>
+                <div class="x-width-1-4:medium"><div class="x-panel">1-4-M</div></div>
+                <div class="x-width-1-4:medium"><div class="x-panel">1-4-M</div></div>
+                <div class="x-width-1-5:medium"><div class="x-panel">1-5-M</div></div>
+                <div class="x-width-1-5:medium"><div class="x-panel">1-5-M</div></div>
+                <div class="x-width-3-5:medium"><div class="x-panel">3-5-M</div></div>
+            </div>
+
+            <div x-grid>
+                <div class="x-width-auto:medium"><div class="x-panel">Auto-M</div></div>
+                <div class="x-width-1-3:medium"><div class="x-panel">1-3-M</div></div>
+                <div class="x-width-expand:medium"><div class="x-panel">Expand-M</div></div>
+            </div>
+
+            <h3>Divider</h3>
+
+            <div class="x-grid-divider x-child-width-1-2" x-grid>
+                <div><div class="x-panel">1-2</div></div>
+                <div><div class="x-panel">1-2</div></div>
+            </div>
+
+            <div class="x-grid-divider x-child-width-1-2:medium x-grid-match" x-grid>
+                <div><div class="x-panel">1-2-M</div></div>
+                <div>
+                    <div class="x-grid-divider x-child-width-1-2:large" x-grid>
+                        <div><div class="x-panel">1-2-L</div></div>
+                        <div><div class="x-panel">1-2-L</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="x-grid-divider x-child-width-1-4:medium x-grid-match" x-grid>
+                <div><div class="x-panel">1-4-M<br>...<br>...</div></div>
+                <div><div class="x-panel">1-4-M</div></div>
+                <div class="x-width-1-2:medium">
+                    <div class="x-grid-divider x-child-width-1-2:large x-grid-match" x-grid>
+                        <div><div class="x-panel">1-2-L<br>...</div></div>
+                        <div><div class="x-panel">1-2-L</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="x-grid-divider x-child-width-1-2:medium x-grid-match" x-grid>
+                <div><div class="x-panel">1-2-M</div></div>
+                <div>
+                    <div class="x-panel">1-2-M</div>
+                    <div class="x-panel x-margin-medium">1-2-M</div>
+                </div>
+            </div>
+
+            <div class="x-grid-divider" x-grid>
+                <div class="x-width-1-2:medium"><div class="x-panel">1-2-M</div></div>
+                <div class="x-width-1-4:medium"><div class="x-panel">1-4-M</div></div>
+                <div class="x-width-1-4:medium"><div class="x-panel">1-4-M</div></div>
+                <div class="x-width-1-5:medium"><div class="x-panel">1-5-M</div></div>
+                <div class="x-width-1-5:medium"><div class="x-panel">1-5-M</div></div>
+                <div class="x-width-3-5:medium"><div class="x-panel">3-5-M</div></div>
+            </div>
+
+            <div class="x-grid-divider" x-grid>
+                <div class="x-width-auto:medium"><div class="x-panel">Auto-M</div></div>
+                <div class="x-width-1-3:medium"><div class="x-panel">1-3-M</div></div>
+                <div class="x-width-expand:medium"><div class="x-panel">Expand-M</div></div>
+            </div>
+
+            <h2>Small</h2>
+
+            <div class="x-grid-small x-child-width-1-2" x-grid>
+                <div><div class="x-panel">1-2</div></div>
+                <div><div class="x-panel">1-2</div></div>
+            </div>
+
+            <div class="x-grid-small x-child-width-1-2:medium x-grid-match" x-grid>
+                <div><div class="x-panel">1-2-M</div></div>
+                <div>
+                    <div class="x-grid-small x-child-width-1-2:large" x-grid>
+                        <div><div class="x-panel">1-2-L</div></div>
+                        <div><div class="x-panel">1-2-L</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="x-grid-small x-child-width-1-4:medium x-grid-match" x-grid>
+                <div><div class="x-panel">1-4-M<br>...<br>...</div></div>
+                <div><div class="x-panel">1-4-M</div></div>
+                <div class="x-width-1-2:medium">
+                    <div class="x-grid-small x-child-width-1-2:large x-grid-match" x-grid>
+                        <div><div class="x-panel">1-2-L<br>...</div></div>
+                        <div><div class="x-panel">1-2-L</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="x-grid-small x-child-width-1-2:medium x-grid-match" x-grid>
+                <div><div class="x-panel">1-2-M</div></div>
+                <div>
+                    <div class="x-panel">1-2-M</div>
+                    <div class="x-panel x-margin">1-2-M</div>
+                </div>
+            </div>
+
+            <div class="x-grid-small" x-grid>
+                <div class="x-width-1-2:medium"><div class="x-panel">1-2-M</div></div>
+                <div class="x-width-1-4:medium"><div class="x-panel">1-4-M</div></div>
+                <div class="x-width-1-4:medium"><div class="x-panel">1-4-M</div></div>
+                <div class="x-width-1-5:medium"><div class="x-panel">1-5-M</div></div>
+                <div class="x-width-1-5:medium"><div class="x-panel">1-5-M</div></div>
+                <div class="x-width-3-5:medium"><div class="x-panel">3-5-M</div></div>
+            </div>
+
+            <div class="x-grid-small" x-grid>
+                <div class="x-width-auto:medium"><div class="x-panel">Auto-M</div></div>
+                <div class="x-width-1-3:medium"><div class="x-panel">1-3-M</div></div>
+                <div class="x-width-expand:medium"><div class="x-panel">Expand-M</div></div>
+            </div>
+
+            <h3>Divider</h3>
+
+            <div class="x-grid-small x-grid-divider x-child-width-1-2" x-grid>
+                <div><div class="x-panel">1-2</div></div>
+                <div><div class="x-panel">1-2</div></div>
+            </div>
+
+            <div class="x-grid-small x-grid-divider x-child-width-1-2:medium x-grid-match" x-grid>
+                <div><div class="x-panel">1-2-M</div></div>
+                <div>
+                    <div class="x-grid-small x-grid-divider x-child-width-1-2:large" x-grid>
+                        <div><div class="x-panel">1-2-L</div></div>
+                        <div><div class="x-panel">1-2-L</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="x-grid-small x-grid-divider x-child-width-1-4:medium x-grid-match" x-grid>
+                <div><div class="x-panel">1-4-M<br>...<br>...</div></div>
+                <div><div class="x-panel">1-4-M</div></div>
+                <div class="x-width-1-2:medium">
+                    <div class="x-grid-small x-grid-divider x-child-width-1-2:large x-grid-match" x-grid>
+                        <div><div class="x-panel">1-2-L<br>...</div></div>
+                        <div><div class="x-panel">1-2-L</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="x-grid-small x-grid-divider x-child-width-1-2:medium x-grid-match" x-grid>
+                <div><div class="x-panel">1-2-M</div></div>
+                <div>
+                    <div class="x-panel">1-2-M</div>
+                    <div class="x-panel x-margin">1-2-M</div>
+                </div>
+            </div>
+
+            <div class="x-grid-small x-grid-divider" x-grid>
+                <div class="x-width-1-2:medium"><div class="x-panel">1-2-M</div></div>
+                <div class="x-width-1-4:medium"><div class="x-panel">1-4-M</div></div>
+                <div class="x-width-1-4:medium"><div class="x-panel">1-4-M</div></div>
+                <div class="x-width-1-5:medium"><div class="x-panel">1-5-M</div></div>
+                <div class="x-width-1-5:medium"><div class="x-panel">1-5-M</div></div>
+                <div class="x-width-3-5:medium"><div class="x-panel">3-5-M</div></div>
+            </div>
+
+            <div class="x-grid-small x-grid-divider" x-grid>
+                <div class="x-width-auto:medium"><div class="x-panel">Auto-M</div></div>
+                <div class="x-width-1-3:medium"><div class="x-panel">1-3-M</div></div>
+                <div class="x-width-expand:medium"><div class="x-panel">Expand-M</div></div>
+            </div>
+
+            <h2>Medium</h2>
+
+            <div class="x-grid-medium x-child-width-1-2" x-grid>
+                <div><div class="x-panel">1-2</div></div>
+                <div><div class="x-panel">1-2</div></div>
+            </div>
+
+            <div class="x-grid-medium x-child-width-1-2:medium x-grid-match" x-grid>
+                <div><div class="x-panel">1-2-M</div></div>
+                <div>
+                    <div class="x-grid-medium x-child-width-1-2:large" x-grid>
+                        <div><div class="x-panel">1-2-L</div></div>
+                        <div><div class="x-panel">1-2-L</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="x-grid-medium x-child-width-1-4:medium x-grid-match" x-grid>
+                <div><div class="x-panel">1-4-M<br>...<br>...</div></div>
+                <div><div class="x-panel">1-4-M</div></div>
+                <div class="x-width-1-2:medium">
+                    <div class="x-grid-medium x-child-width-1-2:large x-grid-match" x-grid>
+                        <div><div class="x-panel">1-2-L<br>...</div></div>
+                        <div><div class="x-panel">1-2-L</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="x-grid-medium x-child-width-1-2:medium x-grid-match" x-grid>
+                <div><div class="x-panel">1-2-M</div></div>
+                <div>
+                    <div class="x-panel">1-2-M</div>
+                    <div class="x-panel x-margin-medium">1-2-M</div>
+                </div>
+            </div>
+
+            <div class="x-grid-medium" x-grid>
+                <div class="x-width-1-2:medium"><div class="x-panel">1-2-M</div></div>
+                <div class="x-width-1-4:medium"><div class="x-panel">1-4-M</div></div>
+                <div class="x-width-1-4:medium"><div class="x-panel">1-4-M</div></div>
+                <div class="x-width-1-5:medium"><div class="x-panel">1-5-M</div></div>
+                <div class="x-width-1-5:medium"><div class="x-panel">1-5-M</div></div>
+                <div class="x-width-3-5:medium"><div class="x-panel">3-5-M</div></div>
+            </div>
+
+            <div class="x-grid-medium" x-grid>
+                <div class="x-width-auto:medium"><div class="x-panel">Auto-M</div></div>
+                <div class="x-width-1-3:medium"><div class="x-panel">1-3-M</div></div>
+                <div class="x-width-expand:medium"><div class="x-panel">Expand-M</div></div>
+            </div>
+
+            <h3>Divider</h3>
+
+            <div class="x-grid-medium x-grid-divider x-child-width-1-2" x-grid>
+                <div><div class="x-panel">1-2</div></div>
+                <div><div class="x-panel">1-2</div></div>
+            </div>
+
+            <div class="x-grid-medium x-grid-divider x-child-width-1-2:medium x-grid-match" x-grid>
+                <div><div class="x-panel">1-2-M</div></div>
+                <div>
+                    <div class="x-grid-medium x-grid-divider x-child-width-1-2:large" x-grid>
+                        <div><div class="x-panel">1-2-L</div></div>
+                        <div><div class="x-panel">1-2-L</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="x-grid-medium x-grid-divider x-child-width-1-4:medium x-grid-match" x-grid>
+                <div><div class="x-panel">1-4-M<br>...<br>...</div></div>
+                <div><div class="x-panel">1-4-M</div></div>
+                <div class="x-width-1-2:medium">
+                    <div class="x-grid-medium x-grid-divider x-child-width-1-2:large x-grid-match" x-grid>
+                        <div><div class="x-panel">1-2-L<br>...</div></div>
+                        <div><div class="x-panel">1-2-L</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="x-grid-medium x-grid-divider x-child-width-1-2:medium x-grid-match" x-grid>
+                <div><div class="x-panel">1-2-M</div></div>
+                <div>
+                    <div class="x-panel">1-2-M</div>
+                    <div class="x-panel x-margin-medium">1-2-M</div>
+                </div>
+            </div>
+
+            <div class="x-grid-medium x-grid-divider" x-grid>
+                <div class="x-width-1-2:medium"><div class="x-panel">1-2-M</div></div>
+                <div class="x-width-1-4:medium"><div class="x-panel">1-4-M</div></div>
+                <div class="x-width-1-4:medium"><div class="x-panel">1-4-M</div></div>
+                <div class="x-width-1-5:medium"><div class="x-panel">1-5-M</div></div>
+                <div class="x-width-1-5:medium"><div class="x-panel">1-5-M</div></div>
+                <div class="x-width-3-5:medium"><div class="x-panel">3-5-M</div></div>
+            </div>
+
+            <div class="x-grid-medium x-grid-divider" x-grid>
+                <div class="x-width-auto:medium"><div class="x-panel">Auto-M</div></div>
+                <div class="x-width-1-3:medium"><div class="x-panel">1-3-M</div></div>
+                <div class="x-width-expand:medium"><div class="x-panel">Expand-M</div></div>
+            </div>
+
+            <h2>Large</h2>
+
+            <div class="x-grid-large x-child-width-1-2" x-grid>
+                <div><div class="x-panel">1-2</div></div>
+                <div><div class="x-panel">1-2</div></div>
+            </div>
+
+            <div class="x-grid-large x-child-width-1-2:medium x-grid-match" x-grid>
+                <div><div class="x-panel">1-2-M</div></div>
+                <div>
+                    <div class="x-grid-large x-child-width-1-2:large" x-grid>
+                        <div><div class="x-panel">1-2-L</div></div>
+                        <div><div class="x-panel">1-2-L</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="x-grid-large x-child-width-1-4:medium x-grid-match" x-grid>
+                <div><div class="x-panel">1-4-M<br>...<br>...</div></div>
+                <div><div class="x-panel">1-4-M</div></div>
+                <div class="x-width-1-2:medium">
+                    <div class="x-grid-large x-child-width-1-2:large x-grid-match" x-grid>
+                        <div><div class="x-panel">1-2-L<br>...</div></div>
+                        <div><div class="x-panel">1-2-L</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="x-grid-large x-child-width-1-2:medium x-grid-match" x-grid>
+                <div><div class="x-panel">1-2-M</div></div>
+                <div>
+                    <div class="x-panel">1-2-M</div>
+                    <div class="x-panel x-margin-large">1-2-M</div>
+                </div>
+            </div>
+
+            <div class="x-grid-large" x-grid>
+                <div class="x-width-1-2:medium"><div class="x-panel">1-2-M</div></div>
+                <div class="x-width-1-4:medium"><div class="x-panel">1-4-M</div></div>
+                <div class="x-width-1-4:medium"><div class="x-panel">1-4-M</div></div>
+                <div class="x-width-1-5:medium"><div class="x-panel">1-5-M</div></div>
+                <div class="x-width-1-5:medium"><div class="x-panel">1-5-M</div></div>
+                <div class="x-width-3-5:medium"><div class="x-panel">3-5-M</div></div>
+            </div>
+
+            <div class="x-grid-large" x-grid>
+                <div class="x-width-auto:medium"><div class="x-panel">Auto-M</div></div>
+                <div class="x-width-1-3:medium"><div class="x-panel">1-3-M</div></div>
+                <div class="x-width-expand:medium"><div class="x-panel">Expand-M</div></div>
+            </div>
+
+            <h3>Divider</h3>
+
+            <div class="x-grid-large x-grid-divider x-child-width-1-2" x-grid>
+                <div><div class="x-panel">1-2</div></div>
+                <div><div class="x-panel">1-2</div></div>
+            </div>
+
+            <div class="x-grid-large x-grid-divider x-child-width-1-2:medium x-grid-match" x-grid>
+                <div><div class="x-panel">1-2-M</div></div>
+                <div>
+                    <div class="x-grid-large x-grid-divider x-child-width-1-2:large" x-grid>
+                        <div><div class="x-panel">1-2-L</div></div>
+                        <div><div class="x-panel">1-2-L</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="x-grid-large x-grid-divider x-child-width-1-4:medium x-grid-match" x-grid>
+                <div><div class="x-panel">1-4-M<br>...<br>...</div></div>
+                <div><div class="x-panel">1-4-M</div></div>
+                <div class="x-width-1-2:medium">
+                    <div class="x-grid-large x-grid-divider x-child-width-1-2:large x-grid-match" x-grid>
+                        <div><div class="x-panel">1-2-L<br>...</div></div>
+                        <div><div class="x-panel">1-2-L</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="x-grid-large x-grid-divider x-child-width-1-2:medium x-grid-match" x-grid>
+                <div><div class="x-panel">1-2-M</div></div>
+                <div>
+                    <div class="x-panel">1-2-M</div>
+                    <div class="x-panel x-margin-large">1-2-M</div>
+                </div>
+            </div>
+
+            <div class="x-grid-large x-grid-divider" x-grid>
+                <div class="x-width-1-2:medium"><div class="x-panel">1-2-M</div></div>
+                <div class="x-width-1-4:medium"><div class="x-panel">1-4-M</div></div>
+                <div class="x-width-1-4:medium"><div class="x-panel">1-4-M</div></div>
+                <div class="x-width-1-5:medium"><div class="x-panel">1-5-M</div></div>
+                <div class="x-width-1-5:medium"><div class="x-panel">1-5-M</div></div>
+                <div class="x-width-3-5:medium"><div class="x-panel">3-5-M</div></div>
+            </div>
+
+            <div class="x-grid-large x-grid-divider" x-grid>
+                <div class="x-width-auto:medium"><div class="x-panel">Auto-M</div></div>
+                <div class="x-width-1-3:medium"><div class="x-panel">1-3-M</div></div>
+                <div class="x-width-expand:medium"><div class="x-panel">Expand-M</div></div>
+            </div>
+
+            <h2>Collapse</h2>
+
+            <div class="x-grid-collapse x-child-width-1-2" x-grid>
+                <div><div class="x-panel">1-2</div></div>
+                <div><div class="x-panel">1-2</div></div>
+            </div>
+
+            <div class="x-grid-collapse x-child-width-1-2:medium x-grid-match" x-grid>
+                <div><div class="x-panel">1-2-M</div></div>
+                <div>
+                    <div class="x-grid-collapse x-child-width-1-2:large" x-grid>
+                        <div><div class="x-panel">1-2-L</div></div>
+                        <div><div class="x-panel">1-2-L</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="x-grid-collapse x-child-width-1-4:medium x-grid-match" x-grid>
+                <div><div class="x-panel">1-4-M<br>...<br>...</div></div>
+                <div><div class="x-panel">1-4-M</div></div>
+                <div class="x-width-1-2:medium">
+                    <div class="x-grid-collapse x-child-width-1-2:large x-grid-match" x-grid>
+                        <div><div class="x-panel">1-2-L<br>...</div></div>
+                        <div><div class="x-panel">1-2-L</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="x-grid-collapse x-child-width-1-2:medium x-grid-match" x-grid>
+                <div><div class="x-panel">1-2-M</div></div>
+                <div>
+                    <div class="x-panel">1-2-M</div>
+                    <div class="x-panel">1-2-M</div>
+                </div>
+            </div>
+
+            <div class="x-grid-collapse" x-grid>
+                <div class="x-width-1-2:medium"><div class="x-panel">1-2-M</div></div>
+                <div class="x-width-1-4:medium"><div class="x-panel">1-4-M</div></div>
+                <div class="x-width-1-4:medium"><div class="x-panel">1-4-M</div></div>
+                <div class="x-width-1-5:medium"><div class="x-panel">1-5-M</div></div>
+                <div class="x-width-1-5:medium"><div class="x-panel">1-5-M</div></div>
+                <div class="x-width-3-5:medium"><div class="x-panel">3-5-M</div></div>
+            </div>
+
+            <div class="x-grid-collapse" x-grid>
+                <div class="x-width-auto:medium"><div class="x-panel">Auto-M</div></div>
+                <div class="x-width-1-3:medium"><div class="x-panel">1-3-M</div></div>
+                <div class="x-width-expand:medium"><div class="x-panel">Expand-M</div></div>
+            </div>
+
+            <h2>Column and Row</h2>
+
+            <h3>Small / Large</h3>
+
+            <div class="x-grid-column-small x-grid-row-large x-child-width-1-4:medium" x-grid>
+                <div><div class="x-panel">1-4-M</div></div>
+                <div><div class="x-panel">1-4-M</div></div>
+                <div><div class="x-panel">1-4-M</div></div>
+                <div><div class="x-panel">1-4-M</div></div>
+                <div><div class="x-panel">1-4-M</div></div>
+                <div><div class="x-panel">1-4-M</div></div>
+                <div><div class="x-panel">1-4-M</div></div>
+                <div><div class="x-panel">1-4-M</div></div>
+            </div>
+
+            <h3>Medium / Small</h3>
+
+            <div class="x-grid-divider x-grid-column-medium x-grid-row-small x-child-width-1-4:medium" x-grid>
+                    <div><div class="x-panel">1-4-M</div></div>
+                    <div><div class="x-panel">1-4-M</div></div>
+                    <div><div class="x-panel">1-4-M</div></div>
+                    <div><div class="x-panel">1-4-M</div></div>
+                    <div><div class="x-panel">1-4-M</div></div>
+                    <div><div class="x-panel">1-4-M</div></div>
+                    <div><div class="x-panel">1-4-M</div></div>
+                    <div><div class="x-panel">1-4-M</div></div>
+                </div>
+
+            <h2>Divider</h2>
+
+            <h3>Order</h3>
+
+            <div class="x-grid-divider x-child-width-1-2:medium" x-grid>
+                <div>
+
+                    <div class="x-grid-small x-grid-divider x-child-width-1-4:medium" x-grid>
+                        <div><div class="x-panel">First</div></div>
+                        <div class="x-flex-last"><div class="x-panel">Second</div></div>
+                        <div><div class="x-panel">Third</div></div>
+                        <div class="x-flex-first"><div class="x-panel">Last</div></div>
+                    </div>
+
+                </div>
+                <div>
+
+                    <div class="x-grid-small x-grid-divider x-child-width-1-4:medium" x-grid>
+                        <div class="x-flex-last"><div class="x-panel">First</div></div>
+                        <div><div class="x-panel">Second</div></div>
+                        <div><div class="x-panel">Third</div></div>
+                        <div class="x-flex-first"><div class="x-panel">Last</div></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <h3>Wrap + Order</h3>
+
+            <div class="x-grid-divider x-child-width-1-4:medium" x-grid>
+                <div>
+
+                    <div class="x-grid-small x-grid-divider x-child-width-1-2:medium x-flex-middle" x-grid>
+                        <div><div class="x-panel">First</div></div>
+                        <div><div class="x-panel">Last<br>...<br>...</div></div>
+                        <div><div class="x-panel">Wrap</div></div>
+                    </div>
+
+                </div>
+                <div>
+
+                    <div class="x-grid-small x-grid-divider x-child-width-1-2:medium x-flex-middle" x-grid>
+                        <div><div class="x-panel">First</div></div>
+                        <div class="x-flex-first"><div class="x-panel">Last<br>...<br>...</div></div>
+                        <div><div class="x-panel">Wrap</div></div>
+                    </div>
+
+                </div>
+                <div>
+
+                    <div class="x-grid-small x-grid-divider x-child-width-1-2:medium x-flex-middle" x-grid>
+                        <div><div class="x-panel">First<br>...<br>...</div></div>
+                        <div class="x-flex-first"><div class="x-panel">Last</div></div>
+                        <div><div class="x-panel">Wrap</div></div>
+                    </div>
+
+                </div>
+                <div>
+
+                    <div class="x-grid-small x-grid-divider x-child-width-1-2:medium x-flex-middle" x-grid>
+                        <div class="x-flex-last"><div class="x-panel">First</div></div>
+                        <div><div class="x-panel">Last<br>...<br>...</div></div>
+                        <div><div class="x-panel">Wrap</div></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="x-grid-divider x-child-width-1-2:medium" x-grid>
+                <div>
+
+                    <h3>Stack</h3>
+
+                    <div class="x-grid-small x-grid-divider x-child-width-1-1" x-grid>
+                        <div><div class="x-panel">First</div></div>
+                        <div><div class="x-panel">Second</div></div>
+                        <div class="x-flex-first"><div class="x-panel">Last</div></div>
+                    </div>
+
+                </div>
+                <div>
+
+                    <h3>Align</h3>
+
+                    <div class="x-grid-small x-grid-divider x-child-width-1-4:small x-flex-center" x-grid>
+                        <div class="x-flex-last"><div class="x-panel">First</div></div>
+                        <div><div class="x-panel">Second</div></div>
+                        <div><div class="x-panel">Third</div></div>
+                        <div><div class="x-panel">Forth</div></div>
+                        <div class="x-flex-first"><div class="x-panel">Fifth</div></div>
+                        <div><div class="x-panel">Last</div></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <h2>JavaScript Options</h2>
+
+            <div class="x-overflow-auto">
+                <table class="x-table x-table-striped">
+                    <thead>
+                        <tr>
+                            <th>Option</th>
+                            <th>Value</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>margin</code></td>
+                            <td>String</td>
+                            <td>x-grid-margin</td>
+                            <td>This class is added to items that break into the next row, typically to create margin to the previous row.</td>
+                        </tr>
+                        <tr>
+                            <td><code>first-column</code></td>
+                            <td>String</td>
+                            <td>x-first-column</td>
+                            <td>This class is added to the first element in each row.</td>
+                        </tr>
+                        <tr>
+                            <td><code>masonry</code></td>
+                            <td>Boolean</td>
+                            <td>false</td>
+                            <td>Enables masonry layout for this grid.</td>
+                        </tr>
+                        <tr>
+                            <td><code>parallax</code></td>
+                            <td>Number</td>
+                            <td>0</td>
+                            <td>Parallax translation value. The value must be a positive integer. Falsy disables the parallax effect (default).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </body>
+</html>

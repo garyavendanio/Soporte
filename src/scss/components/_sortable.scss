@@ -1,0 +1,147 @@
+// Name:            Sortable
+// Description:     Component to create sortable grids and lists
+//
+// Component:       `x-sortable`
+//
+// Sub-objects:     `x-sortable-drag`
+//                  `x-sortable-placeholder`
+//                  `x-sortable-handle`
+//
+// Modifiers:       `x-sortable-empty`
+//
+// States:          `x-drag`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$sortable-dragged-z-index: $global-z-index+50 !default;
+
+$sortable-placeholder-opacity: 0 !default;
+
+$sortable-empty-height: 50px !default;
+
+
+/* ========================================================================
+   Component: Sortable
+ ========================================================================== */
+
+.x-sortable {
+    position: relative;
+
+    @if(mixin-exists(hook-sortable)) {
+        @include hook-sortable();
+    }
+}
+
+/*
+ * Remove margin from the last-child
+ */
+
+.x-sortable> :last-child {
+    margin-bottom: 0;
+}
+
+
+/* Drag
+ ========================================================================== */
+
+.x-sortable-drag {
+    position      : fixed !important;
+    z-index       : $sortable-dragged-z-index !important;
+    pointer-events: none;
+
+    @if(mixin-exists(hook-sortable-drag)) {
+        @include hook-sortable-drag();
+    }
+}
+
+
+/* Placeholder
+ ========================================================================== */
+
+.x-sortable-placeholder {
+    opacity       : $sortable-placeholder-opacity;
+    pointer-events: none;
+
+    @if(mixin-exists(hook-sortable-placeholder)) {
+        @include hook-sortable-placeholder();
+    }
+}
+
+
+/* Empty modifier
+ ========================================================================== */
+
+.x-sortable-empty {
+    min-height: $sortable-empty-height;
+
+    @if(mixin-exists(hook-sortable-empty)) {
+        @include hook-sortable-empty();
+    }
+}
+
+
+/* Handle
+ ========================================================================== */
+
+/* Hover */
+.x-sortable-handle:hover {
+    cursor: move;
+}
+
+
+
+// Hooks
+// ========================================================================
+
+@if(mixin-exists(hook-sortable-misc)) {
+    @include hook-sortable-misc();
+}
+
+// @mixin hook-sortable(){}
+// @mixin hook-sortable-drag(){}
+// @mixin hook-sortable-placeholder(){}
+// @mixin hook-sortable-empty(){}
+// @mixin hook-sortable-misc(){}
+
+//
+// Component: Sortable
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+
+// Component
+// ========================================================================
+
+// @mixin hook-sortable(){}
+
+
+// Drag
+// ========================================================================
+
+// @mixin hook-sortable-drag(){}
+
+
+// Placeholder
+// ========================================================================
+
+// @mixin hook-sortable-placeholder(){}
+
+
+// Empty
+// ========================================================================
+
+// @mixin hook-sortable-empty(){}
+
+
+// Miscellaneous
+// ========================================================================
+
+// @mixin hook-sortable-misc(){}
