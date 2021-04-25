@@ -52,7 +52,7 @@ exports.compile = async function (file, dest, {external, globals, name, aliases,
         input: resolve(file),
         plugins: [
             replace(Object.assign({
-                REPLACE: 'Garyavendanio'
+                AUTHOR: 'Garyavendanio'
             }, replaces)),
             alias({
                 entries: Object.assign({
