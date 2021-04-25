@@ -3,20 +3,20 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "compile": "yarn compile-js && gulp",
+    "compile": "yarn build:js && gulp",
     "icons": "node bin/icons",
     "prefix": "node bin/prefix",
     "scope": "node bin/scope",
     "watch": "npm-watch",
     "eslint": "eslint src/js",
     "eslint-fix": "eslint --fix src/js",
-    "compile-scss": "yarn icons && gulp",
-    "compile-js": "node bin/generator"
+    "build:scss-icons": "yarn icons && gulp",
+    "build:js": "node bin/generator"
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.2",
     "@rollup/plugin-buble": "^0.21.3",
-    "@rollup/plugin-replace": "^2.3.4",
+    "@rollup/plugin-replace": "^2.4.2",
     "archiver": "5.2.0",
     "browser-sync": "^2.26.14",
     "camelcase": "^6.2.0",
@@ -40,8 +40,8 @@
     "uglify-js": "^3.12.6"
   },
   "watch": {
-    "compile-js": "src/js/**/*.js",
-    "compile-scss": {
+    "build:js": "src/js/**/*.js",
+    "build:scss-icons": {
       "patterns": "**/*.scss",
       "extensions": "scss"
     }

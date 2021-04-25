@@ -7,7 +7,7 @@ const html = require('rollup-plugin-html');
 const buble = require('@rollup/plugin-buble');
 const replace = require('@rollup/plugin-replace');
 const alias = require('@rollup/plugin-alias');
-const {basename, dirname, resolve} = require('path');
+const {basename, resolve} = require('path');
 
 exports.validClassName = /[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*/;
 
@@ -51,7 +51,9 @@ exports.compile = async function (file, dest, {external, globals, name, aliases,
         external,
         input: resolve(file),
         plugins: [
-            replace(Object.assign({},replaces)),
+            replace(Object.assign({
+                REPLACE: 'Garyavendanio'
+            }, replaces)),
             alias({
                 entries: Object.assign({
                     'utilities': './src/js/util/index.js'
