@@ -3,11 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "compile": "yarn build:js && gulp",
+    "compile": "yarn build:js && eslint && gulp",
     "icons": "node bin/icons",
-    "prefix": "node bin/prefix",
-    "scope": "node bin/scope",
-    "watch": "npm-watch",
     "eslint": "eslint src/js",
     "eslint-fix": "eslint --fix src/js",
     "build:scss-icons": "yarn icons && gulp",
@@ -38,13 +35,6 @@
     "semver": "^7.3.2",
     "svgo": "^1.3.2",
     "uglify-js": "^3.12.6"
-  },
-  "watch": {
-    "build:js": "src/js/**/*.js",
-    "build:scss-icons": {
-      "patterns": "**/*.scss",
-      "extensions": "scss"
-    }
   },
   "keywords": [],
   "author": "",
