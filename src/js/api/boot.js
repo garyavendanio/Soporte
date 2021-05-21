@@ -1,9 +1,9 @@
 import {getComponentName} from './component';
 import {apply, fastdom, hasAttr, inBrowser} from 'utilities';
 
-export default function (TAGSX) {
+export default function (mytags) {
 
-    const {connect, disconnect} = TAGSX;
+    const {connect, disconnect} = mytags;
 
     if (!inBrowser || !window.MutationObserver) {
         return;
@@ -29,7 +29,7 @@ export default function (TAGSX) {
             subtree: true
         });
 
-        TAGSX._initialized = true;
+        mytags._initialized = true;
     });
 
     function applyChildListMutation({addedNodes, removedNodes}) {
@@ -46,16 +46,16 @@ export default function (TAGSX) {
 
         const name = getComponentName(attributeName);
 
-        if (!name || !(name in TAGSX)) {
+        if (!name || !(name in mytags)) {
             return;
         }
 
         if (hasAttr(target, attributeName)) {
-            TAGSX[name](target);
+            mytags[name](target);
             return;
         }
 
-        const component = TAGSX.getComponent(target, name);
+        const component = mytags.getComponent(target, name);
 
         if (component) {
             component.$destroy();

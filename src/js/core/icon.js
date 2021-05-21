@@ -154,8 +154,8 @@ export const Spinner = {
 };
 
 const parsed = {};
-function install(TAGSX) {
-    TAGSX.icon.add = (name, svg) => {
+function install(mytags) {
+    mytags.icon.add = (name, svg) => {
 
         const added = isString(name) ? ({[name]: svg}) : name;
         each(added, (svg, name) => {
@@ -163,9 +163,9 @@ function install(TAGSX) {
             delete parsed[name];
         });
 
-        if (TAGSX._initialized) {
+        if (mytags._initialized) {
             apply(document.body, el =>
-                each(TAGSX.getComponents(el), cmp => {
+                each(mytags.getComponents(el), cmp => {
                     cmp.$options.isIcon && cmp.icon in added && cmp.$reset();
                 })
             );

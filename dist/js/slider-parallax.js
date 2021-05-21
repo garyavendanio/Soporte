@@ -1,7 +1,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('utilities')) :
-    typeof define === 'function' && define.amd ? define('tagsxslider_parallax', ['utilities'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.TAGSXSlider_parallax = factory(global.TAGSX.util));
+    typeof define === 'function' && define.amd ? define('mytagsslider_parallax', ['utilities'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.mytagsSlider_parallax = factory(global.mytags.util));
 }(this, (function (utilities) { 'use strict';
 
     var Media = {
@@ -532,8 +532,8 @@
                 : percent;
     }
 
-    if (typeof window !== 'undefined' && window.TAGSX) {
-        window.TAGSX.component('sliderParallax', Component);
+    if (typeof window !== 'undefined' && window.mytags) {
+        window.mytags.component('sliderParallax', Component);
     }
 
     return Component;

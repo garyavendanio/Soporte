@@ -1,7 +1,7 @@
 import Component from 'component';
 
-if (typeof window !== 'undefined' && window.TAGSX) {
-    window.TAGSX.component(NAME, Component);
+if (typeof window !== 'undefined' && window.mytags) {
+    window.mytags.component(NAME, Component);
 }
 
 export default Component;

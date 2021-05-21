@@ -117,10 +117,10 @@ export default {
 
 };
 
-function install(TAGSX) {
-    TAGSX.notification.closeAll = function (group, immediate) {
+function install(mytags) {
+    mytags.notification.closeAll = function (group, immediate) {
         apply(document.body, el => {
-            const notification = TAGSX.getComponent(el, 'notification');
+            const notification = mytags.getComponent(el, 'notification');
             if (notification && (!group || group === notification.group)) {
                 notification.close(immediate);
             }

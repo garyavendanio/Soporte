@@ -547,8 +547,8 @@
         <script>
 
             ['finite', 'center', 'sets'].forEach(function(attr) {
-                TAGSX.util.on('#js-'+attr+'-switcher', 'change', function () {
-                    TAGSX.util.attr(TAGSX.util.$$('[x-slider]'), attr, this.value);
+                mytags.util.on('#js-'+attr+'-switcher', 'change', function () {
+                    mytags.util.attr(mytags.util.$$('[x-slider]'), attr, this.value);
                 });
             });
 

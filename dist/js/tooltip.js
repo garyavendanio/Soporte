@@ -1,7 +1,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('utilities')) :
-    typeof define === 'function' && define.amd ? define('tagsxtooltip', ['utilities'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.TAGSXTooltip = factory(global.TAGSX.util));
+    typeof define === 'function' && define.amd ? define('mytagstooltip', ['utilities'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.mytagsTooltip = factory(global.mytags.util));
 }(this, (function (utilities) { 'use strict';
 
     var Container = {
@@ -433,8 +433,8 @@
         return utilities.isInput(el) || utilities.matches(el, 'a,button') || utilities.hasAttr(el, 'tabindex');
     }
 
-    if (typeof window !== 'undefined' && window.TAGSX) {
-        window.TAGSX.component('tooltip', Component);
+    if (typeof window !== 'undefined' && window.mytags) {
+        window.mytags.component('tooltip', Component);
     }
 
     return Component;

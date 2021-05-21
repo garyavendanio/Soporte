@@ -1,8 +1,8 @@
 import {assign, fastdom, hasOwn, isEqual, isPlainObject} from 'utilities';
 
-export default function (TAGSX) {
+export default function (mytags) {
 
-    TAGSX.prototype._callHook = function (hook) {
+    mytags.prototype._callHook = function (hook) {
 
         const handlers = this.$options[hook];
 
@@ -11,7 +11,7 @@ export default function (TAGSX) {
         }
     };
 
-    TAGSX.prototype._callConnected = function () {
+    mytags.prototype._callConnected = function () {
 
         if (this._connected) {
             return;
@@ -32,7 +32,7 @@ export default function (TAGSX) {
         this._callUpdate();
     };
 
-    TAGSX.prototype._callDisconnected = function () {
+    mytags.prototype._callDisconnected = function () {
 
         if (!this._connected) {
             return;
@@ -48,7 +48,7 @@ export default function (TAGSX) {
 
     };
 
-    TAGSX.prototype._callUpdate = function (e = 'update') {
+    mytags.prototype._callUpdate = function (e = 'update') {
 
         if (!this._connected) {
             return;
@@ -73,7 +73,7 @@ export default function (TAGSX) {
         this._updates.add(e.type || e);
     };
 
-    TAGSX.prototype._callWatches = function () {
+    mytags.prototype._callWatches = function () {
 
         if (this._watch) {
             return;

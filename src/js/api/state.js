@@ -1,10 +1,10 @@
 import {assign, camelize, data as getData, hasOwn, hyphenate, isArray, isEmpty, isFunction, isNumeric, isPlainObject, isString, isUndefined, mergeOptions, on, parseOptions, startsWith, toBoolean, toNumber} from 'utilities';
 
-export default function (TAGSX) {
+export default function (mytags) {
 
     let uid = 0;
 
-    TAGSX.prototype._init = function (options) {
+    mytags.prototype._init = function (options) {
 
         options = options || {};
         options.data = normalizeData(options, this.constructor.options);
@@ -24,7 +24,7 @@ export default function (TAGSX) {
         }
     };
 
-    TAGSX.prototype._initData = function () {
+    mytags.prototype._initData = function () {
 
         const {data = {}} = this.$options;
 
@@ -33,7 +33,7 @@ export default function (TAGSX) {
         }
     };
 
-    TAGSX.prototype._initMethods = function () {
+    mytags.prototype._initMethods = function () {
 
         const {methods} = this.$options;
 
@@ -44,7 +44,7 @@ export default function (TAGSX) {
         }
     };
 
-    TAGSX.prototype._initComputeds = function () {
+    mytags.prototype._initComputeds = function () {
 
         const {computed} = this.$options;
 
@@ -57,7 +57,7 @@ export default function (TAGSX) {
         }
     };
 
-    TAGSX.prototype._initProps = function (props) {
+    mytags.prototype._initProps = function (props) {
 
         let key;
 
@@ -77,7 +77,7 @@ export default function (TAGSX) {
         }
     };
 
-    TAGSX.prototype._initEvents = function () {
+    mytags.prototype._initEvents = function () {
 
         this._events = [];
 
@@ -99,19 +99,19 @@ export default function (TAGSX) {
         }
     };
 
-    TAGSX.prototype._unbindEvents = function () {
+    mytags.prototype._unbindEvents = function () {
         this._events.forEach(unbind => unbind());
         delete this._events;
     };
 
-    TAGSX.prototype._initObservers = function () {
+    mytags.prototype._initObservers = function () {
         this._observers = [
             initChildListObserver(this),
             initPropsObserver(this)
         ];
     };
 
-    TAGSX.prototype._disconnectObservers = function () {
+    mytags.prototype._disconnectObservers = function () {
         this._observers.forEach(observer =>
             observer && observer.disconnect()
         );

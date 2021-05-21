@@ -1,7 +1,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('utilities')) :
-    typeof define === 'function' && define.amd ? define('tagsxupload', ['utilities'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.TAGSXUpload = factory(global.TAGSX.util));
+    typeof define === 'function' && define.amd ? define('mytagsupload', ['utilities'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.mytagsUpload = factory(global.mytags.util));
 }(this, (function (utilities) { 'use strict';
 
     var Component = {
@@ -206,8 +206,8 @@
         e.stopPropagation();
     }
 
-    if (typeof window !== 'undefined' && window.TAGSX) {
-        window.TAGSX.component('upload', Component);
+    if (typeof window !== 'undefined' && window.mytags) {
+        window.mytags.component('upload', Component);
     }
 
     return Component;

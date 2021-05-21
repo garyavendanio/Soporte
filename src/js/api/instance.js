@@ -1,14 +1,14 @@
 import {hyphenate, isEmpty, memoize, remove, within} from 'utilities';
 
-export default function (TAGSX) {
+export default function (mytags) {
 
-    const DATA = TAGSX.data;
+    const DATA = mytags.data;
 
-    TAGSX.prototype.$create = function (component, element, data) {
-        return TAGSX[component](element, data);
+    mytags.prototype.$create = function (component, element, data) {
+        return mytags[component](element, data);
     };
 
-    TAGSX.prototype.$mount = function (el) {
+    mytags.prototype.$mount = function (el) {
 
         const {name} = this.$options;
 
@@ -29,12 +29,12 @@ export default function (TAGSX) {
         }
     };
 
-    TAGSX.prototype.$reset = function () {
+    mytags.prototype.$reset = function () {
         this._callDisconnected();
         this._callConnected();
     };
 
-    TAGSX.prototype.$destroy = function (removeEl = false) {
+    mytags.prototype.$destroy = function (removeEl = false) {
 
         const {el, name} = this.$options;
 
@@ -59,20 +59,20 @@ export default function (TAGSX) {
         }
     };
 
-    TAGSX.prototype.$emit = function (e) {
+    mytags.prototype.$emit = function (e) {
         this._callUpdate(e);
     };
 
-    TAGSX.prototype.$update = function (element = this.$el, e) {
-        TAGSX.update(element, e);
+    mytags.prototype.$update = function (element = this.$el, e) {
+        mytags.update(element, e);
     };
 
-    TAGSX.prototype.$getComponent = TAGSX.getComponent;
+    mytags.prototype.$getComponent = mytags.getComponent;
 
-    const componentName = memoize(name => TAGSX.prefix + hyphenate(name));
-    Object.defineProperties(TAGSX.prototype, {
+    const componentName = memoize(name => mytags.prefix + hyphenate(name));
+    Object.defineProperties(mytags.prototype, {
 
-        $container: Object.getOwnPropertyDescriptor(TAGSX, 'container'),
+        $container: Object.getOwnPropertyDescriptor(mytags, 'container'),
 
         $name: {
 

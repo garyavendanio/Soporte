@@ -1,7 +1,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-    typeof define === 'function' && define.amd ? define('tagsx', factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.TAGSX = factory());
+    typeof define === 'function' && define.amd ? define('mytags', factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.mytags = factory());
 }(this, (function () { 'use strict';
 
     var objPrototype = Object.prototype;
@@ -2656,11 +2656,11 @@
         getViewportClientHeight: getViewportClientHeight
     });
 
-    function globalAPI (TAGSX) {
+    function globalAPI (mytags) {
 
-        var DATA = TAGSX.data;
+        var DATA = mytags.data;
 
-        TAGSX.use = function (plugin) {
+        mytags.use = function (plugin) {
 
             if (plugin.installed) {
                 return;
@@ -2672,17 +2672,17 @@
             return this;
         };
 
-        TAGSX.mixin = function (mixin, component) {
-            component = (isString(component) ? TAGSX.component(component) : component) || this;
+        mytags.mixin = function (mixin, component) {
+            component = (isString(component) ? mytags.component(component) : component) || this;
             component.options = mergeOptions(component.options, mixin);
         };
 
-        TAGSX.extend = function (options) {
+        mytags.extend = function (options) {
 
             options = options || {};
 
             var Super = this;
-            var Sub = function TAGSXComponent(options) {
+            var Sub = function mytagsComponent(options) {
                 this._init(options);
             };
 
@@ -2696,7 +2696,7 @@
             return Sub;
         };
 
-        TAGSX.update = function (element, e) {
+        mytags.update = function (element, e) {
 
             element = element ? toNode(element) : document.body;
 
@@ -2706,7 +2706,7 @@
         };
 
         var container;
-        Object.defineProperty(TAGSX, 'container', {
+        Object.defineProperty(mytags, 'container', {
 
             get: function() {
                 return container || document.body;
@@ -2733,9 +2733,9 @@
         }
     }
 
-    function hooksAPI (TAGSX) {
+    function hooksAPI (mytags) {
 
-        TAGSX.prototype._callHook = function (hook) {
+        mytags.prototype._callHook = function (hook) {
             var this$1 = this;
 
 
@@ -2746,7 +2746,7 @@
             }
         };
 
-        TAGSX.prototype._callConnected = function () {
+        mytags.prototype._callConnected = function () {
 
             if (this._connected) {
                 return;
@@ -2767,7 +2767,7 @@
             this._callUpdate();
         };
 
-        TAGSX.prototype._callDisconnected = function () {
+        mytags.prototype._callDisconnected = function () {
 
             if (!this._connected) {
                 return;
@@ -2783,7 +2783,7 @@
 
         };
 
-        TAGSX.prototype._callUpdate = function (e) {
+        mytags.prototype._callUpdate = function (e) {
             var this$1 = this;
             if ( e === void 0 ) e = 'update';
 
@@ -2811,7 +2811,7 @@
             this._updates.add(e.type || e);
         };
 
-        TAGSX.prototype._callWatches = function () {
+        mytags.prototype._callWatches = function () {
             var this$1 = this;
 
 
@@ -2888,11 +2888,11 @@
         }
     }
 
-    function stateAPI (TAGSX) {
+    function stateAPI (mytags) {
 
         var uid = 0;
 
-        TAGSX.prototype._init = function (options) {
+        mytags.prototype._init = function (options) {
 
             options = options || {};
             options.data = normalizeData(options, this.constructor.options);
@@ -2912,7 +2912,7 @@
             }
         };
 
-        TAGSX.prototype._initData = function () {
+        mytags.prototype._initData = function () {
 
             var ref = this.$options;
             var data = ref.data; if ( data === void 0 ) data = {};
@@ -2922,7 +2922,7 @@
             }
         };
 
-        TAGSX.prototype._initMethods = function () {
+        mytags.prototype._initMethods = function () {
 
             var ref = this.$options;
             var methods = ref.methods;
@@ -2934,7 +2934,7 @@
             }
         };
 
-        TAGSX.prototype._initComputeds = function () {
+        mytags.prototype._initComputeds = function () {
 
             var ref = this.$options;
             var computed = ref.computed;
@@ -2948,7 +2948,7 @@
             }
         };
 
-        TAGSX.prototype._initProps = function (props) {
+        mytags.prototype._initProps = function (props) {
 
             var key;
 
@@ -2968,7 +2968,7 @@
             }
         };
 
-        TAGSX.prototype._initEvents = function () {
+        mytags.prototype._initEvents = function () {
             var this$1 = this;
 
 
@@ -2993,19 +2993,19 @@
             }
         };
 
-        TAGSX.prototype._unbindEvents = function () {
+        mytags.prototype._unbindEvents = function () {
             this._events.forEach(function (unbind) { return unbind(); });
             delete this._events;
         };
 
-        TAGSX.prototype._initObservers = function () {
+        mytags.prototype._initObservers = function () {
             this._observers = [
                 initChildListObserver(this),
                 initPropsObserver(this)
             ];
         };
 
-        TAGSX.prototype._disconnectObservers = function () {
+        mytags.prototype._disconnectObservers = function () {
             this._observers.forEach(function (observer) { return observer && observer.disconnect(); }
             );
         };
@@ -3236,15 +3236,15 @@
         }
     }
 
-    function instanceAPI (TAGSX) {
+    function instanceAPI (mytags) {
 
-        var DATA = TAGSX.data;
+        var DATA = mytags.data;
 
-        TAGSX.prototype.$create = function (component, element, data) {
-            return TAGSX[component](element, data);
+        mytags.prototype.$create = function (component, element, data) {
+            return mytags[component](element, data);
         };
 
-        TAGSX.prototype.$mount = function (el) {
+        mytags.prototype.$mount = function (el) {
 
             var ref = this.$options;
             var name = ref.name;
@@ -3266,12 +3266,12 @@
             }
         };
 
-        TAGSX.prototype.$reset = function () {
+        mytags.prototype.$reset = function () {
             this._callDisconnected();
             this._callConnected();
         };
 
-        TAGSX.prototype.$destroy = function (removeEl) {
+        mytags.prototype.$destroy = function (removeEl) {
             if ( removeEl === void 0 ) removeEl = false;
 
 
@@ -3300,22 +3300,22 @@
             }
         };
 
-        TAGSX.prototype.$emit = function (e) {
+        mytags.prototype.$emit = function (e) {
             this._callUpdate(e);
         };
 
-        TAGSX.prototype.$update = function (element, e) {
+        mytags.prototype.$update = function (element, e) {
             if ( element === void 0 ) element = this.$el;
 
-            TAGSX.update(element, e);
+            mytags.update(element, e);
         };
 
-        TAGSX.prototype.$getComponent = TAGSX.getComponent;
+        mytags.prototype.$getComponent = mytags.getComponent;
 
-        var componentName = memoize(function (name) { return TAGSX.prefix + hyphenate(name); });
-        Object.defineProperties(TAGSX.prototype, {
+        var componentName = memoize(function (name) { return mytags.prefix + hyphenate(name); });
+        Object.defineProperties(mytags.prototype, {
 
-            $container: Object.getOwnPropertyDescriptor(TAGSX, 'container'),
+            $container: Object.getOwnPropertyDescriptor(mytags, 'container'),
 
             $name: {
 
@@ -3329,13 +3329,13 @@
 
     }
 
-    function componentAPI (TAGSX) {
+    function componentAPI (mytags) {
 
-        var DATA = TAGSX.data;
+        var DATA = mytags.data;
 
         var components = {};
 
-        TAGSX.component = function (name, options) {
+        mytags.component = function (name, options) {
 
             var id = hyphenate(name);
 
@@ -3344,19 +3344,19 @@
             if (!options) {
 
                 if (isPlainObject(components[name])) {
-                    components[name] = TAGSX.extend(components[name]);
+                    components[name] = mytags.extend(components[name]);
                 }
 
                 return components[name];
 
             }
 
-            TAGSX[name] = function (element, data) {
+            mytags[name] = function (element, data) {
                 var i = arguments.length, argsArray = Array(i);
                 while ( i-- ) argsArray[i] = arguments[i];
 
 
-                var component = TAGSX.component(name);
+                var component = mytags.component(name);
 
                 return component.options.functional
                     ? new component({data: isPlainObject(element) ? element : [].concat( argsArray )})
@@ -3364,7 +3364,7 @@
 
                 function init(element) {
 
-                    var instance = TAGSX.getComponent(element, name);
+                    var instance = mytags.getComponent(element, name);
 
                     if (instance) {
                         if (!data) {
@@ -3385,20 +3385,20 @@
             opt.name = name;
 
             if (opt.install) {
-                opt.install(TAGSX, opt, name);
+                opt.install(mytags, opt, name);
             }
 
-            if (TAGSX._initialized && !opt.functional) {
-                fastdom.read(function () { return TAGSX[name](("[x-" + id + "],[data-x-" + id + "]")); });
+            if (mytags._initialized && !opt.functional) {
+                fastdom.read(function () { return mytags[name](("[x-" + id + "],[data-x-" + id + "]")); });
             }
 
             return components[name] = isPlainObject(options) ? opt : options;
         };
 
-        TAGSX.getComponents = function (element) { return element && element[DATA] || {}; };
-        TAGSX.getComponent = function (element, name) { return TAGSX.getComponents(element)[name]; };
+        mytags.getComponents = function (element) { return element && element[DATA] || {}; };
+        mytags.getComponent = function (element, name) { return mytags.getComponents(element)[name]; };
 
-        TAGSX.connect = function (node) {
+        mytags.connect = function (node) {
 
             if (node[DATA]) {
                 for (var name in node[DATA]) {
@@ -3411,14 +3411,14 @@
                 var name$1 = getComponentName(node.attributes[i].name);
 
                 if (name$1 && name$1 in components) {
-                    TAGSX[name$1](node);
+                    mytags[name$1](node);
                 }
 
             }
 
         };
 
-        TAGSX.disconnect = function (node) {
+        mytags.disconnect = function (node) {
             for (var name in node[DATA]) {
                 node[DATA][name]._callDisconnected();
             }
@@ -3432,22 +3432,22 @@
             : false;
     });
 
-    var TAGSX = function (options) {
+    var mytags = function (options) {
         this._init(options);
     };
 
-    TAGSX.util = util;
-    TAGSX.data = '__TAGSX__';
-    TAGSX.prefix = 'x-';
-    TAGSX.options = {};
+    mytags.util = util;
+    mytags.data = '__mytags__';
+    mytags.prefix = 'x-';
+    mytags.options = {};
 
-    globalAPI(TAGSX);
-    hooksAPI(TAGSX);
-    stateAPI(TAGSX);
-    componentAPI(TAGSX);
-    instanceAPI(TAGSX);
+    globalAPI(mytags);
+    hooksAPI(mytags);
+    stateAPI(mytags);
+    componentAPI(mytags);
+    instanceAPI(mytags);
 
-    function Core (TAGSX) {
+    function Core (mytags) {
 
         if (!inBrowser) {
             return;
@@ -3461,7 +3461,7 @@
             }
             pendingResize = true;
             fastdom.write(function () { return pendingResize = false; });
-            TAGSX.update(null, 'resize');
+            mytags.update(null, 'resize');
         };
 
         on(window, 'load resize', handleResize);
@@ -3481,7 +3481,7 @@
             pending = true;
             fastdom.write(function () { return pending = false; });
 
-            TAGSX.update(null, e.type);
+            mytags.update(null, e.type);
 
         }, {passive: true, capture: true});
 
@@ -3542,10 +3542,10 @@
                 : 'Down';
     }
 
-    function boot (TAGSX) {
+    function boot (mytags) {
 
-        var connect = TAGSX.connect;
-        var disconnect = TAGSX.disconnect;
+        var connect = mytags.connect;
+        var disconnect = mytags.disconnect;
 
         if (!inBrowser || !window.MutationObserver) {
             return;
@@ -3569,7 +3569,7 @@
                 subtree: true
             });
 
-            TAGSX._initialized = true;
+            mytags._initialized = true;
         });
 
         function applyChildListMutation(ref) {
@@ -3592,16 +3592,16 @@
 
             var name = getComponentName(attributeName);
 
-            if (!name || !(name in TAGSX)) {
+            if (!name || !(name in mytags)) {
                 return;
             }
 
             if (hasAttr(target, attributeName)) {
-                TAGSX[name](target);
+                mytags[name](target);
                 return;
             }
 
-            var component = TAGSX.getComponent(target, name);
+            var component = mytags.getComponent(target, name);
 
             if (component) {
                 component.$destroy();
@@ -5684,8 +5684,8 @@
     };
 
     var parsed = {};
-    function install$1(TAGSX) {
-        TAGSX.icon.add = function (name, svg) {
+    function install$1(mytags) {
+        mytags.icon.add = function (name, svg) {
             var obj;
 
 
@@ -5695,8 +5695,8 @@
                 delete parsed[name];
             });
 
-            if (TAGSX._initialized) {
-                apply$1(document.body, function (el) { return each(TAGSX.getComponents(el), function (cmp) {
+            if (mytags._initialized) {
+                apply$1(document.body, function (el) { return each(mytags.getComponents(el), function (cmp) {
                         cmp.$options.isIcon && cmp.icon in added && cmp.$reset();
                     }); }
                 );
@@ -8218,14 +8218,14 @@
     });
 
     // register components
-    each(components, function (component, name) { return TAGSX.component(name, component); }
+    each(components, function (component, name) { return mytags.component(name, component); }
     );
 
     // core functionality
-    TAGSX.use(Core);
+    mytags.use(Core);
 
-    boot(TAGSX);
+    boot(mytags);
 
-    return TAGSX;
+    return mytags;
 
 })));

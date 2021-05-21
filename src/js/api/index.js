@@ -5,19 +5,19 @@ import instanceAPI from './instance';
 import componentAPI from './component';
 import * as util from 'utilities';
 
-const TAGSX = function (options) {
+const mytags = function (options) {
     this._init(options);
 };
 
-TAGSX.util = util;
-TAGSX.data = '__TAGSX__';
-TAGSX.prefix = 'x-';
-TAGSX.options = {};
+mytags.util = util;
+mytags.data = '__mytags__';
+mytags.prefix = 'x-';
+mytags.options = {};
 
-globalAPI(TAGSX);
-hooksAPI(TAGSX);
-stateAPI(TAGSX);
-componentAPI(TAGSX);
-instanceAPI(TAGSX);
+globalAPI(mytags);
+hooksAPI(mytags);
+stateAPI(mytags);
+componentAPI(mytags);
+instanceAPI(mytags);
 
-export default TAGSX;
+export default mytags;

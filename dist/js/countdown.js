@@ -1,7 +1,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('utilities')) :
-    typeof define === 'function' && define.amd ? define('tagsxcountdown', ['utilities'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.TAGSXCountdown = factory(global.TAGSX.util));
+    typeof define === 'function' && define.amd ? define('mytagscountdown', ['utilities'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.mytagsCountdown = factory(global.mytags.util));
 }(this, (function (utilities) { 'use strict';
 
     var Class = {
@@ -180,8 +180,8 @@
         };
     }
 
-    if (typeof window !== 'undefined' && window.TAGSX) {
-        window.TAGSX.component('countdown', Component);
+    if (typeof window !== 'undefined' && window.mytags) {
+        window.mytags.component('countdown', Component);
     }
 
     return Component;

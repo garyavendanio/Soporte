@@ -1,10 +1,10 @@
 import {$, apply, isString, mergeOptions, parents, toNode} from 'utilities';
 
-export default function (TAGSX) {
+export default function (mytags) {
 
-    const DATA = TAGSX.data;
+    const DATA = mytags.data;
 
-    TAGSX.use = function (plugin) {
+    mytags.use = function (plugin) {
 
         if (plugin.installed) {
             return;
@@ -16,17 +16,17 @@ export default function (TAGSX) {
         return this;
     };
 
-    TAGSX.mixin = function (mixin, component) {
-        component = (isString(component) ? TAGSX.component(component) : component) || this;
+    mytags.mixin = function (mixin, component) {
+        component = (isString(component) ? mytags.component(component) : component) || this;
         component.options = mergeOptions(component.options, mixin);
     };
 
-    TAGSX.extend = function (options) {
+    mytags.extend = function (options) {
 
         options = options || {};
 
         const Super = this;
-        const Sub = function TAGSXComponent(options) {
+        const Sub = function mytagsComponent(options) {
             this._init(options);
         };
 
@@ -40,7 +40,7 @@ export default function (TAGSX) {
         return Sub;
     };
 
-    TAGSX.update = function (element, e) {
+    mytags.update = function (element, e) {
 
         element = element ? toNode(element) : document.body;
 
@@ -50,7 +50,7 @@ export default function (TAGSX) {
     };
 
     let container;
-    Object.defineProperty(TAGSX, 'container', {
+    Object.defineProperty(mytags, 'container', {
 
         get() {
             return container || document.body;

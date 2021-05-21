@@ -1,7 +1,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('utilities')) :
-    typeof define === 'function' && define.amd ? define('tagsxparallax', ['utilities'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.TAGSXParallax = factory(global.TAGSX.util));
+    typeof define === 'function' && define.amd ? define('mytagsparallax', ['utilities'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.mytagsParallax = factory(global.mytags.util));
 }(this, (function (utilities) { 'use strict';
 
     var Media = {
@@ -502,8 +502,8 @@
             : document.body;
     }
 
-    if (typeof window !== 'undefined' && window.TAGSX) {
-        window.TAGSX.component('parallax', Component);
+    if (typeof window !== 'undefined' && window.mytags) {
+        window.mytags.component('parallax', Component);
     }
 
     return Component;

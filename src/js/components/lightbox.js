@@ -77,15 +77,15 @@ export default {
 
 };
 
-function install(TAGSX, Lightbox) {
+function install(mytags, Lightbox) {
 
-    if (!TAGSX.lightboxPanel) {
-        TAGSX.component('lightboxPanel', LightboxPanel);
+    if (!mytags.lightboxPanel) {
+        mytags.component('lightboxPanel', LightboxPanel);
     }
 
     assign(
         Lightbox.props,
-        TAGSX.component('lightboxPanel').options.props
+        mytags.component('lightboxPanel').options.props
     );
 
 }

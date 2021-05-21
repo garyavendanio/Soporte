@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TAGSX</title>
+    <title>mytags</title>
     <link rel="stylesheet" href="./css/app.css">
 </head>
 
@@ -299,8 +299,8 @@
 
         var date = (new Date(Date.now() + 864e5 * 7)).toISOString();
 
-        TAGSX.util.$$('[js-countdown]').forEach(function(el) {
-            TAGSX.countdown(el, {date: date});
+        mytags.util.$$('[js-countdown]').forEach(function(el) {
+            mytags.countdown(el, {date: date});
         });
 
     </script>

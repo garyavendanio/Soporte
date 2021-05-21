@@ -1,7 +1,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('utilities')) :
-    typeof define === 'function' && define.amd ? define('tagsxslideshow', ['utilities'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.TAGSXSlideshow = factory(global.TAGSX.util));
+    typeof define === 'function' && define.amd ? define('mytagsslideshow', ['utilities'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.mytagsSlideshow = factory(global.mytags.util));
 }(this, (function (utilities) { 'use strict';
 
     var Class = {
@@ -1036,8 +1036,8 @@
 
     };
 
-    if (typeof window !== 'undefined' && window.TAGSX) {
-        window.TAGSX.component('slideshow', Component);
+    if (typeof window !== 'undefined' && window.mytags) {
+        window.mytags.component('slideshow', Component);
     }
 
     return Component;

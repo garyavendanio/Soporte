@@ -1,7 +1,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('utilities')) :
-    typeof define === 'function' && define.amd ? define('tagsxslider', ['utilities'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.TAGSXSlider = factory(global.TAGSX.util));
+    typeof define === 'function' && define.amd ? define('mytagsslider', ['utilities'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.mytagsSlider = factory(global.mytags.util));
 }(this, (function (utilities) { 'use strict';
 
     var Class = {
@@ -1099,8 +1099,8 @@
         return Math.max.apply(Math, [ 0 ].concat( utilities.children(list).map(function (el) { return utilities.dimensions(el).width; }) ));
     }
 
-    if (typeof window !== 'undefined' && window.TAGSX) {
-        window.TAGSX.component('slider', Component);
+    if (typeof window !== 'undefined' && window.mytags) {
+        window.mytags.component('slider', Component);
     }
 
     return Component;

@@ -1,7 +1,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('utilities')) :
-    typeof define === 'function' && define.amd ? define('tagsxnotification', ['utilities'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.TAGSXNotification = factory(global.TAGSX.util));
+    typeof define === 'function' && define.amd ? define('mytagsnotification', ['utilities'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.mytagsNotification = factory(global.mytags.util));
 }(this, (function (utilities) { 'use strict';
 
     var Container = {
@@ -146,10 +146,10 @@
 
     };
 
-    function install(TAGSX) {
-        TAGSX.notification.closeAll = function (group, immediate) {
+    function install(mytags) {
+        mytags.notification.closeAll = function (group, immediate) {
             utilities.apply(document.body, function (el) {
-                var notification = TAGSX.getComponent(el, 'notification');
+                var notification = mytags.getComponent(el, 'notification');
                 if (notification && (!group || group === notification.group)) {
                     notification.close(immediate);
                 }
@@ -157,8 +157,8 @@
         };
     }
 
-    if (typeof window !== 'undefined' && window.TAGSX) {
-        window.TAGSX.component('notification', Component);
+    if (typeof window !== 'undefined' && window.mytags) {
+        window.mytags.component('notification', Component);
     }
 
     return Component;

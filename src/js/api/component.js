@@ -1,12 +1,12 @@
 import {$$, assign, camelize, fastdom, hyphenate, isPlainObject, memoize, startsWith} from 'utilities';
 
-export default function (TAGSX) {
+export default function (mytags) {
 
-    const DATA = TAGSX.data;
+    const DATA = mytags.data;
 
     const components = {};
 
-    TAGSX.component = function (name, options) {
+    mytags.component = function (name, options) {
 
         const id = hyphenate(name);
 
@@ -15,16 +15,16 @@ export default function (TAGSX) {
         if (!options) {
 
             if (isPlainObject(components[name])) {
-                components[name] = TAGSX.extend(components[name]);
+                components[name] = mytags.extend(components[name]);
             }
 
             return components[name];
 
         }
 
-        TAGSX[name] = function (element, data) {
+        mytags[name] = function (element, data) {
 
-            const component = TAGSX.component(name);
+            const component = mytags.component(name);
 
             return component.options.functional
                 ? new component({data: isPlainObject(element) ? element : [...arguments]})
@@ -32,7 +32,7 @@ export default function (TAGSX) {
 
             function init(element) {
 
-                const instance = TAGSX.getComponent(element, name);
+                const instance = mytags.getComponent(element, name);
 
                 if (instance) {
                     if (!data) {
@@ -53,20 +53,20 @@ export default function (TAGSX) {
         opt.name = name;
 
         if (opt.install) {
-            opt.install(TAGSX, opt, name);
+            opt.install(mytags, opt, name);
         }
 
-        if (TAGSX._initialized && !opt.functional) {
-            fastdom.read(() => TAGSX[name](`[x-${id}],[data-x-${id}]`));
+        if (mytags._initialized && !opt.functional) {
+            fastdom.read(() => mytags[name](`[x-${id}],[data-x-${id}]`));
         }
 
         return components[name] = isPlainObject(options) ? opt : options;
     };
 
-    TAGSX.getComponents = element => element && element[DATA] || {};
-    TAGSX.getComponent = (element, name) => TAGSX.getComponents(element)[name];
+    mytags.getComponents = element => element && element[DATA] || {};
+    mytags.getComponent = (element, name) => mytags.getComponents(element)[name];
 
-    TAGSX.connect = node => {
+    mytags.connect = node => {
 
         if (node[DATA]) {
             for (const name in node[DATA]) {
@@ -79,14 +79,14 @@ export default function (TAGSX) {
             const name = getComponentName(node.attributes[i].name);
 
             if (name && name in components) {
-                TAGSX[name](node);
+                mytags[name](node);
             }
 
         }
 
     };
 
-    TAGSX.disconnect = node => {
+    mytags.disconnect = node => {
         for (const name in node[DATA]) {
             node[DATA][name]._callDisconnected();
         }

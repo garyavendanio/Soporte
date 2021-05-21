@@ -476,13 +476,13 @@
         <script src="../../dist/js/icons.min.js"></script>
         <script>
 
-            var options = TAGSX.util.$$('#js-color-switcher option').map(function (option) { return option.value; });
+            var options = mytags.util.$$('#js-color-switcher option').map(function (option) { return option.value; });
 
-            TAGSX.util.on('#js-color-switcher', 'change', function () {
+            mytags.util.on('#js-color-switcher', 'change', function () {
                 var value = this.value;
-                TAGSX.util.$$('.x-list').forEach(function (table) {
-                    TAGSX.util.removeClass(table, options);
-                    TAGSX.util.addClass(table, value);
+                mytags.util.$$('.x-list').forEach(function (table) {
+                    mytags.util.removeClass(table, options);
+                    mytags.util.addClass(table, value);
                 });
             });
 

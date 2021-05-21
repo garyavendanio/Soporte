@@ -1,7 +1,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('utilities')) :
-    typeof define === 'function' && define.amd ? define('tagsxfilter', ['utilities'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.TAGSXFilter = factory(global.TAGSX.util));
+    typeof define === 'function' && define.amd ? define('mytagsfilter', ['utilities'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.mytagsFilter = factory(global.mytags.util));
 }(this, (function (utilities) { 'use strict';
 
     function getRows(items) {
@@ -581,8 +581,8 @@
         return utilities.assign([], nodes).sort(function (a, b) { return utilities.data(a, sort).localeCompare(utilities.data(b, sort), undefined, {numeric: true}) * (order === 'asc' || -1); });
     }
 
-    if (typeof window !== 'undefined' && window.TAGSX) {
-        window.TAGSX.component('filter', Component);
+    if (typeof window !== 'undefined' && window.mytags) {
+        window.mytags.component('filter', Component);
     }
 
     return Component;

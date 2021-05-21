@@ -72,8 +72,8 @@ exports.compile = async function (file, dest, {external, globals, name, aliases,
     let {output: [{code, map}]} = await bundle.generate({
         globals,
         format: 'umd',
-        amd: {id: `TAGSX${name}`.toLowerCase()},
-        name: `TAGSX${exports.ucfirst(name)}`,
+        amd: {id: `mytags${name}`.toLowerCase()},
+        name: `mytags${exports.ucfirst(name)}`,
         sourcemap: !minify ? 'inline' : false
     });
 

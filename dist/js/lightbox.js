@@ -1,7 +1,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('utilities')) :
-    typeof define === 'function' && define.amd ? define('tagsxlightbox', ['utilities'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.TAGSXLightbox = factory(global.TAGSX.util));
+    typeof define === 'function' && define.amd ? define('mytagslightbox', ['utilities'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.mytagsLightbox = factory(global.mytags.util));
 }(this, (function (utilities) { 'use strict';
 
     var Animations$1 = {
@@ -1793,15 +1793,15 @@
 
     };
 
-    function install(TAGSX, Lightbox) {
+    function install(mytags, Lightbox) {
 
-        if (!TAGSX.lightboxPanel) {
-            TAGSX.component('lightboxPanel', LightboxPanel);
+        if (!mytags.lightboxPanel) {
+            mytags.component('lightboxPanel', LightboxPanel);
         }
 
         utilities.assign(
             Lightbox.props,
-            TAGSX.component('lightboxPanel').options.props
+            mytags.component('lightboxPanel').options.props
         );
 
     }
@@ -1819,8 +1819,8 @@
         return item;
     }
 
-    if (typeof window !== 'undefined' && window.TAGSX) {
-        window.TAGSX.component('lightbox', Component);
+    if (typeof window !== 'undefined' && window.mytags) {
+        window.mytags.component('lightbox', Component);
     }
 
     return Component;

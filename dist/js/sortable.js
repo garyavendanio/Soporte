@@ -1,7 +1,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('utilities')) :
-    typeof define === 'function' && define.amd ? define('tagsxsortable', ['utilities'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.TAGSXSortable = factory(global.TAGSX.util));
+    typeof define === 'function' && define.amd ? define('mytagssortable', ['utilities'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.mytagsSortable = factory(global.mytags.util));
 }(this, (function (utilities) { 'use strict';
 
     function getRows(items) {
@@ -811,8 +811,8 @@
         return lineA[1] > lineB[0] && lineB[1] > lineA[0];
     }
 
-    if (typeof window !== 'undefined' && window.TAGSX) {
-        window.TAGSX.component('sortable', Component);
+    if (typeof window !== 'undefined' && window.mytags) {
+        window.mytags.component('sortable', Component);
     }
 
     return Component;

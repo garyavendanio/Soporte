@@ -25,8 +25,8 @@ const components = glob.sync('src/js/components/!(index).js').reduce((components
         util.compile(`${__dirname}/wrapper/component.js`, `dist/js/${name}`, {
             name,
             minify,
-            external: ['TAGSX', 'utilities'],
-            globals: {TAGSX: 'TAGSX', 'utilities': 'TAGSX.util'},
+            external: ['mytags', 'utilities'],
+            globals: {mytags: 'mytags', 'utilities': 'mytags.util'},
             aliases: {component: path.resolve(__dirname, '../src/js/components', name)},
             replaces: {NAME: `'${camelize(name)}'`}
         });
@@ -38,7 +38,7 @@ const components = glob.sync('src/js/components/!(index).js').reduce((components
 const steps = {
 
     core: () => util.compile('src/js/core.js', 'dist/js/core', {minify}),
-    TAGSX: () => util.compile('src/js/app.js', 'dist/js/app', {minify}),
+    mytags: () => util.compile('src/js/app.js', 'dist/js/app', {minify}),
     icons: async () => util.compile('bin/wrapper/icons.js', 'dist/js/icons', {
         minify,
         name: 'icons',

@@ -1,6 +1,6 @@
 import {css, fastdom, getEventPos, inBrowser, isTouch, on, once, parent, pointerCancel, pointerDown, pointerUp, toMs, trigger} from 'utilities';
 
-export default function (TAGSX) {
+export default function (mytags) {
 
     if (!inBrowser) {
         return;
@@ -14,7 +14,7 @@ export default function (TAGSX) {
         }
         pendingResize = true;
         fastdom.write(() => pendingResize = false);
-        TAGSX.update(null, 'resize');
+        mytags.update(null, 'resize');
     };
 
     on(window, 'load resize', handleResize);
@@ -34,7 +34,7 @@ export default function (TAGSX) {
         pending = true;
         fastdom.write(() => pending = false);
 
-        TAGSX.update(null, e.type);
+        mytags.update(null, e.type);
 
     }, {passive: true, capture: true});
 
