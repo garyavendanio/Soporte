@@ -8,7 +8,7 @@
     "eslint": "eslint src/js",
     "eslint-fix": "eslint --fix src/js",
     "build:scss-icons": "yarn icons && gulp",
-    "build:js": "node bin/generator"
+    "build:js": "node bin/build"
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.2",

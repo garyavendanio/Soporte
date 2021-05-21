@@ -48,19 +48,10 @@ const steps = {
 
 if (argv.h || argv.help) {
 
-    console.log(`
-        usage: generator.js [componentA, componentB, ...] [-d|debug|nominify|development]
-
-        examples:
-	        generator.js // builds all of, including icons and does minification (implies 'all')
-	        generator.js icons -d // builds all of and the icons, skipping the minification
-	        generator.js core lightbox -d // builds core and the lightbox, skipping the minification
-
+    console.log(`build.js [componentA, componentB, ...] [-d | debug | nominify | development]
         available components:
-
-        bundles: ${Object.keys(steps).join(', ')}
-        components: ${Object.keys(components).join(', ')}
-
+            bundles: ${Object.keys(steps).join(', ')}
+            components: ${Object.keys(components).join(', ')}
     `);
 
 } else {
