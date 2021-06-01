@@ -94,7 +94,7 @@ gulp.task('combine', function() {
 	  'src/scss/components/_width.scss'
   ])
     .pipe(concat('app.scss'))
-    .pipe(gulp.dest('./dist/scss'))
+    .pipe(gulp.dest('./src/examples/scss'))
 });
 
 gulp.task('html', function() {
