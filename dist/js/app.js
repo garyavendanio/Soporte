@@ -6057,11 +6057,11 @@
         connected: function() {
             var assign;
 
-            (assign = wrapInner(this.$el, ("<span class=\"" + (this.clsWrapper) + "\">")), this.wrapper = assign[0]);
+            (assign = wrapInner(this.$el, ("<span class=\"" + (this.clsWrapper) + "\">")), this.rollup = assign[0]);
         },
 
         disconnected: function() {
-            unwrap(this.wrapper.childNodes);
+            unwrap(this.rollup.childNodes);
         },
 
         update: {
@@ -6085,11 +6085,11 @@
 
             write: function(data) {
 
-                toggleClass(this.wrapper, this.clsHide, data.hide);
+                toggleClass(this.rollup, this.clsHide, data.hide);
 
                 if (data.changed) {
                     data.changed = false;
-                    attr(this.wrapper, this.attrFill, new Array(data.width).join(data.fill));
+                    attr(this.rollup, this.attrFill, new Array(data.width).join(data.fill));
                 }
 
             },

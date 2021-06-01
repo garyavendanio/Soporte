@@ -26,11 +26,11 @@ export default {
     },
 
     connected() {
-        [this.wrapper] = wrapInner(this.$el, `<span class="${this.clsWrapper}">`);
+        [this.rollup] = wrapInner(this.$el, `<span class="${this.clsWrapper}">`);
     },
 
     disconnected() {
-        unwrap(this.wrapper.childNodes);
+        unwrap(this.rollup.childNodes);
     },
 
     update: {
@@ -51,11 +51,11 @@ export default {
 
         write(data) {
 
-            toggleClass(this.wrapper, this.clsHide, data.hide);
+            toggleClass(this.rollup, this.clsHide, data.hide);
 
             if (data.changed) {
                 data.changed = false;
-                attr(this.wrapper, this.attrFill, new Array(data.width).join(data.fill));
+                attr(this.rollup, this.attrFill, new Array(data.width).join(data.fill));
             }
 
         },

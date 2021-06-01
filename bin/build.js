@@ -22,7 +22,7 @@ const components = glob.sync('src/js/components/!(index).js').reduce((components
     const name = path.basename(file, '.js');
 
     components[name] = () =>
-        util.compile(`${__dirname}/wrapper/component.js`, `dist/js/${name}`, {
+        util.compile(`${__dirname}/rollup/component.js`, `dist/js/${name}`, {
             name,
             minify,
             external: ['mytags', 'utilities'],
@@ -39,7 +39,7 @@ const steps = {
 
     core: () => util.compile('src/js/core.js', 'dist/js/core', {minify}),
     mytags: () => util.compile('src/js/app.js', 'dist/js/app', {minify}),
-    icons: async () => util.compile('bin/wrapper/icons.js', 'dist/js/icons', {
+    icons: async () => util.compile('bin/rollup/icons.js', 'dist/js/icons', {
         minify,
         name: 'icons',
         replaces: {ICONS: await util.icons('{src/images,custom}/icons/*.svg')}}
