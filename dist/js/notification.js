@@ -77,7 +77,7 @@
         },
 
         connected: function() {
-            var this$1 = this;
+            var this$1$1 = this;
             var obj;
 
 
@@ -86,8 +86,8 @@
                 utilities.css(this.$el, this.startProps),
                 ( obj = {opacity: 1}, obj[this.marginProp] = margin, obj )
             ).then(function () {
-                if (this$1.timeout) {
-                    this$1.timer = setTimeout(this$1.close, this$1.timeout);
+                if (this$1$1.timeout) {
+                    this$1$1.timer = setTimeout(this$1$1.close, this$1$1.timeout);
                 }
             });
 
@@ -115,14 +115,14 @@
         methods: {
 
             close: function(immediate) {
-                var this$1 = this;
+                var this$1$1 = this;
 
 
                 var removeFn = function (el) {
 
                     var container = utilities.parent(el);
 
-                    utilities.trigger(el, 'close', [this$1]);
+                    utilities.trigger(el, 'close', [this$1$1]);
                     utilities.remove(el);
 
                     if (container && !container.hasChildNodes()) {

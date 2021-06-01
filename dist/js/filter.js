@@ -323,7 +323,7 @@
         methods: {
 
             animate: function(action, target) {
-                var this$1 = this;
+                var this$1$1 = this;
                 if ( target === void 0 ) target = this.$el;
 
 
@@ -340,7 +340,7 @@
                         : slide;
 
                 return animationFn(action, target, this.duration)
-                    .then(function () { return this$1.$update(target, 'resize'); }, utilities.noop);
+                    .then(function () { return this$1$1.$update(target, 'resize'); }, utilities.noop);
             }
 
         }
@@ -376,14 +376,14 @@
                 },
 
                 watch: function() {
-                    var this$1 = this;
+                    var this$1$1 = this;
 
 
                     this.updateState();
 
                     if (this.selActive !== false) {
                         var actives = utilities.$$(this.selActive, this.$el);
-                        this.toggles.forEach(function (el) { return utilities.toggleClass(el, this$1.cls, utilities.includes(actives, el)); });
+                        this.toggles.forEach(function (el) { return utilities.toggleClass(el, this$1$1.cls, utilities.includes(actives, el)); });
                     }
 
                 },
@@ -445,15 +445,15 @@
             },
 
             getState: function() {
-                var this$1 = this;
+                var this$1$1 = this;
 
                 return this.toggles
-                    .filter(function (item) { return utilities.hasClass(item, this$1.cls); })
-                    .reduce(function (state, el) { return mergeState(el, this$1.attrItem, state); }, {filter: {'': ''}, sort: []});
+                    .filter(function (item) { return utilities.hasClass(item, this$1$1.cls); })
+                    .reduce(function (state, el) { return mergeState(el, this$1$1.attrItem, state); }, {filter: {'': ''}, sort: []});
             },
 
             setState: function(state, animate) {
-                var this$1 = this;
+                var this$1$1 = this;
                 if ( animate === void 0 ) animate = true;
 
 
@@ -461,22 +461,22 @@
 
                 utilities.trigger(this.$el, 'beforeFilter', [this, state]);
 
-                this.toggles.forEach(function (el) { return utilities.toggleClass(el, this$1.cls, !!matchFilter(el, this$1.attrItem, state)); });
+                this.toggles.forEach(function (el) { return utilities.toggleClass(el, this$1$1.cls, !!matchFilter(el, this$1$1.attrItem, state)); });
 
                 utilities.Promise.all(utilities.$$(this.target, this.$el).map(function (target) {
                     var filterFn = function () {
                         applyState(state, target, utilities.children(target));
-                        this$1.$update(this$1.$el);
+                        this$1$1.$update(this$1$1.$el);
                     };
-                    return animate ? this$1.animate(filterFn, target) : filterFn();
-                })).then(function () { return utilities.trigger(this$1.$el, 'afterFilter', [this$1]); });
+                    return animate ? this$1$1.animate(filterFn, target) : filterFn();
+                })).then(function () { return utilities.trigger(this$1$1.$el, 'afterFilter', [this$1$1]); });
 
             },
 
             updateState: function() {
-                var this$1 = this;
+                var this$1$1 = this;
 
-                utilities.fastdom.write(function () { return this$1.setState(this$1.getState(), false); });
+                utilities.fastdom.write(function () { return this$1$1.setState(this$1$1.getState(), false); });
             }
 
         }

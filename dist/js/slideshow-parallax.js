@@ -88,7 +88,7 @@
         computed: {
 
             props: function(properties, $el) {
-                var this$1 = this;
+                var this$1$1 = this;
 
 
                 return props.reduce(function (props, prop) {
@@ -127,12 +127,12 @@
                     } else if (utilities.startsWith(prop, 'bg')) {
 
                         var attr = prop === 'bgy' ? 'height' : 'width';
-                        steps = steps.map(function (step) { return utilities.toPx(step, attr, this$1.$el); });
+                        steps = steps.map(function (step) { return utilities.toPx(step, attr, this$1$1.$el); });
 
                         utilities.css($el, ("background-position-" + (prop[2])), '');
                         bgPos = utilities.css($el, 'backgroundPosition').split(' ')[prop[2] === 'x' ? 0 : 1]; // IE 11 can't read background-position-[x|y]
 
-                        if (this$1.covers) {
+                        if (this$1$1.covers) {
 
                             var min = Math.min.apply(Math, steps);
                             var max = Math.max.apply(Math, steps);
@@ -161,7 +161,7 @@
                             return props;
                         }
 
-                        var length = getMaxPathLength(this$1.$el);
+                        var length = getMaxPathLength(this$1$1.$el);
                         utilities.css($el, 'strokeDasharray', length);
 
                         if (unit === '%') {
@@ -182,9 +182,9 @@
             },
 
             bgProps: function() {
-                var this$1 = this;
+                var this$1$1 = this;
 
-                return ['bgx', 'bgy'].filter(function (bg) { return bg in this$1.props; });
+                return ['bgx', 'bgy'].filter(function (bg) { return bg in this$1$1.props; });
             },
 
             covers: function(_, $el) {
@@ -200,7 +200,7 @@
         update: {
 
             read: function(data) {
-                var this$1 = this;
+                var this$1$1 = this;
 
 
                 if (!this.matchMedia) {
@@ -216,7 +216,7 @@
                         data.image = img;
 
                         if (!img.naturalWidth) {
-                            img.onload = function () { return this$1.$update(); };
+                            img.onload = function () { return this$1$1.$update(); };
                         }
                     }
 
@@ -241,7 +241,7 @@
 
                 this.bgProps.forEach(function (prop) {
 
-                    var ref = this$1.props[prop];
+                    var ref = this$1$1.props[prop];
                     var diff = ref.diff;
                     var bgPos = ref.bgPos;
                     var steps = ref.steps;
@@ -252,10 +252,10 @@
                         dimEl[attr] = dim[attr] + diff - span;
                     } else if (span > diff) {
 
-                        var posPercentage = dimEl[attr] / utilities.toPx(bgPos, attr, this$1.$el);
+                        var posPercentage = dimEl[attr] / utilities.toPx(bgPos, attr, this$1$1.$el);
 
                         if (posPercentage) {
-                            this$1.props[prop].steps = steps.map(function (step) { return step - (span - diff) / posPercentage; });
+                            this$1$1.props[prop].steps = steps.map(function (step) { return step - (span - diff) / posPercentage; });
                         }
                     }
 
@@ -288,9 +288,9 @@
         methods: {
 
             reset: function() {
-                var this$1 = this;
+                var this$1$1 = this;
 
-                utilities.each(this.getCss(0), function (_, prop) { return utilities.css(this$1.$el, prop, ''); });
+                utilities.each(this.getCss(0), function (_, prop) { return utilities.css(this$1$1.$el, prop, ''); });
             },
 
             getCss: function(percent) {
@@ -452,7 +452,7 @@
                 },
 
                 handler: function(ref) {
-                    var this$1 = this;
+                    var this$1$1 = this;
                     var type = ref.type;
                     var ref_detail = ref.detail;
                     var percent = ref_detail.percent;
@@ -462,11 +462,11 @@
 
 
                     utilities.fastdom.read(function () {
-                        var propsFrom = this$1.getCss(getCurrentPercent(type, dir, percent));
-                        var propsTo = this$1.getCss(isIn(type) ? .5 : dir > 0 ? 1 : 0);
+                        var propsFrom = this$1$1.getCss(getCurrentPercent(type, dir, percent));
+                        var propsTo = this$1$1.getCss(isIn(type) ? .5 : dir > 0 ? 1 : 0);
                         utilities.fastdom.write(function () {
-                            utilities.css(this$1.$el, propsFrom);
-                            utilities.Transition.start(this$1.$el, propsTo, duration, timing).catch(utilities.noop);
+                            utilities.css(this$1$1.$el, propsFrom);
+                            utilities.Transition.start(this$1$1.$el, propsTo, duration, timing).catch(utilities.noop);
                         });
                     });
 
@@ -498,15 +498,15 @@
                 },
 
                 handler: function(ref) {
-                    var this$1 = this;
+                    var this$1$1 = this;
                     var type = ref.type;
                     var ref_detail = ref.detail;
                     var percent = ref_detail.percent;
                     var dir = ref_detail.dir;
 
                     utilities.fastdom.read(function () {
-                        var props = this$1.getCss(getCurrentPercent(type, dir, percent));
-                        utilities.fastdom.write(function () { return utilities.css(this$1.$el, props); });
+                        var props = this$1$1.getCss(getCurrentPercent(type, dir, percent));
+                        utilities.fastdom.write(function () { return utilities.css(this$1$1.$el, props); });
                     });
                 }
             }

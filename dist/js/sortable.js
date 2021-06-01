@@ -323,7 +323,7 @@
         methods: {
 
             animate: function(action, target) {
-                var this$1 = this;
+                var this$1$1 = this;
                 if ( target === void 0 ) target = this.$el;
 
 
@@ -340,7 +340,7 @@
                         : slide;
 
                 return animationFn(action, target, this.duration)
-                    .then(function () { return this$1.$update(target, 'resize'); }, utilities.noop);
+                    .then(function () { return this$1$1.$update(target, 'resize'); }, utilities.noop);
             }
 
         }
@@ -388,12 +388,12 @@
         },
 
         created: function() {
-            var this$1 = this;
+            var this$1$1 = this;
 
             ['init', 'start', 'move', 'end'].forEach(function (key) {
-                var fn = this$1[key];
-                this$1[key] = function (e) {
-                    utilities.assign(this$1.pos, utilities.getEventPos(e));
+                var fn = this$1$1[key];
+                this$1$1[key] = function (e) {
+                    utilities.assign(this$1$1.pos, utilities.getEventPos(e));
                     fn(e);
                 };
             });
@@ -583,7 +583,7 @@
             },
 
             end: function() {
-                var this$1 = this;
+                var this$1$1 = this;
 
 
                 utilities.off(document, utilities.pointerMove, this.move);
@@ -616,7 +616,7 @@
                         var clsPlaceholder = ref.clsPlaceholder;
                         var clsItem = ref.clsItem;
 
-                        return this$1.touched.forEach(function (sortable) { return utilities.removeClass(sortable.items, clsPlaceholder, clsItem); }
+                        return this$1$1.touched.forEach(function (sortable) { return utilities.removeClass(sortable.items, clsPlaceholder, clsItem); }
                     );
                 }
                 );
@@ -626,14 +626,14 @@
             },
 
             insert: function(element, target) {
-                var this$1 = this;
+                var this$1$1 = this;
 
 
                 utilities.addClass(this.items, this.clsItem);
 
                 var insert = function () { return target
                     ? utilities.before(target, element)
-                    : utilities.append(this$1.target, element); };
+                    : utilities.append(this$1$1.target, element); };
 
                 if (this.animation) {
                     this.animate(insert);

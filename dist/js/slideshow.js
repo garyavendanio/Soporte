@@ -70,7 +70,7 @@
             dir: dir,
 
             show: function(duration, percent, linear) {
-                var this$1 = this;
+                var this$1$1 = this;
                 if ( percent === void 0 ) percent = 0;
 
 
@@ -86,7 +86,7 @@
                     utilities.Transition.start(next, props[1], duration, timing),
                     utilities.Transition.start(prev, props[0], duration, timing)
                 ]).then(function () {
-                    this$1.reset();
+                    this$1$1.reset();
                     deferred.resolve();
                 }, utilities.noop);
 
@@ -193,16 +193,16 @@
         methods: {
 
             startAutoplay: function() {
-                var this$1 = this;
+                var this$1$1 = this;
 
 
                 this.stopAutoplay();
 
                 this.interval = setInterval(
-                    function () { return (!this$1.draggable || !utilities.$(':focus', this$1.$el))
-                        && (!this$1.pauseOnHover || !utilities.matches(this$1.$el, ':hover'))
-                        && !this$1.stack.length
-                        && this$1.show('next'); },
+                    function () { return (!this$1$1.draggable || !utilities.$(':focus', this$1$1.$el))
+                        && (!this$1$1.pauseOnHover || !utilities.matches(this$1$1.$el, ':hover'))
+                        && !this$1$1.stack.length
+                        && this$1$1.show('next'); },
                     this.autoplayInterval
                 );
 
@@ -228,18 +228,18 @@
         },
 
         created: function() {
-            var this$1 = this;
+            var this$1$1 = this;
 
 
             ['start', 'move', 'end'].forEach(function (key) {
 
-                var fn = this$1[key];
-                this$1[key] = function (e) {
+                var fn = this$1$1[key];
+                this$1$1[key] = function (e) {
 
                     var pos = utilities.getEventPos(e).x * (utilities.isRtl ? -1 : 1);
 
-                    this$1.prevPos = pos !== this$1.pos ? this$1.pos : this$1.prevPos;
-                    this$1.pos = pos;
+                    this$1$1.prevPos = pos !== this$1$1.pos ? this$1$1.pos : this$1$1.prevPos;
+                    this$1$1.pos = pos;
 
                     fn(e);
                 };
@@ -316,7 +316,7 @@
             },
 
             move: function(e) {
-                var this$1 = this;
+                var this$1$1 = this;
 
 
                 var distance = this.pos - this.drag;
@@ -362,11 +362,11 @@
                 var itemShown;
 
                 [this.index, this.prevIndex].filter(function (i) { return !utilities.includes([nextIndex, prevIndex], i); }).forEach(function (i) {
-                    utilities.trigger(slides[i], 'itemhidden', [this$1]);
+                    utilities.trigger(slides[i], 'itemhidden', [this$1$1]);
 
                     if (edge) {
                         itemShown = true;
-                        this$1.prevIndex = prevIndex;
+                        this$1$1.prevIndex = prevIndex;
                     }
 
                 });
@@ -465,14 +465,14 @@
         update: {
 
             write: function() {
-                var this$1 = this;
+                var this$1$1 = this;
 
 
                 if (this.nav && this.length !== this.nav.children.length) {
-                    utilities.html(this.nav, this.slides.map(function (_, i) { return ("<li " + (this$1.attrItem) + "=\"" + i + "\"><a href></a></li>"); }).join(''));
+                    utilities.html(this.nav, this.slides.map(function (_, i) { return ("<li " + (this$1$1.attrItem) + "=\"" + i + "\"><a href></a></li>"); }).join(''));
                 }
 
-                this.navItems.concat(this.nav).forEach(function (el) { return el && (el.hidden = !this$1.maxIndex); });
+                this.navItems.concat(this.nav).forEach(function (el) { return el && (el.hidden = !this$1$1.maxIndex); });
 
                 this.updateNav();
 
@@ -511,16 +511,16 @@
         methods: {
 
             updateNav: function() {
-                var this$1 = this;
+                var this$1$1 = this;
 
 
                 var i = this.getValidIndex();
                 this.navItems.forEach(function (el) {
 
-                    var cmd = utilities.data(el, this$1.attrItem);
+                    var cmd = utilities.data(el, this$1$1.attrItem);
 
-                    utilities.toggleClass(el, this$1.clsActive, utilities.toNumber(cmd) === i);
-                    utilities.toggleClass(el, 'x-invisible', this$1.finite && (cmd === 'previous' && i === 0 || cmd === 'next' && i >= this$1.maxIndex));
+                    utilities.toggleClass(el, this$1$1.clsActive, utilities.toNumber(cmd) === i);
+                    utilities.toggleClass(el, 'x-invisible', this$1$1.finite && (cmd === 'previous' && i === 0 || cmd === 'next' && i >= this$1$1.maxIndex));
                 });
 
             }
@@ -620,7 +620,7 @@
         methods: {
 
             show: function(index, force) {
-                var this$1 = this;
+                var this$1$1 = this;
                 if ( force === void 0 ) force = false;
 
 
@@ -635,7 +635,7 @@
                     stack.splice(queueIndex, 1);
 
                     if (stack.length) {
-                        this$1.show(stack.shift(), true);
+                        this$1$1.show(stack.shift(), true);
                     }
                 };
 
@@ -674,16 +674,16 @@
 
                 var promise = this._show(prev, next, force).then(function () {
 
-                    prev && utilities.trigger(prev, 'itemhidden', [this$1]);
-                    utilities.trigger(next, 'itemshown', [this$1]);
+                    prev && utilities.trigger(prev, 'itemhidden', [this$1$1]);
+                    utilities.trigger(next, 'itemshown', [this$1$1]);
 
                     return new utilities.Promise(function (resolve) {
                         utilities.fastdom.write(function () {
                             stack.shift();
                             if (stack.length) {
-                                this$1.show(stack.shift(), true);
+                                this$1$1.show(stack.shift(), true);
                             } else {
-                                this$1._transitioner = null;
+                                this$1$1._transitioner = null;
                             }
                             resolve();
                         });

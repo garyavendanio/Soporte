@@ -84,36 +84,36 @@
         methods: {
 
             toggleElement: function(targets, toggle, animate) {
-                var this$1 = this;
+                var this$1$1 = this;
 
                 return new utilities.Promise(function (resolve) { return utilities.Promise.all(utilities.toNodes(targets).map(function (el) {
 
-                        var show = utilities.isBoolean(toggle) ? toggle : !this$1.isToggled(el);
+                        var show = utilities.isBoolean(toggle) ? toggle : !this$1$1.isToggled(el);
 
-                        if (!utilities.trigger(el, ("before" + (show ? 'show' : 'hide')), [this$1])) {
+                        if (!utilities.trigger(el, ("before" + (show ? 'show' : 'hide')), [this$1$1])) {
                             return utilities.Promise.reject();
                         }
 
                         var promise = (
                             utilities.isFunction(animate)
                                 ? animate
-                                : animate === false || !this$1.hasAnimation
-                                ? this$1._toggle
-                                : this$1.hasTransition
-                                    ? toggleHeight(this$1)
-                                    : toggleAnimation(this$1)
+                                : animate === false || !this$1$1.hasAnimation
+                                ? this$1$1._toggle
+                                : this$1$1.hasTransition
+                                    ? toggleHeight(this$1$1)
+                                    : toggleAnimation(this$1$1)
                         )(el, show);
 
-                        var cls = show ? this$1.clsEnter : this$1.clsLeave;
+                        var cls = show ? this$1$1.clsEnter : this$1$1.clsLeave;
 
                         utilities.addClass(el, cls);
 
-                        utilities.trigger(el, show ? 'show' : 'hide', [this$1]);
+                        utilities.trigger(el, show ? 'show' : 'hide', [this$1$1]);
 
                         var done = function () {
                             utilities.removeClass(el, cls);
-                            utilities.trigger(el, show ? 'shown' : 'hidden', [this$1]);
-                            this$1.$update(el);
+                            utilities.trigger(el, show ? 'shown' : 'hidden', [this$1$1]);
+                            this$1$1.$update(el);
                         };
 
                         return promise ? promise.then(done, function () {
@@ -337,16 +337,16 @@
         methods: {
 
             show: function() {
-                var this$1 = this;
+                var this$1$1 = this;
 
 
                 if (this.isToggled(this.tooltip) || !this.title) {
                     return;
                 }
 
-                this._unbind = utilities.once(document, ("show keydown " + utilities.pointerDown), this.hide, false, function (e) { return e.type === utilities.pointerDown && !utilities.within(e.target, this$1.$el)
+                this._unbind = utilities.once(document, ("show keydown " + utilities.pointerDown), this.hide, false, function (e) { return e.type === utilities.pointerDown && !utilities.within(e.target, this$1$1.$el)
                     || e.type === 'keydown' && e.keyCode === 27
-                    || e.type === 'show' && e.detail[0] !== this$1 && e.detail[0].$name === this$1.$name; }
+                    || e.type === 'show' && e.detail[0] !== this$1$1 && e.detail[0].$name === this$1$1.$name; }
                 );
 
                 clearTimeout(this.showTimer);
@@ -354,7 +354,7 @@
             },
 
             hide: function() {
-                var this$1 = this;
+                var this$1$1 = this;
 
 
                 if (utilities.matches(this.$el, 'input:focus')) {
@@ -368,13 +368,13 @@
                 }
 
                 this.toggleElement(this.tooltip, false, false).then(function () {
-                    this$1.tooltip = utilities.remove(this$1.tooltip);
-                    this$1._unbind();
+                    this$1$1.tooltip = utilities.remove(this$1$1.tooltip);
+                    this$1$1._unbind();
                 });
             },
 
             _show: function() {
-                var this$1 = this;
+                var this$1$1 = this;
 
 
                 this.tooltip = utilities.append(this.container,
@@ -383,17 +383,17 @@
 
                 utilities.on(this.tooltip, 'toggled', function (e, toggled) {
 
-                    this$1.updateAria(toggled);
+                    this$1$1.updateAria(toggled);
 
                     if (!toggled) {
                         return;
                     }
 
-                    this$1.positionAt(this$1.tooltip, this$1.$el);
+                    this$1$1.positionAt(this$1$1.tooltip, this$1$1.$el);
 
-                    this$1.origin = this$1.getAxis() === 'y'
-                        ? ((utilities.flipPosition(this$1.dir)) + "-" + (this$1.align))
-                        : ((this$1.align) + "-" + (utilities.flipPosition(this$1.dir)));
+                    this$1$1.origin = this$1$1.getAxis() === 'y'
+                        ? ((utilities.flipPosition(this$1$1.dir)) + "-" + (this$1$1.align))
+                        : ((this$1$1.align) + "-" + (utilities.flipPosition(this$1$1.dir)));
                 });
 
                 this.toggleElement(this.tooltip, true);

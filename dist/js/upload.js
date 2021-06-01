@@ -101,7 +101,7 @@
         methods: {
 
             upload: function(files) {
-                var this$1 = this;
+                var this$1$1 = this;
 
 
                 if (!files.length) {
@@ -140,39 +140,39 @@
 
                     var data = new FormData();
 
-                    files.forEach(function (file) { return data.append(this$1.name, file); });
+                    files.forEach(function (file) { return data.append(this$1$1.name, file); });
 
-                    for (var key in this$1.params) {
-                        data.append(key, this$1.params[key]);
+                    for (var key in this$1$1.params) {
+                        data.append(key, this$1$1.params[key]);
                     }
 
-                    utilities.ajax(this$1.url, {
+                    utilities.ajax(this$1$1.url, {
                         data: data,
-                        method: this$1.method,
-                        responseType: this$1.type,
+                        method: this$1$1.method,
+                        responseType: this$1$1.type,
                         beforeSend: function (env) {
 
                             var xhr = env.xhr;
-                            xhr.upload && utilities.on(xhr.upload, 'progress', this$1.progress);
-                            ['loadStart', 'load', 'loadEnd', 'abort'].forEach(function (type) { return utilities.on(xhr, type.toLowerCase(), this$1[type]); }
+                            xhr.upload && utilities.on(xhr.upload, 'progress', this$1$1.progress);
+                            ['loadStart', 'load', 'loadEnd', 'abort'].forEach(function (type) { return utilities.on(xhr, type.toLowerCase(), this$1$1[type]); }
                             );
 
-                            return this$1.beforeSend(env);
+                            return this$1$1.beforeSend(env);
 
                         }
                     }).then(
                         function (xhr) {
 
-                            this$1.complete(xhr);
+                            this$1$1.complete(xhr);
 
                             if (chunks.length) {
                                 upload(chunks.shift());
                             } else {
-                                this$1.completeAll(xhr);
+                                this$1$1.completeAll(xhr);
                             }
 
                         },
-                        function (e) { return this$1.error(e); }
+                        function (e) { return this$1$1.error(e); }
                     );
 
                 };

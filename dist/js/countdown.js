@@ -59,9 +59,9 @@
             },
 
             units: function() {
-                var this$1 = this;
+                var this$1$1 = this;
 
-                return ['days', 'hours', 'minutes', 'seconds'].filter(function (unit) { return this$1[unit]; });
+                return ['days', 'hours', 'minutes', 'seconds'].filter(function (unit) { return this$1$1[unit]; });
             }
 
         },
@@ -71,10 +71,10 @@
         },
 
         disconnected: function() {
-            var this$1 = this;
+            var this$1$1 = this;
 
             this.stop();
-            this.units.forEach(function (unit) { return utilities.empty(this$1[unit]); });
+            this.units.forEach(function (unit) { return utilities.empty(this$1$1[unit]); });
         },
 
         events: [
@@ -102,7 +102,7 @@
         update: {
 
             write: function() {
-                var this$1 = this;
+                var this$1$1 = this;
 
 
                 var timespan = getTimeSpan(this.date);
@@ -124,7 +124,7 @@
 
                     digits = digits.length < 2 ? ("0" + digits) : digits;
 
-                    var el = this$1[unit];
+                    var el = this$1$1[unit];
                     if (el.textContent !== digits) {
                         digits = digits.split('');
 

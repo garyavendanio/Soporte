@@ -305,12 +305,12 @@
         },
 
         contain: function(dimensions, maxDimensions) {
-            var this$1 = this;
+            var this$1$1 = this;
 
             dimensions = assign({}, dimensions);
 
             each(dimensions, function (_, prop) { return dimensions = dimensions[prop] > maxDimensions[prop]
-                ? this$1.ratio(dimensions, prop, maxDimensions[prop])
+                ? this$1$1.ratio(dimensions, prop, maxDimensions[prop])
                 : dimensions; }
             );
 
@@ -318,12 +318,12 @@
         },
 
         cover: function(dimensions, maxDimensions) {
-            var this$1 = this;
+            var this$1$1 = this;
 
             dimensions = this.contain(dimensions, maxDimensions);
 
             each(dimensions, function (_, prop) { return dimensions = dimensions[prop] < maxDimensions[prop]
-                ? this$1.ratio(dimensions, prop, maxDimensions[prop])
+                ? this$1$1.ratio(dimensions, prop, maxDimensions[prop])
                 : dimensions; }
             );
 
@@ -741,7 +741,7 @@
     }
 
     function delegate(selector, listener) {
-        var this$1 = this;
+        var this$1$1 = this;
 
         return function (e) {
 
@@ -751,7 +751,7 @@
 
             if (current) {
                 e.current = current;
-                listener.call(this$1, e);
+                listener.call(this$1$1, e);
             }
 
         };
@@ -812,11 +812,11 @@
     var Promise$1 = inBrowser && window.Promise || PromiseFn;
 
     var Deferred = function() {
-        var this$1 = this;
+        var this$1$1 = this;
 
         this.promise = new Promise$1(function (resolve, reject) {
-            this$1.reject = reject;
-            this$1.resolve = resolve;
+            this$1$1.reject = reject;
+            this$1$1.resolve = resolve;
         });
     };
 
@@ -959,29 +959,29 @@
     };
 
     p.notify = function notify() {
-        var this$1 = this;
+        var this$1$1 = this;
 
         async(function () {
-            if (this$1.state !== PENDING) {
-                while (this$1.deferred.length) {
-                    var ref = this$1.deferred.shift();
+            if (this$1$1.state !== PENDING) {
+                while (this$1$1.deferred.length) {
+                    var ref = this$1$1.deferred.shift();
                     var onResolved = ref[0];
                     var onRejected = ref[1];
                     var resolve = ref[2];
                     var reject = ref[3];
 
                     try {
-                        if (this$1.state === RESOLVED) {
+                        if (this$1$1.state === RESOLVED) {
                             if (isFunction(onResolved)) {
-                                resolve(onResolved.call(undefined, this$1.value));
+                                resolve(onResolved.call(undefined, this$1$1.value));
                             } else {
-                                resolve(this$1.value);
+                                resolve(this$1$1.value);
                             }
-                        } else if (this$1.state === REJECTED) {
+                        } else if (this$1$1.state === REJECTED) {
                             if (isFunction(onRejected)) {
-                                resolve(onRejected.call(undefined, this$1.value));
+                                resolve(onRejected.call(undefined, this$1$1.value));
                             } else {
-                                reject(this$1.value);
+                                reject(this$1$1.value);
                             }
                         }
                     } catch (e) {
@@ -993,11 +993,11 @@
     };
 
     p.then = function then(onResolved, onRejected) {
-        var this$1 = this;
+        var this$1$1 = this;
 
         return new PromiseFn(function (resolve, reject) {
-            this$1.deferred.push([onResolved, onRejected, resolve, reject]);
-            this$1.notify();
+            this$1$1.deferred.push([onResolved, onRejected, resolve, reject]);
+            this$1$1.notify();
         });
     };
 
@@ -1840,7 +1840,7 @@
         positions: [],
 
         init: function() {
-            var this$1 = this;
+            var this$1$1 = this;
 
 
             this.positions = [];
@@ -1853,10 +1853,10 @@
                     return;
                 }
 
-                this$1.positions.push(position);
+                this$1$1.positions.push(position);
 
-                if (this$1.positions.length > 5) {
-                    this$1.positions.shift();
+                if (this$1$1.positions.length > 5) {
+                    this$1$1.positions.shift();
                 }
             }, 50);
 
@@ -2736,13 +2736,13 @@
     function hooksAPI (mytags) {
 
         mytags.prototype._callHook = function (hook) {
-            var this$1 = this;
+            var this$1$1 = this;
 
 
             var handlers = this.$options[hook];
 
             if (handlers) {
-                handlers.forEach(function (handler) { return handler.call(this$1); });
+                handlers.forEach(function (handler) { return handler.call(this$1$1); });
             }
         };
 
@@ -2784,7 +2784,7 @@
         };
 
         mytags.prototype._callUpdate = function (e) {
-            var this$1 = this;
+            var this$1$1 = this;
             if ( e === void 0 ) e = 'update';
 
 
@@ -2803,8 +2803,8 @@
             if (!this._updates) {
                 this._updates = new Set();
                 fastdom.read(function () {
-                    runUpdates.call(this$1, this$1._updates);
-                    delete this$1._updates;
+                    runUpdates.call(this$1$1, this$1$1._updates);
+                    delete this$1$1._updates;
                 });
             }
 
@@ -2812,7 +2812,7 @@
         };
 
         mytags.prototype._callWatches = function () {
-            var this$1 = this;
+            var this$1$1 = this;
 
 
             if (this._watch) {
@@ -2823,7 +2823,7 @@
 
             this._watch = fastdom.read(function () {
 
-                var ref = this$1;
+                var ref = this$1$1;
                 var computed = ref.$options.computed;
                 var _computeds = ref._computeds;
 
@@ -2839,21 +2839,21 @@
                     var immediate = ref$1.immediate;
                     if (watch && (
                         initital && immediate
-                        || hasPrev && !isEqual(prev, this$1[key])
+                        || hasPrev && !isEqual(prev, this$1$1[key])
                     )) {
-                        watch.call(this$1, this$1[key], prev);
+                        watch.call(this$1$1, this$1$1[key], prev);
                     }
 
                 }
 
-                this$1._watch = null;
+                this$1$1._watch = null;
 
             });
 
         };
 
         function runUpdates(types) {
-            var this$1 = this;
+            var this$1$1 = this;
 
 
             var updates = this.$options.update;
@@ -2871,15 +2871,15 @@
                 var result = (void 0);
                 if (read) {
 
-                    result = read.call(this$1, this$1._data, types);
+                    result = read.call(this$1$1, this$1$1._data, types);
 
                     if (result && isPlainObject(result)) {
-                        assign(this$1._data, result);
+                        assign(this$1$1._data, result);
                     }
                 }
 
                 if (write && result !== false) {
-                    fastdom.write(function () { return write.call(this$1, this$1._data, types); });
+                    fastdom.write(function () { return write.call(this$1$1, this$1$1._data, types); });
                 }
 
             };
@@ -2969,7 +2969,7 @@
         };
 
         mytags.prototype._initEvents = function () {
-            var this$1 = this;
+            var this$1$1 = this;
 
 
             this._events = [];
@@ -2983,10 +2983,10 @@
 
                     if (!hasOwn(event, 'handler')) {
                         for (var key in event) {
-                            registerEvent(this$1, event[key], key);
+                            registerEvent(this$1$1, event[key], key);
                         }
                     } else {
-                        registerEvent(this$1, event);
+                        registerEvent(this$1$1, event);
                     }
 
                 });
@@ -3677,36 +3677,36 @@
         methods: {
 
             toggleElement: function(targets, toggle, animate) {
-                var this$1 = this;
+                var this$1$1 = this;
 
                 return new Promise$1(function (resolve) { return Promise$1.all(toNodes(targets).map(function (el) {
 
-                        var show = isBoolean(toggle) ? toggle : !this$1.isToggled(el);
+                        var show = isBoolean(toggle) ? toggle : !this$1$1.isToggled(el);
 
-                        if (!trigger(el, ("before" + (show ? 'show' : 'hide')), [this$1])) {
+                        if (!trigger(el, ("before" + (show ? 'show' : 'hide')), [this$1$1])) {
                             return Promise$1.reject();
                         }
 
                         var promise = (
                             isFunction(animate)
                                 ? animate
-                                : animate === false || !this$1.hasAnimation
-                                ? this$1._toggle
-                                : this$1.hasTransition
-                                    ? toggleHeight(this$1)
-                                    : toggleAnimation(this$1)
+                                : animate === false || !this$1$1.hasAnimation
+                                ? this$1$1._toggle
+                                : this$1$1.hasTransition
+                                    ? toggleHeight(this$1$1)
+                                    : toggleAnimation(this$1$1)
                         )(el, show);
 
-                        var cls = show ? this$1.clsEnter : this$1.clsLeave;
+                        var cls = show ? this$1$1.clsEnter : this$1$1.clsLeave;
 
                         addClass(el, cls);
 
-                        trigger(el, show ? 'show' : 'hide', [this$1]);
+                        trigger(el, show ? 'show' : 'hide', [this$1$1]);
 
                         var done = function () {
                             removeClass(el, cls);
-                            trigger(el, show ? 'shown' : 'hidden', [this$1]);
-                            this$1.$update(el);
+                            trigger(el, show ? 'shown' : 'hidden', [this$1$1]);
+                            this$1$1.$update(el);
                         };
 
                         return promise ? promise.then(done, function () {
@@ -3852,10 +3852,10 @@
                 },
 
                 watch: function(items, prev) {
-                    var this$1 = this;
+                    var this$1$1 = this;
 
 
-                    items.forEach(function (el) { return hide($(this$1.content, el), !hasClass(el, this$1.clsOpen)); });
+                    items.forEach(function (el) { return hide($(this$1$1.content, el), !hasClass(el, this$1$1.clsOpen)); });
 
                     if (prev || hasClass(items, this.clsOpen)) {
                         return;
@@ -3904,7 +3904,7 @@
         methods: {
 
             toggle: function(item, animate) {
-                var this$1 = this;
+                var this$1$1 = this;
 
 
                 var items = [this.items[getIndex(item, this.items)]];
@@ -3918,14 +3918,14 @@
                     return;
                 }
 
-                items.forEach(function (el) { return this$1.toggleElement(el, !hasClass(el, this$1.clsOpen), function (el, show) {
+                items.forEach(function (el) { return this$1$1.toggleElement(el, !hasClass(el, this$1$1.clsOpen), function (el, show) {
 
-                    toggleClass(el, this$1.clsOpen, show);
-                    attr($(this$1.$props.toggle, el), 'aria-expanded', show);
+                    toggleClass(el, this$1$1.clsOpen, show);
+                    attr($(this$1$1.$props.toggle, el), 'aria-expanded', show);
 
-                    var content = $(("" + (el._wrapper ? '> * ' : '') + (this$1.content)), el);
+                    var content = $(("" + (el._wrapper ? '> * ' : '') + (this$1$1.content)), el);
 
-                    if (animate === false || !this$1.hasTransition) {
+                    if (animate === false || !this$1$1.hasTransition) {
                         hide(content, !show);
                         return;
                     }
@@ -3935,15 +3935,15 @@
                     }
 
                     hide(content, false);
-                    return toggleHeight(this$1)(el._wrapper, show).then(function () {
+                    return toggleHeight(this$1$1)(el._wrapper, show).then(function () {
                         hide(content, !show);
                         delete el._wrapper;
                         unwrap(content);
 
                         if (show) {
-                            var toggle = $(this$1.$props.toggle, el);
+                            var toggle = $(this$1$1.$props.toggle, el);
                             if (!isInView(toggle)) {
-                                scrollIntoView(toggle, {offset: this$1.offset});
+                                scrollIntoView(toggle, {offset: this$1$1.offset});
                             }
                         }
                     });
@@ -3997,9 +3997,9 @@
         methods: {
 
             close: function() {
-                var this$1 = this;
+                var this$1$1 = this;
 
-                this.toggleElement(this.$el).then(function () { return this$1.$destroy(true); });
+                this.toggleElement(this.$el).then(function () { return this$1$1.$destroy(true); });
             }
 
         }
@@ -4430,7 +4430,7 @@
                 self: true,
 
                 handler: function() {
-                    var this$1 = this;
+                    var this$1$1 = this;
 
 
                     active$1 = this;
@@ -4440,13 +4440,13 @@
                     once(this.$el, 'hide', on(document, pointerDown, function (ref) {
                             var target = ref.target;
 
-                            return !within(target, this$1.$el) && once(document, (pointerUp + " " + pointerCancel + " scroll"), function (ref) {
+                            return !within(target, this$1$1.$el) && once(document, (pointerUp + " " + pointerCancel + " scroll"), function (ref) {
                             var defaultPrevented = ref.defaultPrevented;
                             var type = ref.type;
                             var newTarget = ref.target;
 
-                            if (!defaultPrevented && type === pointerUp && target === newTarget && !(this$1.toggle && within(target, this$1.toggle.$el))) {
-                                this$1.hide(false);
+                            if (!defaultPrevented && type === pointerUp && target === newTarget && !(this$1$1.toggle && within(target, this$1$1.toggle.$el))) {
+                                this$1$1.hide(false);
                             }
                         }, true);
                     }
@@ -4454,7 +4454,7 @@
 
                     once(this.$el, 'hide', on(document, 'keydown', function (e) {
                         if (e.keyCode === 27) {
-                            this$1.hide(false);
+                            this$1$1.hide(false);
                         }
                     }), {self: true});
 
@@ -4512,7 +4512,7 @@
         methods: {
 
             show: function(toggle, delay) {
-                var this$1 = this;
+                var this$1$1 = this;
                 if ( toggle === void 0 ) toggle = this.toggle;
                 if ( delay === void 0 ) delay = true;
 
@@ -4544,20 +4544,20 @@
 
                 }
 
-                this.showTimer = setTimeout(function () { return !this$1.isToggled() && this$1.toggleElement(this$1.$el, true); }, delay && this.delayShow || 0);
+                this.showTimer = setTimeout(function () { return !this$1$1.isToggled() && this$1$1.toggleElement(this$1$1.$el, true); }, delay && this.delayShow || 0);
 
             },
 
             hide: function(delay) {
-                var this$1 = this;
+                var this$1$1 = this;
                 if ( delay === void 0 ) delay = true;
 
 
-                var hide = function () { return this$1.toggleElement(this$1.$el, false, false); };
+                var hide = function () { return this$1$1.toggleElement(this$1$1.$el, false, false); };
 
                 this.clearTimers();
 
-                this.isDelaying = getPositionedElements(this.$el).some(function (el) { return this$1.tracker.movesTo(el); });
+                this.isDelaying = getPositionedElements(this.$el).some(function (el) { return this$1$1.tracker.movesTo(el); });
 
                 if (delay && this.isDelaying) {
                     this.hideTimer = setTimeout(this.hide, 50);
@@ -5057,11 +5057,11 @@
             {
 
                 write: function() {
-                    var this$1 = this;
+                    var this$1$1 = this;
 
                     this.elements.forEach(function (el) {
                         var height = toFloat(css(el, 'minHeight'));
-                        if (height && (this$1.forceHeight || Math.round(height + boxModelAdjust(el, 'height', 'content-box')) >= el.offsetHeight)) {
+                        if (height && (this$1$1.forceHeight || Math.round(height + boxModelAdjust(el, 'height', 'content-box')) >= el.offsetHeight)) {
                             css(el, 'height', height);
                         }
                     });
@@ -5297,7 +5297,7 @@
         },
 
         connected: function() {
-            var this$1 = this;
+            var this$1$1 = this;
             var assign;
 
 
@@ -5307,17 +5307,17 @@
 
             this.svg = this.getSvg().then(function (el) {
 
-                if (this$1._connected) {
+                if (this$1$1._connected) {
 
-                    var svg = insertSVG(el, this$1.$el);
+                    var svg = insertSVG(el, this$1$1.$el);
 
-                    if (this$1.svgEl && svg !== this$1.svgEl) {
-                        remove$1(this$1.svgEl);
+                    if (this$1$1.svgEl && svg !== this$1$1.svgEl) {
+                        remove$1(this$1$1.svgEl);
                     }
 
-                    this$1.applyAttributes(svg, el);
-                    this$1.$emit();
-                    return this$1.svgEl = svg;
+                    this$1$1.applyAttributes(svg, el);
+                    this$1$1.$emit();
+                    return this$1$1.svgEl = svg;
                 }
 
             }, noop);
@@ -5325,18 +5325,18 @@
         },
 
         disconnected: function() {
-            var this$1 = this;
+            var this$1$1 = this;
 
 
             this.svg.then(function (svg) {
-                if (!this$1._connected) {
+                if (!this$1$1._connected) {
 
-                    if (isVoidElement(this$1.$el)) {
-                        this$1.$el.hidden = false;
+                    if (isVoidElement(this$1$1.$el)) {
+                        this$1$1.$el.hidden = false;
                     }
 
                     remove$1(svg);
-                    this$1.svgEl = null;
+                    this$1$1.svgEl = null;
                 }
             });
 
@@ -5361,14 +5361,14 @@
         methods: {
 
             getSvg: function() {
-                var this$1 = this;
+                var this$1$1 = this;
 
-                return loadSVG(this.src).then(function (svg) { return parseSVG(svg, this$1.icon) || Promise$1.reject('SVG not found.'); }
+                return loadSVG(this.src).then(function (svg) { return parseSVG(svg, this$1$1.icon) || Promise$1.reject('SVG not found.'); }
                 );
             },
 
             applyAttributes: function(el, ref) {
-                var this$1 = this;
+                var this$1$1 = this;
 
 
                 for (var prop in this.$options.props) {
@@ -5389,7 +5389,7 @@
                 }
 
                 var props = ['width', 'height'];
-                var dimensions = props.map(function (prop) { return this$1[prop]; });
+                var dimensions = props.map(function (prop) { return this$1$1[prop]; });
 
                 if (!dimensions.some(function (val) { return val; })) {
                     dimensions = props.map(function (prop) { return attr(ref, prop); });
@@ -5400,7 +5400,7 @@
                     dimensions = viewBox.split(' ').slice(2);
                 }
 
-                dimensions.forEach(function (val, i) { return attr(el, props[i], toFloat(val) * this$1.ratio || null); }
+                dimensions.forEach(function (val, i) { return attr(el, props[i], toFloat(val) * this$1$1.ratio || null); }
                 );
 
             }
@@ -5676,9 +5676,9 @@
         extends: IconComponent,
 
         connected: function() {
-            var this$1 = this;
+            var this$1$1 = this;
 
-            this.svg.then(function (svg) { return svg && this$1.ratio !== 1 && css($('circle', svg), 'strokeWidth', 1 / this$1.ratio); });
+            this.svg.then(function (svg) { return svg && this$1$1.ratio !== 1 && css($('circle', svg), 'strokeWidth', 1 / this$1$1.ratio); });
         }
 
     };
@@ -5836,7 +5836,7 @@
         update: {
 
             read: function(ref) {
-                var this$1 = this;
+                var this$1$1 = this;
                 var image = ref.image;
 
 
@@ -5852,7 +5852,7 @@
                     return false;
                 }
 
-                image && image.then(function (img) { return img && img.currentSrc !== '' && setSrcAttrs(this$1.$el, currentSrc(img)); });
+                image && image.then(function (img) { return img && img.currentSrc !== '' && setSrcAttrs(this$1$1.$el, currentSrc(img)); });
 
             },
 
@@ -5877,7 +5877,7 @@
         methods: {
 
             load: function(entries) {
-                var this$1 = this;
+                var this$1$1 = this;
 
 
                 // Old chromium based browsers (UC Browser) did not implement `isIntersecting`
@@ -5887,20 +5887,20 @@
 
                 this._data.image = getImage(this.dataSrc, this.dataSrcset, this.sizes).then(function (img) {
 
-                    setSrcAttrs(this$1.$el, currentSrc(img), img.srcset, img.sizes);
-                    storage[this$1.cacheKey] = currentSrc(img);
+                    setSrcAttrs(this$1$1.$el, currentSrc(img), img.srcset, img.sizes);
+                    storage[this$1$1.cacheKey] = currentSrc(img);
                     return img;
 
-                }, function (e) { return trigger(this$1.$el, new e.constructor(e.type, e)); });
+                }, function (e) { return trigger(this$1$1.$el, new e.constructor(e.type, e)); });
 
                 this.observer.disconnect();
             },
 
             observe: function() {
-                var this$1 = this;
+                var this$1$1 = this;
 
                 if (this._connected && !this._data.image) {
-                    this.target.forEach(function (el) { return this$1.observer.observe(el); });
+                    this.target.forEach(function (el) { return this$1$1.observer.observe(el); });
                 }
             }
 
@@ -6236,7 +6236,7 @@
                 self: true,
 
                 handler: function() {
-                    var this$1 = this;
+                    var this$1$1 = this;
 
 
                     var docEl = document.documentElement;
@@ -6256,7 +6256,7 @@
                             var target = ref.target;
 
 
-                            if (last(active) !== this$1 || this$1.overlay && !within(target, this$1.$el) || within(target, this$1.panel)) {
+                            if (last(active) !== this$1$1 || this$1$1.overlay && !within(target, this$1$1.$el) || within(target, this$1$1.panel)) {
                                 return;
                             }
 
@@ -6266,7 +6266,7 @@
                                 var newTarget = ref.target;
 
                                 if (!defaultPrevented && type === pointerUp && target === newTarget) {
-                                    this$1.hide();
+                                    this$1$1.hide();
                                 }
                             }, true);
 
@@ -6275,8 +6275,8 @@
 
                     if (this.escClose) {
                         once(this.$el, 'hide', on(document, 'keydown', function (e) {
-                            if (e.keyCode === 27 && last(active) === this$1) {
-                                this$1.hide();
+                            if (e.keyCode === 27 && last(active) === this$1$1) {
+                                this$1$1.hide();
                             }
                         }), {self: true});
                     }
@@ -6291,7 +6291,7 @@
                 self: true,
 
                 handler: function() {
-                    var this$1 = this;
+                    var this$1$1 = this;
 
 
                     if (includes(active, this)) {
@@ -6304,7 +6304,7 @@
 
                     css(this.$el, 'zIndex', '');
 
-                    if (!active.some(function (modal) { return modal.clsPage === this$1.clsPage; })) {
+                    if (!active.some(function (modal) { return modal.clsPage === this$1$1.clsPage; })) {
                         removeClass(document.documentElement, this.clsPage);
                     }
 
@@ -6321,11 +6321,11 @@
             },
 
             show: function() {
-                var this$1 = this;
+                var this$1$1 = this;
 
                 if (this.container && parent(this.$el) !== this.container) {
                     append(this.container, this.$el);
-                    return new Promise$1(function (resolve) { return requestAnimationFrame(function () { return this$1.show().then(resolve); }
+                    return new Promise$1(function (resolve) { return requestAnimationFrame(function () { return this$1$1.show().then(resolve); }
                         ); }
                     );
                 }
@@ -6606,11 +6606,11 @@
                 },
 
                 watch: function(dropdowns) {
-                    var this$1 = this;
+                    var this$1$1 = this;
 
                     this.$create(
                         'drop',
-                        dropdowns.filter(function (el) { return !this$1.getDropdown(el); }),
+                        dropdowns.filter(function (el) { return !this$1$1.getDropdown(el); }),
                         assign({}, this.$props, {boundary: this.boundary, pos: this.pos, offset: this.dropbar || this.offset})
                     );
                 },
@@ -6759,7 +6759,7 @@
             },
 
             transitionTo: function(newHeight, el) {
-                var this$1 = this;
+                var this$1$1 = this;
 
 
                 var ref = this;
@@ -6780,7 +6780,7 @@
                     .catch(noop)
                     .then(function () {
                         css(el, {clip: ''});
-                        this$1.$update(dropbar);
+                        this$1$1.$update(dropbar);
                     });
             },
 
@@ -7165,13 +7165,13 @@
         methods: {
 
             scrollTo: function(el) {
-                var this$1 = this;
+                var this$1$1 = this;
 
 
                 el = el && $(el) || document.body;
 
                 if (trigger(this.$el, 'beforescroll', [this, el])) {
-                    scrollIntoView(el, {offset: this.offset}).then(function () { return trigger(this$1.$el, 'scrolled', [this$1, el]); }
+                    scrollIntoView(el, {offset: this.offset}).then(function () { return trigger(this$1$1.$el, 'scrolled', [this$1$1, el]); }
                     );
                 }
 
@@ -7244,10 +7244,10 @@
         },
 
         disconnected: function() {
-            var this$1 = this;
+            var this$1$1 = this;
 
             this.elements.forEach(function (el) {
-                removeClass(el, this$1.inViewClass, el[stateKey] ? el[stateKey].cls : '');
+                removeClass(el, this$1$1.inViewClass, el[stateKey] ? el[stateKey].cls : '');
                 delete el[stateKey];
             });
         },
@@ -7257,7 +7257,7 @@
             {
 
                 read: function(ref) {
-                    var this$1 = this;
+                    var this$1$1 = this;
                     var update = ref.update;
 
 
@@ -7268,17 +7268,17 @@
                     this.elements.forEach(function (el) {
 
                         if (!el[stateKey]) {
-                            el[stateKey] = {cls: data(el, 'x-scrollspy-class') || this$1.cls};
+                            el[stateKey] = {cls: data(el, 'x-scrollspy-class') || this$1$1.cls};
                         }
 
-                        el[stateKey].show = isInView(el, this$1.offsetTop, this$1.offsetLeft);
+                        el[stateKey].show = isInView(el, this$1$1.offsetTop, this$1$1.offsetLeft);
 
                     });
 
                 },
 
                 write: function(data) {
-                    var this$1 = this;
+                    var this$1$1 = this;
 
 
                     // Let child components be applied at least once first
@@ -7292,16 +7292,16 @@
                         var state = el[stateKey];
                         var toggle = function (inview) {
 
-                            css(el, 'visibility', !inview && this$1.hidden ? 'hidden' : '');
+                            css(el, 'visibility', !inview && this$1$1.hidden ? 'hidden' : '');
 
-                            toggleClass(el, this$1.inViewClass, inview);
+                            toggleClass(el, this$1$1.inViewClass, inview);
                             toggleClass(el, state.cls);
 
                             trigger(el, inview ? 'inview' : 'outview');
 
                             state.inview = inview;
 
-                            this$1.$update(el);
+                            this$1$1.$update(el);
 
                         };
 
@@ -7309,17 +7309,17 @@
 
                             state.queued = true;
 
-                            data.promise = (data.promise || Promise$1.resolve()).then(function () { return new Promise$1(function (resolve) { return setTimeout(resolve, this$1.delay); }
+                            data.promise = (data.promise || Promise$1.resolve()).then(function () { return new Promise$1(function (resolve) { return setTimeout(resolve, this$1$1.delay); }
                                 ); }
                             ).then(function () {
                                 toggle(true);
                                 setTimeout(function () {
                                     state.queued = false;
-                                    this$1.$emit();
+                                    this$1$1.$emit();
                                 }, 300);
                             });
 
-                        } else if (!state.show && state.inview && !state.queued && this$1.repeat) {
+                        } else if (!state.show && state.inview && !state.queued && this$1$1.repeat) {
 
                             toggle(false);
 
@@ -7390,7 +7390,7 @@
             {
 
                 read: function() {
-                    var this$1 = this;
+                    var this$1$1 = this;
 
 
                     var ref = this.targets;
@@ -7412,7 +7412,7 @@
                     } else {
 
                         this.targets.every(function (el, i) {
-                            if (offset(el).top - offset(getViewport$1(scrollElement)).top - this$1.offset <= 0) {
+                            if (offset(el).top - offset(getViewport$1(scrollElement)).top - this$1$1.offset <= 0) {
                                 active = i;
                                 return true;
                             }
@@ -7550,7 +7550,7 @@
                 },
 
                 handler: function() {
-                    var this$1 = this;
+                    var this$1$1 = this;
 
 
                     if (!(this.targetOffset !== false && location.hash && window.pageYOffset > 0)) {
@@ -7564,11 +7564,11 @@
 
                             var ref = offset(target);
                             var top = ref.top;
-                            var elTop = offset(this$1.$el).top;
-                            var elHeight = this$1.$el.offsetHeight;
+                            var elTop = offset(this$1$1.$el).top;
+                            var elHeight = this$1$1.$el.offsetHeight;
 
-                            if (this$1.isFixed && elTop + elHeight >= top && elTop <= top + target.offsetHeight) {
-                                scrollTop(window, top - elHeight - (isNumeric(this$1.targetOffset) ? this$1.targetOffset : 0) - this$1.offset);
+                            if (this$1$1.isFixed && elTop + elHeight >= top && elTop <= top + target.offsetHeight) {
+                                scrollTop(window, top - elHeight - (isNumeric(this$1$1.targetOffset) ? this$1$1.targetOffset : 0) - this$1$1.offset);
                             }
 
                         });
@@ -7656,7 +7656,7 @@
                 },
 
                 write: function(data, types) {
-                    var this$1 = this;
+                    var this$1$1 = this;
 
 
                     var now = Date.now();
@@ -7704,7 +7704,7 @@
 
                         if (this.animation && scroll > this.topOffset) {
                             Animation.cancel(this.$el);
-                            Animation.out(this.$el, this.animation).then(function () { return this$1.hide(); }, noop);
+                            Animation.out(this.$el, this.animation).then(function () { return this$1$1.hide(); }, noop);
                         } else {
                             this.hide();
                         }
@@ -7831,7 +7831,7 @@
                 },
 
                 watch: function(connects) {
-                    var this$1 = this;
+                    var this$1$1 = this;
 
 
                     if (this.swiping) {
@@ -7839,7 +7839,7 @@
                     }
 
                     var index = this.index();
-                    this.connects.forEach(function (el) { return children(el).forEach(function (child, i) { return toggleClass(child, this$1.cls, i === index); }
+                    this.connects.forEach(function (el) { return children(el).forEach(function (child, i) { return toggleClass(child, this$1$1.cls, i === index); }
                         ); }
                     );
 
@@ -7867,9 +7867,9 @@
             },
 
             children: function() {
-                var this$1 = this;
+                var this$1$1 = this;
 
-                return children(this.$el).filter(function (child) { return this$1.toggles.some(function (toggle) { return within(toggle, child); }); });
+                return children(this.$el).filter(function (child) { return this$1$1.toggles.some(function (toggle) { return within(toggle, child); }); });
             }
 
         },
@@ -7931,13 +7931,13 @@
         methods: {
 
             index: function() {
-                var this$1 = this;
+                var this$1$1 = this;
 
-                return findIndex(this.children, function (el) { return hasClass(el, this$1.cls); });
+                return findIndex(this.children, function (el) { return hasClass(el, this$1$1.cls); });
             },
 
             show: function(item) {
-                var this$1 = this;
+                var this$1$1 = this;
 
 
                 var prev = this.index();
@@ -7951,15 +7951,15 @@
                 }
 
                 this.children.forEach(function (child, i) {
-                    toggleClass(child, this$1.cls, next === i);
-                    attr(this$1.toggles[i], 'aria-expanded', next === i);
+                    toggleClass(child, this$1$1.cls, next === i);
+                    attr(this$1$1.toggles[i], 'aria-expanded', next === i);
                 });
 
                 this.connects.forEach(function (ref) {
                         var children = ref.children;
 
-                        return this$1.toggleElement(toNodes(children).filter(function (child) { return hasClass(child, this$1.cls); }
-                    ), false, prev >= 0).then(function () { return this$1.toggleElement(children[next], true, prev >= 0); }
+                        return this$1$1.toggleElement(toNodes(children).filter(function (child) { return hasClass(child, this$1$1.cls); }
+                    ), false, prev >= 0).then(function () { return this$1$1.toggleElement(children[next], true, prev >= 0); }
                     );
                 }
                 );
@@ -8127,7 +8127,7 @@
         methods: {
 
             toggle: function(type) {
-                var this$1 = this;
+                var this$1$1 = this;
 
 
                 if (!trigger(this.target, type || 'toggle', [this])) {
@@ -8138,18 +8138,18 @@
                     return this.toggleElement(this.target);
                 }
 
-                var leaving = this.target.filter(function (el) { return hasClass(el, this$1.clsLeave); });
+                var leaving = this.target.filter(function (el) { return hasClass(el, this$1$1.clsLeave); });
 
                 if (leaving.length) {
                     this.target.forEach(function (el) {
                         var isLeaving = includes(leaving, el);
-                        this$1.toggleElement(el, isLeaving, isLeaving);
+                        this$1$1.toggleElement(el, isLeaving, isLeaving);
                     });
                     return;
                 }
 
                 var toggled = this.target.filter(this.isToggled);
-                this.toggleElement(toggled, false).then(function () { return this$1.toggleElement(this$1.target.filter(function (el) { return !includes(toggled, el); }
+                this.toggleElement(toggled, false).then(function () { return this$1$1.toggleElement(this$1$1.target.filter(function (el) { return !includes(toggled, el); }
                     ), true); }
                 );
 
