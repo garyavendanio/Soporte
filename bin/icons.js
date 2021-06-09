@@ -17,5 +17,5 @@ async function run() {
 async function compileIcons(folder) {
     const [, name] = folder.toString().match(new RegExp(match, 'i'));
     const ICONS = await icons(`{src/images/icons,${folder}}/*.svg`);
-    return compile('bin/rollup/icons.js', `dist/js/icons-${name}`, {name, replaces: {ICONS}});
+    return compile('bin/compile/icons.js', `dist/js/icons-${name}`, {name, replaces: {ICONS}});
 }
